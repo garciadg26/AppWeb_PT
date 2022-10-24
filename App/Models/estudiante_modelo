@@ -1,0 +1,24 @@
+<?php
+    require_once 'App/db.php';
+
+    class Estudiante_modelo extends BD{
+
+        private $bd;
+        private $tabla = 'estudiantes';
+
+        //Metodo consultar
+        public function consultar(){
+            $conexion = parent::conectar();
+            try{
+                #SELECT * FORM nombre_tabla;
+                $query = "SELECT * FROM usuarios";
+                return $consulta = $conexion->query($query)->fetch();
+            
+            }catch(Exception $e){
+                exit("ERROR: ".$e->getMessage());
+            }
+        }
+    }
+
+
+?>
