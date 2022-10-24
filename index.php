@@ -11,7 +11,7 @@
 
     //Validacion del login
     if(isset($_SESSION['user'])){
-        echo "Hay sesion";
+        //echo "Hay sesion";
         $user->setUser($userSession->getCurrentUser());
         include_once 'App/Views/home.php';
     }else if(isset($_POST['username']) && isset($_POST['password'])){
@@ -19,6 +19,7 @@
         $userForm = $_POST['username'];
         $passForm = $_POST['password'];
 
+        $user = new User();
         //
         if($user->userExists($userForm, $passForm)){
             //Asignar las sesion de usuario

@@ -34,7 +34,7 @@
         <ul>
             <li>Home</li>
             <li class="cerrar-sesion">
-                <a href="../App/Includes/logout.php">Cerrar sesión</a>
+                <a href="../iam/App/Includes/logout.php">Cerrar sesión</a>
             </li>
         </ul>
     </div>

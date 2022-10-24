@@ -10,7 +10,7 @@ class User extends BD{
     public function userExists($user, $pass){
         
         //$md5pass = md5($pass);  
-        $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_alu = :user AND Contrasenia_alu = :pass');
+        $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_usu = :user AND Contrasenia_usu = :pass');
         $query->bindParam(':user', $user);
         $query->bindParam(':pass', $pass);
         
@@ -26,12 +26,12 @@ class User extends BD{
     }
 
     public function setUser($user){
-        $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_alu = :user');
+        $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_usu = :user');
         $query->execute(['user' => $user]);
 
         foreach($query as $currentUser){
-            $this->nombre = $currentUser['Nombre_alu'];
-            $this->username = $currentUser['Email_alu'];
+            $this->nombre = $currentUser['Nombre_usu'];
+            $this->username = $currentUser['Email_usu'];
         }
     }
 

@@ -38,12 +38,13 @@
         <section class="sect_login">
             <article class="cont_login">
                 <h3>Ingresa al sistema</h3>
-                <?php
+                <form action="php/login.php" method="POST">
+                    <?php
                         if(isset($errorLogin)){
                             echo $errorLogin;
                         }
                     ?>
-                <form action="php/login.php" method="POST">
+                    </br>
                     <label for="input_nombre"> Número de usuario<br>
                         <input type="text" id="input_nombre" name="username" placeholder="Usuario" required>
                     </label>
