@@ -6,7 +6,7 @@
             parent::__construct();
         }
 
-        public function insert(){
+        public function insertar(){
             //insertar datos en la base de datos
             echo "Insertar datos";
         }

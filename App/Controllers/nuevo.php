@@ -8,7 +8,7 @@
 
         function regisAlu(){
             echo "Alumno creado";
-            $this->model->insert();
+            $this->model->insertar();
         }
     }
 
