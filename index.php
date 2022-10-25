@@ -23,7 +23,7 @@
     $user = new User();
 
     // Objeto de la app
-    $app = new App();
+    //$app = new App();
 
     #Validacion del login
     //Si existe sesion del usuario
@@ -51,6 +51,7 @@
             //Manda a llamar a la vista del home
             //include_once "App/Controllers/home.php";
             //$controller = new HomePage();
+            //include_once 'App/Views/homePage/index.php';
             include_once 'App/Views/homePage/index.php';
         }else{
             echo "<p>El Email y/o la contraseña son incorrectos</p>";

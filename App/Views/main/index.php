@@ -1,3 +1,14 @@
+<?php
+include_once 'App/Includes/user.php';
+include_once 'App/Includes/user_session.php';
+include_once 'App/Libs/app.php';
+
+//$userSession = new UserSession();
+$user = new User();
+
+$app = new App();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
