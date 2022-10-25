@@ -14,6 +14,12 @@
             $this->view->render('errorViews/index');
             //echo "<p>Error al cargar recurso</p>";
         }
+
+        public function errorLogin(){
+            parent::__construct();
+            $this->view->mensaje = "Error en el usuario y contraseña";
+        }
+
     }
 
 ?>

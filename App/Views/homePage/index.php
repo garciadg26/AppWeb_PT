@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Esta es la vista de Main</h1>
+    <h1>Esta es la vista de HomePage</h1>
 
         <?php include_once __DIR__ . "/../header.php"; ?>
         <section>

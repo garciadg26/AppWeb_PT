@@ -9,7 +9,7 @@
               llamamos el metodo render
               que tiene el nombre de la carpteta y la vista
             */
-            $this->view->render('main/index');
+            $this->view->render('login/index');
         }
 
         public function saludo(){

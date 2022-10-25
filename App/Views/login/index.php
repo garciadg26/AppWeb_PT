@@ -11,7 +11,7 @@
 </head>
 <body>
 
-
+    <h1>Esta es la vista del LOGIN</h1>
     <!-- <header class="menu_principal menu_navegacion">
         <nav class="wrapper">
             <div class="col_1">
@@ -38,14 +38,14 @@
         <section class="sect_login">
             <article class="cont_login">
                 <h3>Ingresa al sistema</h3>
-                <form action="php/login.php" method="POST">
-                    <?php
+                <form action="" method="POST">
+                     <?php
                         if(isset($errorLogin)){
-                            echo $errorLogin;
+                            $errorLogin;
                         }
                     ?>
                     </br>
-                    <label for="input_nombre"> Número de usuario<br>
+                    <label for="input_nombre"> Email de usuario<br>
                         <input type="text" id="input_nombre" name="username" placeholder="Usuario" required>
                     </label>
                     <br>

@@ -3,14 +3,20 @@
     //require_once '../App/Models/estudiante_modelo';
     //$estudiante = new Estudiante_modelo();
 
+
     //Mandar los routers
     require_once __DIR__ . '/App/Libs/controllers.php';
     require_once __DIR__ . '/App/Libs/models.php';
     require_once __DIR__ . '/App/Libs/views.php';
+    include_once "App/Controllers/main.php";
+    
 
     include_once 'App/Includes/user.php';
     include_once 'App/Includes/user_session.php';
     include_once __DIR__ . '/App/Libs/app.php';
+
+    //$archivoController = 'App/Controllers/login.php';
+    //require_once $archivoController; 
 
     //Objeto de sesion
     $userSession = new UserSession();
@@ -19,11 +25,16 @@
     // Objeto de la app
     $app = new App();
 
-    //Validacion del login
+    #Validacion del login
+    //Si existe sesion del usuario
     if(isset($_SESSION['user'])){
-        //echo "Hay sesion";
+        echo 'hay sesion';
+        #obtener el usuario
         $user->setUser($userSession->getCurrentUser());
-        include_once 'App/Views/home.php';
+        #Incluir la vista del MAIN
+        //include_once "App/Controllers/home.php";
+        //$controller = new HomePage();
+        include_once 'App/Views/homePage/index.php';
     }else if(isset($_POST['username']) && isset($_POST['password'])){
         
         $userForm = $_POST['username'];
@@ -31,22 +42,32 @@
 
         $user = new User();
         //
+        
         if($user->userExists($userForm, $passForm)){
             //Asignar las sesion de usuario
             $userSession->setCurrentUser($userForm);
             //Llenar los datos del nombre y del username
             $user->setUser($userForm);
-            include_once 'App/Views/home.php';
+            //Manda a llamar a la vista del home
+            //include_once "App/Controllers/home.php";
+            //$controller = new HomePage();
+            include_once 'App/Views/homePage/index.php';
         }else{
+            echo "<p>El Email y/o la contraseña son incorrectos</p>";
             //Mensaje de error en los datos
+            
             $errorLogin = "El Email y/o la contraseña son incorrectos";
-            include_once 'App/Views/login.php';
+            //$controller = new Main();
+            
+            //include '/main';
+            include_once 'App/Views/login/index.php';
         }
 
 
     }else{
-        //echo "Login";
-        include_once 'App/Views/login.php';
+        echo "Login";
+        include_once 'App/Views/login/index.php';
+        //$controller = new Main();
     }
 
 
