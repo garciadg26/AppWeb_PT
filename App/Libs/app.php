@@ -5,7 +5,7 @@ require_once __DIR__ . '/../Controllers/home.php';
 
     class App{
         public function __construct(){
-            //echo "<p>Nueva app</p>";
+            echo "<p>Nueva app</p>";
 
 
             $url = isset($_GET['url']) ? $_GET['url'] : null;

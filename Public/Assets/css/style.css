@@ -1,0 +1,10 @@
+body{
+    background-color: #fff;
+}
+
+/*FORMULARIO*/
+input[type=text], input[type=password]{
+    padding: 5px 12px;
+    width: 100%;
+    border-radius: 4px;
+}

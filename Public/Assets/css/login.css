@@ -1,0 +1,22 @@
+/* ESTILOS PARA EL LOGIN */
+.container{
+    width: 100%;
+}
+
+.cont_login{
+    margin: 0 auto;
+    max-width: 500px;
+    background-color: #232323;
+    border-radius: 12px;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    color: #ffffff;
+}
+
+.cont_login h3{
+    color: #ffffff;
+    text-align: center;
+}
+
+
+
