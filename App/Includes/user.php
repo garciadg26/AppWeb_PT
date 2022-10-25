@@ -1,6 +1,6 @@
 <?php
 
-include_once 'App/db.php';
+include_once 'App/Libs/db.php';
 
 class User extends BD{
     private $nombre;

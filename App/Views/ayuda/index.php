@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    <?php include_once __DIR__ . "/../header.php"; ?>
     <h2>Sección de ayuda</h2>
+    <?php include_once __DIR__ . "/../footer.php"; ?>
 </body>
 </html>

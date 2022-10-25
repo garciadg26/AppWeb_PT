@@ -1,16 +1,16 @@
 <?php
 
-    const DB = 'mysql';
-    const DB_SERVIDOR = 'localhost';
-    const DB_CHARSET = 'utf8';
+    //const DB = 'mysql';
+    //const DB_SERVIDOR = 'localhost';
+    //const DB_CHARSET = 'utf8';
 
     //CLASE ABSTRACTA PARA LA CONEXION A LA BASE DE DATOS
     abstract class BD{
         private static $db_usuario  = 'root';
         private static $db_pass = '';
-        private static $db_servidor = DB_SERVIDOR;
+        private static $db_servidor = 'localhost';
         private static $db_nombre  = 'db_app_web_iam';
-        private static $db_charset = DB_CHARSET;
+        private static $db_charset = 'utf8';
         private $conexion; #conexion con al base de datos
     
         //Metodo conexion a la base de datos

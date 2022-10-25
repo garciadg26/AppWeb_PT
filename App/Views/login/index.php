@@ -34,7 +34,7 @@
 
     <div class="container">
         <section class="cont_login">
-            <h3>Iniciar al sistema</h3>
+            <h3>Iniciar sesión</h3>
             <form action="" method="POST">
                     <?php
                     if(isset($errorLogin)){
