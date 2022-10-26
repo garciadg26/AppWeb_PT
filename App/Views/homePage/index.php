@@ -10,7 +10,7 @@
     
     <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
     <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
-        <h1>Esta es la vista de HomePage</h1>
+        <h1>Esta es la vista de HomePage Alumno</h1>
         <section>
             <h1>Bienvenido <?php echo $user->getNombre(); ?></h1>
             <a href="../iam/App/Includes/logout.php">Cerrar sesión</a>

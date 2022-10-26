@@ -3,6 +3,12 @@
     width: 100%;
 }
 
+#cont_login{
+    background-image: url(../images/fondo-login-iam.png);
+    background-position: center center;
+    background-size: cover;
+}
+
 .cont_login{
     margin: 0 auto;
     max-width: 500px;
