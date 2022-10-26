@@ -6,8 +6,9 @@
             parent::__construct();
         }
 
-        public function insertar($datos){
-            
+        public function insertar(){
+            echo "Registro insertado correctamente";
+            /*
             try{
                 //insertar datos en la base de datos
                 $query = $this->db->conectar()->prepare('INSERT INTO descripcion (Acerca_des, Que_aprenderas_des, para_quien_des) values(:acercaDe, :queAprenderas, :paraQuien)');
@@ -17,7 +18,7 @@
             }catch(PDOException $e){
                 echo "Ya existe correo";
                 return false;
-            }
+            }*/
 
 
         }

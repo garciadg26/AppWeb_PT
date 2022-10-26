@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../Controllers/errorControllers.php';
+require_once __DIR__ . '/../Controllers/errorController.php';
 require_once __DIR__ . '/../Controllers/home.php';
 
     class App{
@@ -34,7 +34,7 @@ require_once __DIR__ . '/../Controllers/home.php';
                     $controller->{$url[1]}();
                 }
             }else{
-                $controller = new ErrorControllers();
+                $controller = new ErrorController();
             }
         }
     }

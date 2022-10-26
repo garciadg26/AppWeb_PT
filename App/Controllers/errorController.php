@@ -1,6 +1,6 @@
 <?php
 
-    class ErrorControllers extends Controller{
+    class ErrorController extends Controller{
 
         public function __construct(){
             //Invocamos al metodo constructor del Controller

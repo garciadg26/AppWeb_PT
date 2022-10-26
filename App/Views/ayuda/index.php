@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body> -->
 
-    <?php include_once __DIR__ . "/../header.php"; ?>
+    <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
+    <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
     <h2>Sección de ayuda</h2>
-    <?php include_once __DIR__ . "/../footer.php"; ?>
+    <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
 </body>
 </html>

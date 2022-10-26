@@ -18,5 +18,10 @@
     text-align: center;
 }
 
-
+.cont_login > p > a{
+    border-radius: 4px;
+    padding: 6px 12px;
+    background-color: aqua;
+    color: #212121;
+}
 

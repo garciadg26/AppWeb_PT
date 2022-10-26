@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN - SISTEMA DE COMERCIAZACIÓN WEB</title>
     <link rel="stylesheet" href="Public/assets/css/style.css?ver=1.0">
-    <link rel="stylesheet" href="Public/assets/css/login.css">
+    <link rel="stylesheet" href="Public/assets/css/login.css?ver=1.0">
     <!-- FUENTES WEB -->
 
 </head>
@@ -53,8 +53,8 @@
                 <!-- <p class="olvidar_pas"><a href="#">Olvidé mi constraseña</a></p> -->
                 <input type="submit" value="Iniciar">
             </form>
-            <p class="new_cuenta">¿Deseas crear una nueva cuenta? <a href="php/registro.php"> Registrar cuenta</a></p>
-        </section>
+            <p class="new_cuenta">¿Deseas crear una nueva cuenta? <a href="<?php echo constant('URL'); ?>registro"> Registrar cuenta</a></p>
+        </section>                                                       
     </div>
     <footer>
         <p class="foote_legales">© IAM 2022. Todos los derechos reservados.</p>
