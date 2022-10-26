@@ -15,6 +15,22 @@
     $user = new User();
     //$app = new App();
 
+    //IMPLEMENTACION DE ROL DE SESIONES
+    if(isset($_SESSION['rol'])){
+        switch($_SESSION['rol']){
+            //ADMINISTRADOR
+            case 1:
+                include_once 'App/Views/nuevo/index.php';
+            break;
+            //ALUMNO
+            case 2:
+                include_once 'App/Views/homePage/index.php';
+            break;
+            default:
+        }
+    } //else
+
+    //AUTENTICACION DEL USUARIO
 
     #Validacion del login
     //Si existe sesion del usuario
