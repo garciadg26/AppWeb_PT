@@ -5,7 +5,7 @@
 
 
     //Mandar los routers
-    require_once __DIR__ . '/App/Libs/database.php';
+    require_once __DIR__ . '/App/Libs/db.php';
     require_once __DIR__ . '/App/Libs/controllers.php';
     require_once __DIR__ . '/App/Libs/models.php';
     require_once __DIR__ . '/App/Libs/views.php';

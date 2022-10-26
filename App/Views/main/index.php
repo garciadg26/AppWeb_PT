@@ -1,7 +1,7 @@
 <?php
 
     //Mandar los routers
-    require_once 'App/Libs/database.php';
+    require_once 'App/Libs/db.php';
     require_once 'App/Libs/controllers.php';
     require_once 'App/Libs/models.php';
     require_once 'App/Libs/views.php';

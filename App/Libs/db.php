@@ -5,7 +5,7 @@
     //const DB_CHARSET = 'utf8';
 
     //CLASE ABSTRACTA PARA LA CONEXION A LA BASE DE DATOS
-    abstract class BD{
+    /*abstract*/ class BD{
         private static $db_usuario  = 'root';
         private static $db_pass = '';
         private static $db_servidor = 'localhost';
@@ -38,7 +38,7 @@
 
         # ACTUALIZAR CRUD
         //Consultar
-        abstract protected function consultar();
+        //abstract protected function consultar();
 
     }
 
