@@ -5,10 +5,12 @@
             session_start();
         }
 
+        //Poner un valor a la sesion actual
         public function setCurrentUser($user){
             $_SESSION['user'] = $user;
         }
 
+        //Devolver la sesión
         public function getCurrentUser(){
             return $_SESSION['user'];
         }

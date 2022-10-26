@@ -25,7 +25,8 @@
                 //$query->execute(['nombreA' => $datos['nombreA'], 'apellidosA' => $datos['apellidosA'], 'emailA' => $datos['emailA'], 'passA' => $datos['passA'], 'celularA' => $datos['celularA'], 2 => $datos[$usuarioAlumno]]);
                 return true;
             }catch(PDOException $e){
-                echo "ERROR: ".$e->getMessage();
+                echo "Error: Correo ya existe en el sistema";
+                //echo "ERROR: ".$e->getMessage();
                 return false;
             }
         }

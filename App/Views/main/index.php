@@ -16,7 +16,7 @@
     //$app = new App();
 
 
-        #Validacion del login
+    #Validacion del login
     //Si existe sesion del usuario
     if(isset($_SESSION['user'])){
         echo 'hay sesion';

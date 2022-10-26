@@ -13,24 +13,6 @@
 <body>
 
     <h1>Esta es la vista del LOGIN</h1>
-    <!-- <header class="menu_principal menu_navegacion">
-        <nav class="wrapper">
-            <div class="col_1">
-                <h1>DANSUTOL</h1>
-            </div>
-            <div class="col_2">
-                <ul class="wrapper">
-                    <li><a href="index.html"> Inicio</a></li>
-                </ul>
-            </div>
-            <div class="col_3">
-                <ul class="wrapper">
-                    <li><a href="php/registro.php"> Registrarse</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header> -->
-
 
     <div class="container">
         <section class="cont_login">

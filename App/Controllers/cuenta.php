@@ -19,7 +19,9 @@
 
             if($this->model->insertar(['nombreA' => $nombreA, 'apellidosA' => $apellidosA, 'emailA' => $emailA, 'passA' => $passA, 'celularA' => $celularA, 2 => $usuarioAlumno])){
                 echo "Nueva descripción creada";
-                
+                //REDIRECCIÓN USANDO HTML
+                echo '<meta http-equiv="refresh" content="2;URL=\'../cuenta\'">';
+                //echo '<meta http-equiv="refresh" content="2;URL=\'http:localhost/iam/cuenta/\'">';
             }
         }
     }

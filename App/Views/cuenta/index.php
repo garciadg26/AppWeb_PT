@@ -48,13 +48,14 @@
                 <!-- <p class="olvidar_pas"><a href="#">Olvidé mi constraseña</a></p> -->
                 <input type="submit" value="Crear">
             </form>
-            
+            <p>¿Deseas iniciar sesión?
+                <a href="<?php echo constant('URL'); ?>">Iniciar sesión</a>
+            </p>
         </section>                                                       
     </div>
     <footer>
         <p class="foote_legales">© IAM 2022. Todos los derechos reservados.</p>
     </footer>
-
 
 </body>
 </html>
