@@ -53,7 +53,7 @@
                 <!-- <p class="olvidar_pas"><a href="#">Olvidé mi constraseña</a></p> -->
                 <input type="submit" value="Iniciar">
             </form>
-            <p class="new_cuenta">¿Deseas crear una nueva cuenta? <a href="<?php echo constant('URL'); ?>registro"> Registrar cuenta</a></p>
+            <p class="new_cuenta">¿Deseas crear una nueva cuenta? <a href="<?php echo constant('URL'); ?>cuenta"> Registrar cuenta</a></p>
         </section>                                                       
     </div>
     <footer>

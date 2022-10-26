@@ -15,7 +15,5 @@
         public function saludo(){
             echo "<p>Ejeutaste el metodo saludo</p>";
         }
-
     }
-
 ?>
