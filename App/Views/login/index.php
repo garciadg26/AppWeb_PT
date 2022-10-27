@@ -13,16 +13,13 @@
 <body>
 
     <h1>Esta es la vista del LOGIN</h1>
+    <?php $mensaje = "";?>
 
     <div class="container" id="cont_login">
         <section class="cont_login">
-            <h3>Iniciar sesión</h3>
+            <h2>Iniciar sesión</h2>
+            <div ><?php echo $this->mensaje; ?></div>
             <form action="" method="POST">
-                    <?php
-                    if(isset($errorLogin)){
-                        $errorLogin;
-                    }
-                ?>
                 </br>
                 <label for="input_nombre"> Email de usuario<br>
                     <input type="text" id="input_nombre" name="username" placeholder="Usuario" required>

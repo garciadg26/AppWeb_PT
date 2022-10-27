@@ -1,21 +1,12 @@
-
-
-
-
-
 <?php include_once __DIR__ . "/../../Includes/headInicio.php"; ?>
 
     <h1>Esta es la vista de CREAR CUENTA</h1>
-
     <div class="container">
         <section class="cont_login">
-            <h3>Crear cuenta</h3>
+            <h2>Crear cuenta</h2>
+            <div ><?php echo $this->mensaje; ?></div>
             <form action="<?php echo constant('URL'); ?>cuenta/crearUsuario" method="POST">
-                    <?php
-                    if(isset($errorCuenta)){
-                        $errorCuenta;
-                    }
-                ?>
+
                 </br>
                 <label for="nombreA"> Nombre<br>
                     <input type="text" id="nombreA" name="nombreA" placeholder="Carlos" required>

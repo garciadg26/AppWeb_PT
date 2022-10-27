@@ -13,11 +13,12 @@
     
     $userSession = new UserSession();
     $user = new User();
+    $mensaje = '';
+    
     //$app = new App();
 
     //////////// BLOQUE 1 
     //IMPLEMENTACION DE ROL DE SESIONES
-    
     if(isset($_SESSION['rol'])){
         echo 'hay sesion';
         #obtener el usuario
@@ -32,40 +33,41 @@
             case 2:
                 include_once 'App/Views/homePage/index.php';
             break;
-            //INSTRUCTOR
-            /*
-            case 3:
-                include_once 'App/Views/ayuda/index.php';
-                //include_once 'App/Views/ayuda/index.php';
-                //include_once 'App/Views/homePage/index.php';
-            break;*/
             default:
         }
     }else if(isset($_POST['username']) && isset($_POST['password'])){
-        echo "Nuevo usuario Main";
+        //echo "Nuevo usuario Main";
         $userForm = $_POST['username'];
         $passForm = $_POST['password'];
 
-        $user = new User();
 
+        $user = new User();
+        
+        //1C+Comprobar si el usuario existe en la base de datos
         if($user->userExists($userForm, $passForm)){
             //Asignar las sesion de usuario
             $userSession->setCurrentUser($userForm);
             //Llenar los datos del nombre y del username
             $user->setUser($userForm);
             $user->rolUser($userForm, $passForm);
+        //1C-SiNo se indica error en las credenciales
         }else{
-            echo "<p>El Email y/o la contraseña son incorrectos</p>";
+            #echo "<p>El Email y/o la contraseña son incorrectos</p>";
+            $mensaje = "<div class='msnErrorLogin'>Error: El email y/o la contraseña son incorrectos</div>";
             //Mensaje de error en los datos
-            
-            $errorLogin = "El Email y/o la contraseña son incorrectos";
+
+            //$this->mensaje = $mensaje;
+
             //$controller = new Main();
             
             //include '/main';
-            include_once 'App/Views/login/index.php';
+            #include_once 'App/Views/login/index.php';
         }
+
+        $this->mensaje = $mensaje;
+        $this->render('login/index');
+
         /*
-        //1C+Comprobar si el usuario existe en la base de datos
         if($user->userExists($userForm, $passForm)){
             $userSession->setCurrentUser($userForm);
             //Asignar las sesion de usuario
@@ -78,7 +80,7 @@
             
             #COMENTARIO
             //include_once 'App/Views/homePage/index.php';
-            //1C-SiNo se indica error en las credenciales
+            
         }else{
             echo "<p>El Email y/o la contraseña son incorrectos</p>";
             //Mensaje de error en los datos
@@ -147,7 +149,6 @@
         echo "Login";
         include_once 'App/Views/login/index.php';
         //$controller = new Main();
-    }
-*/
+    }*/
 ?>
 

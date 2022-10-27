@@ -13,11 +13,13 @@ require_once __DIR__ . '/../Controllers/home.php';
             $url = explode('/', $url);
 
             //Validar esta vacio el controlador
+            //Cuando se ingresa sin definir controlador
             if(empty($url[0])){
                 $archivoController = 'App/Controllers/main.php';
                 require_once $archivoController;
                 $controller = new Main();
                 $controller->loadModel('main');
+                $controller->render();
                 return false;
             }
 
@@ -27,11 +29,16 @@ require_once __DIR__ . '/../Controllers/home.php';
             //Validamos si la ruta llama al controlador
             if(file_exists($archivoController)){
                 require_once $archivoController;
+
+                //Inicializar el controlador y se carga el modelo
                 $controller = new $url[0];
                 $controller->loadModel($url[0]);
 
+                // si hay un método que se requiere cargar
                 if(isset($url[1])){
                     $controller->{$url[1]}();
+                }else{
+                    $controller->render();
                 }
             }else{
                 $controller = new ErrorController();

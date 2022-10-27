@@ -8,6 +8,7 @@ include_once 'App/Libs/db.php';
 class User extends BD{
     private $nombre;
     private $username;
+    
 
     //Metodo para comprobar si existe el usuario en la base de datos
     public function userExists($user, $pass){
@@ -45,7 +46,13 @@ class User extends BD{
 
             $rol = $row[15];
             $_SESSION['rol'] = $rol;
-            
+            header('Location:' . constant('URL'));
+
+
+            //header("Location:../iam/");
+            //echo '<meta http-equiv="refresh" content="0;URL=\'../iam/main\'">';
+            //echo '<meta http-equiv="refresh" content="0;URL=\'../iam/main\'">';
+            /*
             switch($_SESSION['rol']){
                 //ADMINISTRADOR
                 case 1:
@@ -60,14 +67,14 @@ class User extends BD{
                     //include_once 'App/Views/ayuda/index.php';
                 break;
                 //INSTRUCTOR
-                /*
+                
                 case 3:
                     echo '<meta http-equiv="refresh" content="2;URL=\'../iam/ayuda\'">';
                     //include_once 'App/Views/ayuda/index.php';
                     //include_once 'App/Views/homePage/index.php';
-                break;*/
+                break;
                 default:
-            }
+            }*/
 
         }else{
             //No existe

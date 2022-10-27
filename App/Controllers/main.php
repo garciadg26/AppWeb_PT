@@ -4,11 +4,13 @@
         
         public function __construct(){
             parent::__construct();
+        }
 
-            /*Desde la libreria del router
-              llamamos el metodo render
-              que tiene el nombre de la carpteta y la vista
-            */
+        /*Desde la libreria del router
+        llamamos el metodo render
+        que tiene el nombre de la carpteta y la vista
+        */
+        public function render(){
             $this->view->render('main/index');
         }
 

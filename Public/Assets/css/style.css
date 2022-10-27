@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body{
     background-color: #fff;
     margin: 0;
     padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
 }
 
 /*FORMULARIO*/
@@ -9,4 +16,25 @@ input[type=text], input[type=password]{
     padding: 5px 12px;
     width: 100%;
     border-radius: 4px;
+}
+
+
+/* __MENSAJES */
+.msnErrorLogin{
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 4px;
+    text-align: center;
+    width: 80%;
+    background-color: #FB5252;
+    color: #fff;
+}
+.msnSuccesLogin{
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 4px;
+    text-align: center;
+    width: 80%;
+    background-color: #58CE6B;
+    color: #fff;
 }

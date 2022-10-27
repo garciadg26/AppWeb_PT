@@ -7,7 +7,7 @@
 
         public function insertar($datos, $DateAndTime){
             //echo "Registro exitoso de usuario";
-            var_dump($datos['2']);
+            //var_dump($datos['2']);
 
             try{
                 $usuarioAlumno = 2;
@@ -28,7 +28,7 @@
                 return true;
             }catch(PDOException $e){
                 //echo "Error: Correo ya existe en el sistema";
-                echo "ERROR: ".$e->getMessage();
+                //echo "ERROR: ".$e->getMessage();
                 return false;
             }
         }
