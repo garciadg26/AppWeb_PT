@@ -17,10 +17,12 @@
 
     //////////// BLOQUE 1 
     //IMPLEMENTACION DE ROL DE SESIONES
+    
     if(isset($_SESSION['rol'])){
         echo 'hay sesion';
         #obtener el usuario
         $user->setUser($userSession->getCurrentUser());
+
         switch($_SESSION['rol']){
             //ADMINISTRADOR
             case 1:
@@ -30,6 +32,13 @@
             case 2:
                 include_once 'App/Views/homePage/index.php';
             break;
+            //INSTRUCTOR
+            /*
+            case 3:
+                include_once 'App/Views/ayuda/index.php';
+                //include_once 'App/Views/ayuda/index.php';
+                //include_once 'App/Views/homePage/index.php';
+            break;*/
             default:
         }
     }else if(isset($_POST['username']) && isset($_POST['password'])){
@@ -58,8 +67,8 @@
         /*
         //1C+Comprobar si el usuario existe en la base de datos
         if($user->userExists($userForm, $passForm)){
-            //Asignar las sesion de usuario
             $userSession->setCurrentUser($userForm);
+            //Asignar las sesion de usuario
             //Llenar los datos del nombre y del username
             $user->setUser($userForm);
             //Manda a llamar a la vista del home

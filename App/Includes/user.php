@@ -42,27 +42,30 @@ class User extends BD{
         $row = $query->fetch(PDO::FETCH_NUM);
         if($row == true){
             echo 'Nuevo usuario User: ' . $user;
-            //Validar el rol del usuario
-            //Asignar las sesion de usuario
-            
-            //$userSession->setCurrentUser($user);
-            //Llenar los datos del nombre y del username
-            //setUser($user);
-            //setUser($row[2]);
 
             $rol = $row[15];
             $_SESSION['rol'] = $rol;
-
+            
             switch($_SESSION['rol']){
                 //ADMINISTRADOR
                 case 1:
+                    //echo '<meta http-equiv="refresh" content="2;URL=\'../iam/nuevo\'">';
                     include_once 'App/Views/nuevo/index.php';
                 break;
                 //ALUMNO
                 case 2:
-                    include_once 'App/Views/ayuda/index.php';
-                    //include_once 'App/Views/homePage/index.php';
+                    echo 'Ingreso el alumno';
+                    //echo '<meta http-equiv="refresh" content="2;URL=\'../iam/main\'">';
+                    include_once 'App/Views/homePage/index.php';
+                    //include_once 'App/Views/ayuda/index.php';
                 break;
+                //INSTRUCTOR
+                /*
+                case 3:
+                    echo '<meta http-equiv="refresh" content="2;URL=\'../iam/ayuda\'">';
+                    //include_once 'App/Views/ayuda/index.php';
+                    //include_once 'App/Views/homePage/index.php';
+                break;*/
                 default:
             }
 
@@ -72,6 +75,26 @@ class User extends BD{
             include_once 'App/Views/login/index.php';
         }
     }
+    /*
+    public function userOptiones($rol){
+        switch($rol){
+            //ADMINISTRADOR
+            case 1:
+                include_once 'App/Views/nuevo/index.php';
+            break;
+            //ALUMNO
+            case 2:
+                include_once 'App/Views/homePage/index.php';
+                //include_once 'App/Views/ayuda/index.php';
+            break;
+            //INSTRUCTOR
+            case 3:
+                include_once 'App/Views/ayuda/index.php';
+                //include_once 'App/Views/homePage/index.php';
+            break;
+            default:
+        }
+    }*/
 
     public function setUser($user){
         $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_usu = :user');

@@ -13,6 +13,7 @@
     <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
     <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
     <h2>Sección de Nuevo</h2>
+    <h3>Bienvenido <?php echo $user->getNombre(); ?></h3>
     <a href="<?php echo constant('URL'); ?>App/Includes/logout.php">Cerrar sesión</a>
     <form action="<?php echo constant('URL'); ?>nuevo/regisAlu" method="POST">
         <p>
