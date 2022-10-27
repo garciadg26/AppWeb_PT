@@ -13,7 +13,7 @@
 <body>
 
     <h1>Esta es la vista del LOGIN</h1>
-    <?php $mensaje = "";?>
+    
 
     <div class="container" id="cont_login">
         <section class="cont_login">

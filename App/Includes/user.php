@@ -48,33 +48,7 @@ class User extends BD{
             $_SESSION['rol'] = $rol;
             header('Location:' . constant('URL'));
 
-
-            //header("Location:../iam/");
             //echo '<meta http-equiv="refresh" content="0;URL=\'../iam/main\'">';
-            //echo '<meta http-equiv="refresh" content="0;URL=\'../iam/main\'">';
-            /*
-            switch($_SESSION['rol']){
-                //ADMINISTRADOR
-                case 1:
-                    //echo '<meta http-equiv="refresh" content="2;URL=\'../iam/nuevo\'">';
-                    include_once 'App/Views/nuevo/index.php';
-                break;
-                //ALUMNO
-                case 2:
-                    echo 'Ingreso el alumno';
-                    //echo '<meta http-equiv="refresh" content="2;URL=\'../iam/main\'">';
-                    include_once 'App/Views/homePage/index.php';
-                    //include_once 'App/Views/ayuda/index.php';
-                break;
-                //INSTRUCTOR
-                
-                case 3:
-                    echo '<meta http-equiv="refresh" content="2;URL=\'../iam/ayuda\'">';
-                    //include_once 'App/Views/ayuda/index.php';
-                    //include_once 'App/Views/homePage/index.php';
-                break;
-                default:
-            }*/
 
         }else{
             //No existe
@@ -82,26 +56,6 @@ class User extends BD{
             include_once 'App/Views/login/index.php';
         }
     }
-    /*
-    public function userOptiones($rol){
-        switch($rol){
-            //ADMINISTRADOR
-            case 1:
-                include_once 'App/Views/nuevo/index.php';
-            break;
-            //ALUMNO
-            case 2:
-                include_once 'App/Views/homePage/index.php';
-                //include_once 'App/Views/ayuda/index.php';
-            break;
-            //INSTRUCTOR
-            case 3:
-                include_once 'App/Views/ayuda/index.php';
-                //include_once 'App/Views/homePage/index.php';
-            break;
-            default:
-        }
-    }*/
 
     public function setUser($user){
         $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_usu = :user');
