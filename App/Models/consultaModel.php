@@ -61,6 +61,7 @@
             }
         }
 
+        //MODELO PARA ACTUALIZAR
         public function actualizar($item){
             $query = $this->db->conectar()->prepare('UPDATE curso SET Nombre_cur = ?, Costo_cur = ?, Duracion_cur = ? WHERE idCurso = ?');
             $query->bindParam(1,$item['nombreCursoIN']);
@@ -76,8 +77,21 @@
             }catch(PDOException $e){
                 return false;
             }
-        
         }
 
+        //MODELO PARA ELIMINAR
+        public function eliminar($idCurso){
+            $query = $this->db->conectar()->prepare('DELETE FROM curso WHERE idCurso = ?');
+            $query->bindParam(1,$idCurso);
+            
+            try{
+
+                $query->execute();
+                return true;
+
+            }catch(PDOException $e){
+                return false;
+            }
+        }
     }
 ?>

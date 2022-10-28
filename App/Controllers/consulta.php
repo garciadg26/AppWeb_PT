@@ -43,7 +43,7 @@
             $duracionC = $_POST['duracionCursoINP'];
 
 
-            //
+            //CONDICIONAL PARA ACTUALIZAR
             if($this->model->actualizar(['id_verCurso' => $idC, 'nombreCursoIN' => $nombreC, 'costoCursoINP' => $costoC, 'duracionCursoINP' => $duracionC])){
                 //ACTUALIZAR CURSO EXITO
 
@@ -64,8 +64,22 @@
         }
 
         //Eliminar curso
-        public function eliminarCurso(){
+        public function eliminarCurso($param = null){
+            //Asignamos solo un parametro
+            $idCurso = $param[0];
 
+            
+            //CONDICIONAL PARA ACTUALIZAR
+            if($this->model->eliminar($idCurso)){
+                //ACTUALIZAR CURSO EXITO
+                $mensaje = "<div class='msnSuccesLogin'>Curso ELIMINADO exitosamente</div>";
+            }else{
+                //MENSAJE DE ERROR
+                $mensaje = "<div class='msnErrorLogin'>Error: No se pudo eliminar</div>";
+            }
+            //Mostrar la vista del mensaje
+            $this->view->mensaje = $mensaje;
+            $this->render();
         }
 
     }
