@@ -1,8 +1,8 @@
-<?php include_once __DIR__ . "/../../Includes/head.php"; ?>
+    <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
     <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
     <h2>Actualizar curso</h2>
     <h3><?php echo $this->curso->nombreC; ?></h3>
-    <h3>Bienvenido <?php //echo $user->getNombre(); ?></h3>
+    <h3>Bienvenido <?php echo $user->getNombre(); ?></h3>
 
     <a href="<?php echo constant('URL'); ?>App/Includes/logout.php">Cerrar sesión</a>
     <div><?php echo $this->mensaje; ?></div>
@@ -16,8 +16,8 @@
             <input type="number" name="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" required>
         </p>
         <p>
-            <label for="duracionCursoINP">¿Para quién esta dirigido?</label><br>
-            <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?> hrs" required>
+            <label for="duracionCursoINP">Duración del curso</label><br>
+            <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" required> <p>hrs</p>
         </p>
         <p>
             <input type="submit" value="Actualizar curso">

@@ -1,11 +1,13 @@
 <?php
-    //Soluciona las sesiones para consultar el nombre EN LOS ESTAOD 
+    //Soluciona las sesiones para consultar el nombre EN LOS ESTADO
+    /* 
     include_once 'App/Includes/user_session.php';
     include_once 'App/Includes/user.php';
     
     $userSession = new UserSession();
     $user = new User();
     $user->setUser($userSession->getCurrentUser());
+    */
     
     /*COMPROBACION DE ROLES
     //Comprobar si el usuario NO inicio sesion
@@ -25,6 +27,9 @@
     <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
     <h2>Sección de consulta</h2>
     <h3>Bienvenido <?php echo $user->getNombre(); ?></h3>
+    
+    <a href="<?php echo constant('URL') . 'altaCurso'?>">Crear nuevo curso</a>
+
     <table width="50%">
         <thead>
             <tr>

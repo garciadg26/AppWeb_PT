@@ -15,6 +15,7 @@
     $user = new User();
     $mensaje = '';
     
+    
     //$app = new App();
 
     //////////// BLOQUE 1 

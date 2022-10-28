@@ -8,7 +8,7 @@
 </head>
 <body> -->
     
-    <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
+    <?php include_once __DIR__ . "/../../Includes/headHome.php"; ?>
     <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
         <h1>Esta es la vista de HomePage Alumno</h1>
         <section>

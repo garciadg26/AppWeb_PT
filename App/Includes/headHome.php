@@ -9,11 +9,4 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?> Public/css/style.css?ver=1.0.1">
 </head>
 <body>
-    <?php 
-    echo "Estoy en el encabezado";
-        include_once 'App/Includes/user_session.php';
-        include_once 'App/Includes/user.php';
-        $userSession = new UserSession();
-        $user = new User();
-        $user->setUser($userSession->getCurrentUser());
-    ?>
+    <?php echo "Estoy en el encabezado del HOMEPAGE - headHome"; ?>
