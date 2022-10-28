@@ -7,23 +7,12 @@
 
             //Definimos la variable del arreglo
             $this->view->cursos = [];
-            $this->view->categorias = [];
         }
         
         public function render(){
             //Renderizamos los datos obtenidos del modelo
             $cursos = $this->model->consultarCurso();
             $this->view->cursos = $cursos;
-            $this->view->render('consulta/index');
-        }
-
-        public function crearCurso(){
-            ##PRIMERA PARTE - CONSULTAR CATEGORIAS
-            //Traemos un objeto con todos los datos
-            $categorias = $this->model->consultarCategorias();
-            //$categoria->$nombreCat;
-            var_dump($categorias);
-            $this->view->categorias = $categorias;
             $this->view->render('consulta/index');
         }
 

@@ -29,6 +29,7 @@
     <h3>Bienvenido <?php echo $user->getNombre(); ?></h3>
     
     <a href="<?php echo constant('URL') . 'altaCurso'?>">Crear nuevo curso</a>
+    <a href="<?php //echo constant('URL') . 'altaCurso'?>"></a>
 
     <table width="50%">
         <thead>
