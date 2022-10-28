@@ -40,7 +40,6 @@
         $userForm = $_POST['username'];
         $passForm = $_POST['password'];
 
-
         $user = new User();
         
         //1C+Comprobar si el usuario existe en la base de datos
@@ -60,8 +59,6 @@
 
         $this->mensaje = $mensaje;
         $this->render('login/index');
-
-
 
     //1B-SiNo mandar a la vista del login
     }else{

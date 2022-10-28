@@ -38,5 +38,45 @@
             }
         }
 
+        public function getById($id){
+            $item = new Curso();
+
+            $query = $this->db->conectar()->prepare('SELECT * FROM curso WHERE idCurso = :idcurso');
+            try{
+                $query->execute(['idcurso' => $id]);
+
+                while($row = $query->fetch()){
+                    $item->idC = $row['idCurso'];
+                    $item->nombreC = $row['Nombre_cur'];
+                    $item->costoC = $row['Costo_cur'];
+                    $item->duracionC = $row['Duracion_cur'];
+                    $item->categoriaC = $row['Categoria_idCategoria'];
+                    $item->tipoC = $row['Tipo_idTipo'];
+                    $item->softwareC = $row['Software_idSoftware'];
+                }
+                return $item;
+            }catch(PDOException $e){
+                return null;
+            }
+        }
+
+        public function actualizar($item){
+            $query = $this->db->conectar()->prepare('UPDATE curso SET Nombre_cur = ?, Costo_cur = ?, Duracion_cur = ? WHERE idCurso = ?');
+            $query->bindParam(1,$item['nombreCursoIN']);
+            $query->bindParam(2,$item['costoCursoINP']);
+            $query->bindParam(3,$item['duracionCursoINP']);
+            $query->bindParam(4,$item['id_verCurso']);
+            
+            try{
+
+                $query->execute();
+                return true;
+
+            }catch(PDOException $e){
+                return false;
+            }
+        
+        }
+
     }
 ?>

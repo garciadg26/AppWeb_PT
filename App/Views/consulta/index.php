@@ -55,8 +55,8 @@
                 <td><?php echo $cursos->categoriaC; ?></td>
                 <td><?php echo $cursos->tipoC; ?></td>
                 <td><?php echo $cursos->softwareC; ?></td>
-                <th><a href="<?php echo constant('URL') . 'consulta/verCurso'  . $cursos->idC ?>">Actualizar</a></th>
-                <th><a href="<?php echo constant('URL') . 'consulta/eliminarCurso'  . $cursos->idC ?>">Eliminar</a></th>
+                <th><a href="<?php echo constant('URL') . 'consulta/verCurso/'  . $cursos->idC ?>">Actualizar</a></th>
+                <th><a href="<?php echo constant('URL') . 'consulta/eliminarCurso/'  . $cursos->idC ?>">Eliminar</a></th>
             </tr>
             <?php
                 }//Termina el ciclo Foreach  
