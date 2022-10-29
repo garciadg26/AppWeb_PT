@@ -127,7 +127,7 @@
         //MODELO PARA ACTUALIZAR
         public function actualizar($item){
             
-            $query = $this->db->conectar()->prepare('UPDATE curso SET Nombre_cur = ?, Costo_cur = ?, Duracion_cur = ?, Categoria_idCategoria = ?, Tipo_idTipo = ?, Software_idSoftware WHERE idCurso = ?');
+            $query = $this->db->conectar()->prepare('UPDATE curso SET Nombre_cur = ?, Costo_cur = ?, Duracion_cur = ?, Categoria_idCategoria = ?, Tipo_idTipo = ?, Software_idSoftware = ? WHERE idCurso = ?');
             $query->bindParam(1,$item['nombreCursoIN']);
             $query->bindParam(2,$item['costoCursoINP']);
             $query->bindParam(3,$item['duracionCursoINP']);
@@ -141,7 +141,8 @@
                 return true;
 
             }catch(PDOException $e){
-                return false;
+                echo "ERROR: AL ACTUALIZAR DATOS: " . $e;
+                //return false;
             }
         }
 

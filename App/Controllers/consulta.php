@@ -7,7 +7,6 @@
 
             //Definimos la variable del arreglo
             $this->view->cursos = [];
-            $this->view->validarCurActual = array();
         }
         
         public function render(){
@@ -47,31 +46,24 @@
 
         //Actualizar curso
         public function actualizarCurso(){
-            $validarCurActual = array();
+            //$validarCurActual = array();#E
 
-            $nomCurso   = "";
-            $costoCurso = "";
-            $durCurso   = "";
-            $categoriaC   = "";
-            $tipoC   = "";
-            $softwareC   = "";
+            session_start();
+            //PROBAR CON GETTER Y SETTER
+            $idC = $_SESSION['id_verCurso'];
+
+            $nombreC   = $_POST['nombreCursoINP'];
+            $costoC = $_POST['costoCursoINP'];
+            $duracionC   = $_POST['duracionCursoINP'];
+            $categoriaC   = $_POST['catCursoINP'];
+            $tipoC   = $_POST['tipoCursoINP'];
+            $softwareC   = $_POST['softCursoINP'];
 
 
-            ////////////// BLOQUE 1
-            ##VALIDACIONES DEL FORMULARIO
-            ##VALIDACIONES DEL FORMULARIO
-            if(isset($_POST['submit'])){
-
-                $nombreC   = $_POST['nombreCursoINP'];
-                $costoC = $_POST['costoCursoINP'];
-                $duracionC   = $_POST['duracionCursoINP'];
-                $categoriaC   = $_POST['catCursoINP'];
-                $tipoC   = $_POST['tipoCursoINP'];
-                $softwareC   = $_POST['softCursoINP'];
-                /*
-                $catCurso   = $_POST['catCursoINP'];
-                $tipoCurso  = $_POST['tipoCursoINP'];
-                $softCurso  = $_POST['softCursoINP'];*/
+            ////////////// BLOQUE 2
+            //CONDICIONAL PARA ACTUALIZAR
+            if($this->model->actualizar(['id_verCurso' => $idC, 'nombreCursoIN' => $nombreC, 'costoCursoINP' => $costoC, 'duracionCursoINP' => $duracionC, 'catCursoINP' => $categoriaC, 'tipoCursoINP' => $tipoC, 'softCursoINP' => $softwareC])){
+                //ACTUALIZAR CURSO EXITO
 
                 //LLAMAMOS DE NUEVO EL MODELO PARA CONSULTAR LOS DATOS
                 $curso = new Curso();
@@ -92,78 +84,18 @@
                 $this->view->tipos = $tipos;
                 $this->view->softwares = $softwares;
 
-                //VALIDACIONES DE CAMPOS
-                //VALIDACIONES DE CAMPOS
-                if($nombreC == ""){
-                    array_push($validarCurActual, "El campo Nombre no puede estar vacio.");
-                }
-                if($costoC == "" || $duracionC == ""){
-                    array_push($validarCurActual, "El campo de Costo y Duración no pueden estar vacios.");
-                }
-                if(!is_numeric($costoC)){
-                    array_push($validarCurActual, "El campo Costo sólo puede tener números.");
-                }
-                if(!is_numeric($duracionC)){
-                    array_push($validarCurActual, "El campo Duración sólo puede tener números.");
-                }
-                if($categoriaC == ""){
-                    array_push($validarCurActual, "Selecciona una Categoría.");
-                }
-                if($tipoC == ""){
-                    array_push($validarCurActual, "Selecciona un Tipo de curso.");
-                }
-                if($softwareC == ""){
-                    array_push($validarCurActual, "Selecciona un Software.");
-                }
-                if(count($validarCurActual) > 0){
-                    //SI EXISTE UN ELEMENTO ALMACENADO  == HAY ERRORES Y MUESTRA LA VISTA
-                    $this->view->validarCurActual = $validarCurActual;
-                }else{
-                    ////////////// BLOQUE 2
-                    ##INGRESO DEL REGISTRO VALIDADO
-                    session_start();
-                    //PROBAR CON GETTER Y SETTER
-                    $idC = $_SESSION['id_verCurso'];
-                    /*
-                    $nombreC = $_POST['nombreCursoINP'];
-                    $costoC = $_POST['costoCursoINP'];
-                    $duracionC = $_POST['duracionCursoINP'];*/
-                    
-                    //SE CORTA LA SESION 
-                    #unset($_SESSION['id_verCurso']);
-        
-                    //CONDICIONAL PARA ACTUALIZAR
-                    if($this->model->actualizar(['id_verCurso' => $idC, 'nombreCursoIN' => $nombreC, 'costoCursoINP' => $costoC, 'duracionCursoINP' => $duracionC, 'catCursoINP' => $categoriaC, 'tipoCursoINP' => $tipoC, 'softCursoINP' => $softwareC])){
-                        //ACTUALIZAR CURSO EXITO
-        
-                        //LLAMAMOS DE NUEVO EL MODELO PARA CONSULTAR LOS DATOS
-                        $curso = new Curso();
-                        $categorias = $this->model->consultarCategoria();
-                        $tipos = $this->model->consultarTipo();
-                        $softwares = $this->model->consultarSoftware();
-
-                        $curso->nombreC = $nombreC;
-                        $curso->costoC = $costoC;
-                        $curso->duracionC = $duracionC;
-                        $curso->categoriaC = $categoriaC;
-                        $curso->tipoC = $tipoC;
-                        $curso->softwareC = $softwareC;
-
-                        //RENDERIZAMOS LOS DATOS ACTUALES
-                        $this->view->curso = $curso;
-                        $this->view->categorias = $categorias;
-                        $this->view->tipos = $tipos;
-                        $this->view->softwares = $softwares;
-
-                        $mensaje = "<div class='msnSuccesLogin'>Curso actualizado exitosamente</div>";
-                    }else{
-                        //MENSAJE DE ERROR
-                        $mensaje = "<div class='msnErrorLogin'>Error: En la base de datos del curso</div>";
-                    }
-                    //Mostrar la vista del mensaje
-                    $this->view->mensaje = $mensaje;
-                }
+                $mensaje = "<div class='msnSuccesLogin'>Curso actualizado exitosamente</div>";
+            }else{
+                //MENSAJE DE ERROR
+                $mensaje = "<div class='msnErrorLogin'>Error: En la base de datos del curso</div>";
             }
+            //Mostrar la vista del mensaje
+            $this->view->mensaje = $mensaje;
+            $this->view->render('consulta/detalle');
+
+
+
+
 
 
 
@@ -203,8 +135,7 @@
             //Mostrar la vista del mensaje
             $this->view->mensaje = $mensaje;
             */
-            $this->view->validarCurActual = $validarCurActual;
-            $this->view->render('consulta/detalle');
+
         }
 
         //Eliminar curso

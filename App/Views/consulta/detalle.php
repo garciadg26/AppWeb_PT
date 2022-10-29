@@ -7,14 +7,6 @@
     <a href="<?php echo constant('URL'); ?>App/Includes/logout.php">Cerrar sesión</a>
     <div><?php echo $this->mensaje; ?></div>
 
-    <?php
-        echo "<div class='msnErrorLogin'>";
-        for($i = 0; $i < count($this->validarCurActual); $i++){
-            echo "<li>".$this->validarCurActual[$i]."</li>";
-        }
-        echo "</div>";
-    ?>
-
 
     <form action="<?php echo constant('URL'); ?>consulta/actualizarCurso" method="POST">
         <p>
