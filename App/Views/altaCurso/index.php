@@ -35,8 +35,8 @@
             <input type="number" name="durCursoINP" id="" value="<?php echo $this->durCurso ?>">
         </p>
         <p>
-            <label for="catCursoINP">Categoría</label><br>
             <!-- SECCION DE CATEGORIAS -->
+            <label for="catCursoINP">Categoría</label><br>
             <select name="catCursoINP" id="">
                 <option value="">Seleccionar una categoría</option>
                     <?php          
@@ -50,9 +50,9 @@
                         }
                     ?> 
             </select><br>
-            <label for="catCursoINP">Tipo de curso</label><br>
+            <!-- SECCION DE TIPO -->
+            <label for="tipoCursoINP">Tipo de curso</label><br>
             <select name="tipoCursoINP" id="">
-                <!-- SECCION DE TIPO -->
                 <option value="">Seleccionar un tipo</option>
                     <?php
                         foreach($this->tipos as $row)
@@ -65,7 +65,8 @@
                         }
                     ?>
             </select><br>
-            <label for="catCursoINP">Software</label><br>
+            <!-- SECCION DE SOFTWARE -->
+            <label for="softCursoINP">Software</label><br>
             <select name="softCursoINP" id="">
                 <option value="">Seleccionar un software</option>
                     <?php

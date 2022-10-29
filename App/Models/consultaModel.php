@@ -39,6 +39,69 @@
             }
         }
 
+        public function consultarCategoria(){
+
+            $items = [];
+            try{
+                $query = $this->db->conectar()->query('SELECT * FROM categoria');
+                //Recorrer el arreglo para almacenar datos
+                while($row = $query->fetch()){
+                    //Objeto que encapsula las propiedades
+                    $item = new Curso();
+                    $item->idCa = $row['idCategoria'];
+                    $item->nombreCa = $row['Nombre_cat'];
+
+                    //Permite ingresar a un arreglo, un nuevo valor 
+                    array_push($items, $item);
+                }
+                return $items;
+            }catch(PDOException $e){
+                return [];
+            }
+        }
+
+        public function consultarTipo(){
+
+            $items = [];
+            try{
+                $query = $this->db->conectar()->query('SELECT * FROM tipo_curso');
+                //Recorrer el arreglo para almacenar datos
+                while($row = $query->fetch()){
+                    //Objeto que encapsula las propiedades
+                    $item = new Curso();
+                    $item->idTi = $row['idTipo'];
+                    $item->nombreTi = $row['Nombre_tipo'];
+
+                    //Permite ingresar a un arreglo, un nuevo valor 
+                    array_push($items, $item);
+                }
+                return $items;
+            }catch(PDOException $e){
+                return [];
+            }
+        }
+
+        public function consultarSoftware(){
+
+            $items = [];
+            try{
+                $query = $this->db->conectar()->query('SELECT * FROM software');
+                //Recorrer el arreglo para almacenar datos
+                while($row = $query->fetch()){
+                    //Objeto que encapsula las propiedades
+                    $item = new Curso();
+                    $item->idSo = $row['idSoftware'];
+                    $item->nombreSo = $row['Nombre_software'];
+
+                    //Permite ingresar a un arreglo, un nuevo valor 
+                    array_push($items, $item);
+                }
+                return $items;
+            }catch(PDOException $e){
+                return [];
+            }
+        }
+
         public function getById($id){
             $item = new Curso();
 
@@ -63,12 +126,15 @@
 
         //MODELO PARA ACTUALIZAR
         public function actualizar($item){
-            $query = $this->db->conectar()->prepare('UPDATE curso SET Nombre_cur = ?, Costo_cur = ?, Duracion_cur = ? WHERE idCurso = ?');
+            
+            $query = $this->db->conectar()->prepare('UPDATE curso SET Nombre_cur = ?, Costo_cur = ?, Duracion_cur = ?, Categoria_idCategoria = ?, Tipo_idTipo = ?, Software_idSoftware WHERE idCurso = ?');
             $query->bindParam(1,$item['nombreCursoIN']);
             $query->bindParam(2,$item['costoCursoINP']);
             $query->bindParam(3,$item['duracionCursoINP']);
-            $query->bindParam(4,$item['id_verCurso']);
-            
+            $query->bindParam(4,$item['catCursoINP']);
+            $query->bindParam(5,$item['tipoCursoINP']);
+            $query->bindParam(6,$item['softCursoINP']);
+            $query->bindParam(7,$item['id_verCurso']);
             try{
 
                 $query->execute();

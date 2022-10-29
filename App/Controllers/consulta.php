@@ -26,9 +26,22 @@
             //Iniciamos sesion para evitar que se edite el ID del curso
             session_start();
             $_SESSION['id_verCurso'] = $curso->idC;
-            #$id_curso = $curso->idC;
 
+
+            //Traemos un objeto con todos los datos enlazados
+            $categorias = $this->model->consultarCategoria();
+            $tipos = $this->model->consultarTipo();
+            $softwares = $this->model->consultarSoftware();
+
+            //ENCONTRAR EL ID PARA CATEGORIA DEL CURSO
+            $categoC = $curso->categoriaC;
+            echo "Categoria del curso: " . $categoC;
+
+            //RENDERIZAMOS LA INFORMACION
             $this->view->curso = $curso;
+            $this->view->categorias = $categorias;
+            $this->view->tipos = $tipos;
+            $this->view->softwares = $softwares;
             $this->view->render('consulta/detalle');
         }
 
@@ -39,6 +52,9 @@
             $nomCurso   = "";
             $costoCurso = "";
             $durCurso   = "";
+            $categoriaC   = "";
+            $tipoC   = "";
+            $softwareC   = "";
 
 
             ////////////// BLOQUE 1
@@ -49,17 +65,32 @@
                 $nombreC   = $_POST['nombreCursoINP'];
                 $costoC = $_POST['costoCursoINP'];
                 $duracionC   = $_POST['duracionCursoINP'];
+                $categoriaC   = $_POST['catCursoINP'];
+                $tipoC   = $_POST['tipoCursoINP'];
+                $softwareC   = $_POST['softCursoINP'];
                 /*
                 $catCurso   = $_POST['catCursoINP'];
                 $tipoCurso  = $_POST['tipoCursoINP'];
                 $softCurso  = $_POST['softCursoINP'];*/
 
+                //LLAMAMOS DE NUEVO EL MODELO PARA CONSULTAR LOS DATOS
                 $curso = new Curso();
+                $categorias = $this->model->consultarCategoria();
+                $tipos = $this->model->consultarTipo();
+                $softwares = $this->model->consultarSoftware();
+
                 $curso->nombreC = $nombreC;
                 $curso->costoC = $costoC;
                 $curso->duracionC = $duracionC;
+                $curso->categoriaC = $categoriaC;
+                $curso->tipoC = $tipoC;
+                $curso->softwareC = $softwareC;
 
+                //RENDERIZAMOS LOS DATOS ACTUALES
                 $this->view->curso = $curso;
+                $this->view->categorias = $categorias;
+                $this->view->tipos = $tipos;
+                $this->view->softwares = $softwares;
 
                 //VALIDACIONES DE CAMPOS
                 //VALIDACIONES DE CAMPOS
@@ -74,6 +105,15 @@
                 }
                 if(!is_numeric($duracionC)){
                     array_push($validarCurActual, "El campo Duración sólo puede tener números.");
+                }
+                if($categoriaC == ""){
+                    array_push($validarCurActual, "Selecciona una Categoría.");
+                }
+                if($tipoC == ""){
+                    array_push($validarCurActual, "Selecciona un Tipo de curso.");
+                }
+                if($softwareC == ""){
+                    array_push($validarCurActual, "Selecciona un Software.");
                 }
                 if(count($validarCurActual) > 0){
                     //SI EXISTE UN ELEMENTO ALMACENADO  == HAY ERRORES Y MUESTRA LA VISTA
@@ -93,15 +133,28 @@
                     #unset($_SESSION['id_verCurso']);
         
                     //CONDICIONAL PARA ACTUALIZAR
-                    if($this->model->actualizar(['id_verCurso' => $idC, 'nombreCursoIN' => $nombreC, 'costoCursoINP' => $costoC, 'duracionCursoINP' => $duracionC])){
+                    if($this->model->actualizar(['id_verCurso' => $idC, 'nombreCursoIN' => $nombreC, 'costoCursoINP' => $costoC, 'duracionCursoINP' => $duracionC, 'catCursoINP' => $categoriaC, 'tipoCursoINP' => $tipoC, 'softCursoINP' => $softwareC])){
                         //ACTUALIZAR CURSO EXITO
         
+                        //LLAMAMOS DE NUEVO EL MODELO PARA CONSULTAR LOS DATOS
                         $curso = new Curso();
+                        $categorias = $this->model->consultarCategoria();
+                        $tipos = $this->model->consultarTipo();
+                        $softwares = $this->model->consultarSoftware();
+
                         $curso->nombreC = $nombreC;
                         $curso->costoC = $costoC;
                         $curso->duracionC = $duracionC;
-        
+                        $curso->categoriaC = $categoriaC;
+                        $curso->tipoC = $tipoC;
+                        $curso->softwareC = $softwareC;
+
+                        //RENDERIZAMOS LOS DATOS ACTUALES
                         $this->view->curso = $curso;
+                        $this->view->categorias = $categorias;
+                        $this->view->tipos = $tipos;
+                        $this->view->softwares = $softwares;
+
                         $mensaje = "<div class='msnSuccesLogin'>Curso actualizado exitosamente</div>";
                     }else{
                         //MENSAJE DE ERROR
