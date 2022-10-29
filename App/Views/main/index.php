@@ -14,8 +14,7 @@
     $userSession = new UserSession();
     $user = new User();
     $mensaje = '';
-    
-    
+
     //$app = new App();
 
     //////////// BLOQUE 1 
@@ -36,13 +35,18 @@
             break;
             default:
         }
+    //VALIDACION
     }else if(isset($_POST['username']) && isset($_POST['password'])){
         //echo "Nuevo usuario Main";
         $userForm = $_POST['username'];
         $passForm = $_POST['password'];
 
-        $user = new User();
         
+
+        ///////////BLOQUE 2
+        
+        $user = new User();
+
         //1C+Comprobar si el usuario existe en la base de datos
         if($user->userExists($userForm, $passForm)){
             //Asignar las sesion de usuario
@@ -59,6 +63,7 @@
         }
 
         $this->mensaje = $mensaje;
+        
         $this->render('login/index');
 
     //1B-SiNo mandar a la vista del login

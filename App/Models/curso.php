@@ -8,6 +8,8 @@
         public $categoriaC;
         public $tipoC;
         public $softwareC;
+
+
     }
 
     class Categorias{

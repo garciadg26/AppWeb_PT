@@ -19,15 +19,17 @@
         <section class="cont_login">
             <h2>Iniciar sesión</h2>
             <div ><?php echo $this->mensaje; ?></div>
+
+
             <form action="" method="POST">
                 </br>
                 <label for="input_nombre"> Email de usuario<br>
-                    <input type="text" id="input_nombre" name="username" placeholder="Usuario" required>
+                    <input type="text" id="input_nombre" name="username" placeholder="Usuario" >
                 </label>
                 <br>
                 <br>
                 <label for="input_pass"> Contraseña <br>
-                    <input type="password" id="input_pass" name="password" placeholder="Contraseña" required>
+                    <input type="password" id="input_pass" name="password" placeholder="Contraseña" >
                 </label>
                 <!-- <p class="olvidar_pas"><a href="#">Olvidé mi constraseña</a></p> -->
                 <input type="submit" value="Iniciar">

@@ -6,6 +6,7 @@
 
             $this->view = new View();
             $this->view->mensaje = "";
+
         }
 
         //Funcion especial para cargar el modelo

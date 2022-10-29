@@ -10,6 +10,11 @@
             #$this->view->mensaje = "";
 
             $this->view->campos = array();
+
+            $this->view->nombreA = "";
+            $this->view->apellidosA = "";
+            $this->view->emailA = "";
+            $this->view->celularA = "";
         }
 
         public function render(){
@@ -19,6 +24,11 @@
         public function crearUsuario(){
             $campos = array();
             $mensaje = "";
+
+            $nombreA = "";
+            $apellidosA = "";
+            $emailA = "";
+            $celularA = "";
 
             //BLOQUE 1
             ##VALIDACIONES DEL FORMULARIO
@@ -32,7 +42,7 @@
                 $celularA = $_POST['celularA'];
                 
                 
-                //VALIDACION
+                //VALIDACIONES DE CAMPOS
                 if($nombreA == "" && $apellidosA == ""){
                     array_push($campos, "El campo de Nombre y Apellidos no puede estar vacio.");
                 }
@@ -83,37 +93,10 @@
                 //echo "</div>";
             }
             
-
-
-            ////////////// BLOQUE 1
-            //AUTOMATICAMENTE SE RELACIONA CON UN ALUMNO
-            /*
-            $usuarioAlumno = 2;
-            //$mensaje = "";
-            
-
-            $DateAndTime = new FechaTiempo();
-            $DateAndTime = $DateAndTime->mostrarTiempo();
-
-            $nombreA = $_POST['nombreA'];
-            $apellidosA = $_POST['apellidosA'];
-            $emailA = $_POST['emailA'];
-            $passA = $_POST['passA'];
-            $celularA = $_POST['celularA'];
-
-            if($this->model->insertar(['nombreA' => $nombreA, 'apellidosA' => $apellidosA, 'emailA' => $emailA, 'passA' => $passA, 'celularA' => $celularA, $DateAndTime => $DateAndTime, 2 => $usuarioAlumno], $DateAndTime)){
-                $mensaje = "<div class='msnSuccesLogin'>Registro exitoso</div>";
-                //REDIRECCIÓN USANDO HTML
-                echo '<meta http-equiv="refresh" content="2;URL=\'../cuenta\'">';
-                //echo '<meta http-equiv="refresh" content="2;URL=\'http:localhost/iam/cuenta/\'">';
-            }else{
-                //$mensaje = "El correo electrónico ya existe intenta con uno nuevo";
-                $mensaje = "<div class='msnErrorLogin'>Error: El correo electrónico ya existe, intenta con uno nuevo</div>";
-            }
-
-            */
-            //$this->view->mensaje = $mensaje;
-
+            $this->view->nombreA = $nombreA;
+            $this->view->apellidosA = $apellidosA;
+            $this->view->emailA = $emailA;
+            $this->view->celularA = $celularA;
             $this->render();
             //$this->view->render('cuenta/index');
         }

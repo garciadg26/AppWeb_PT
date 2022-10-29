@@ -4,6 +4,7 @@
         
         public function __construct(){
             parent::__construct();
+            
         }
 
         /*Desde la libreria del router

@@ -18,22 +18,22 @@
 
                 </br>
                 <label for="nombreA"> Nombre<br>
-                    <input type="text" id="nombreA" name="nombreA" placeholder="Carlos" >
+                    <input type="text" id="nombreA" name="nombreA" placeholder="Alfredo" value="<?php echo $this->nombreA?>">
                 </label>
                 <br>
                 <br>
                 <label for="apellidosA"> Apellidos <br>
-                    <input type="text" id="apellidosA" name="apellidosA" placeholder="Estrada Molina" >
+                    <input type="text" id="apellidosA" name="apellidosA" placeholder="Estrada Molina" value="<?php echo $this->apellidosA?>">
                 </label>
                 <br>
                 <br>
                 <label for="celularA"> Telefono (opcional) <br>
-                    <input type="text" id="celularA" name="celularA" placeholder="10 digitos">
+                    <input type="number" id="celularA" name="celularA" placeholder="10 digitos" value="<?php echo $this->celularA?>">
                 </label>
                 <br>
                 <br>
                 <label for="emailA"> Email <br>
-                    <input type="text" id="emailA" name="emailA" placeholder="ejemplo@gmail.com" >
+                    <input type="text" id="emailA" name="emailA" placeholder="ejemplo@gmail.com" value="<?php echo $this->emailA?>">
                 </label>
                 <br>
                 <br>

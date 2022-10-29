@@ -9,7 +9,7 @@
     <form action="<?php echo constant('URL'); ?>consulta/actualizarCurso" method="POST">
         <p>
             <label for="nombreCursoINP">Nombre del curso</label><br>
-            <input type="text" name="nombreCursoINP" value="<?php echo $this->curso->nombreC; ?>" disable>
+            <input type="text" name="nombreCursoINP" value="<?php echo $this->curso->nombreC; ?>">
         </p>
         <p>
             <label for="costoCursoINP">Precio del curso</label><br>
@@ -20,7 +20,7 @@
             <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" required> <p>hrs</p>
         </p>
         <p>
-            <input type="submit" value="Actualizar curso">
+            <input type="submit" name="submit" value="Actualizar curso">
         </p>
     </form>
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
