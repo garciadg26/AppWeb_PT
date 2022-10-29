@@ -10,7 +10,7 @@
 </head>
 <body> -->
 
-    <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
+    <?php include_once __DIR__ . "/../../Includes/headHome.php"; ?>
     <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
     <h2>Sección de Nuevo</h2>
     <h3>Bienvenido <?php echo $user->getNombre(); ?></h3>

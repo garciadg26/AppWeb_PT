@@ -23,7 +23,7 @@
             //Traemos un objeto con todos los datos
             $curso = $this->model->getById($idCurso); 
             //Iniciamos sesion para evitar que se edite el ID del curso
-            #session_start();
+            session_start();
             $_SESSION['id_verCurso'] = $curso->idC;
             #$id_curso = $curso->idC;
 
@@ -34,14 +34,16 @@
         //Actualizar curso
         public function actualizarCurso(){
             //Por seguridad se actualiza el id de la sesion
-            #session_start();
+            session_start();
             //PROBAR CON GETTER Y SETTER
             $idC = $_SESSION['id_verCurso'];
             
             $nombreC = $_POST['nombreCursoINP'];
             $costoC = $_POST['costoCursoINP'];
             $duracionC = $_POST['duracionCursoINP'];
-
+            
+            //SE CORTA LA SESION 
+            #unset($_SESSION['id_verCurso']);
 
             //CONDICIONAL PARA ACTUALIZAR
             if($this->model->actualizar(['id_verCurso' => $idC, 'nombreCursoIN' => $nombreC, 'costoCursoINP' => $costoC, 'duracionCursoINP' => $duracionC])){
