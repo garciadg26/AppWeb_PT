@@ -5,7 +5,7 @@
             parent::__construct();
         }
 
-        public function insertar($datos, $DateAndTime){
+        public function insertar($datos, $DateAndTime, $passSec){
             //echo "Registro exitoso de usuario";
             //var_dump($datos['2']);
 
@@ -19,7 +19,7 @@
                 $query->bindParam(1, $datos['nombreA']);
                 $query->bindParam(2, $datos['apellidosA']);
                 $query->bindParam(3, $datos['emailA']);
-                $query->bindParam(4, $datos['passA']);
+                $query->bindParam(4, $passSec);
                 $query->bindParam(5, $datos['celularA']);
                 $query->bindParam(6, $DateAndTime);
                 $query->bindParam(7, $usuarioAlumno, PDO::PARAM_INT);

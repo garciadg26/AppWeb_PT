@@ -40,6 +40,9 @@
                 $passA = $_POST['passA'];
                 $passAR = $_POST['passAR'];
                 $celularA = $_POST['celularA'];
+                echo "Mi pass: " . $passA;
+                $passSec = md5($passA);
+                echo "Mi hash: ". $passSec;
                 
                 
                 //VALIDACIONES DE CAMPOS
@@ -77,9 +80,13 @@
                     $apellidosA = $_POST['apellidosA'];
                     $emailA = $_POST['emailA'];
                     $passA = $_POST['passA'];
+                    echo "Mi pass: " . $passA;
+                    $passSec = md5($passA);
+                    echo "Mi hash: ". $passSec;
+
                     $celularA = $_POST['celularA'];
         
-                    if($this->model->insertar(['nombreA' => $nombreA, 'apellidosA' => $apellidosA, 'emailA' => $emailA, 'passA' => $passA, 'celularA' => $celularA, $DateAndTime => $DateAndTime, 2 => $usuarioAlumno], $DateAndTime)){
+                    if($this->model->insertar(['nombreA' => $nombreA, 'apellidosA' => $apellidosA, 'emailA' => $emailA, $passSec => $passSec, 'celularA' => $celularA, $DateAndTime => $DateAndTime, 2 => $usuarioAlumno], $DateAndTime, $passSec)){
                         $mensaje = "<div class='msnSuccesLogin'>Registro exitoso</div>";
                         //REDIRECCIÓN USANDO HTML
                         echo '<meta http-equiv="refresh" content="2;URL=\'../cuenta\'">';

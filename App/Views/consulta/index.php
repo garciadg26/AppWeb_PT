@@ -72,15 +72,5 @@
     
     <a href="../iam/App/Includes/logout.php">Cerrar sesión</a>
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript">
-        function confirmEliminar(){
-            var respuesta = confirm("¿Estas seguro que deseas ELIMINAR el curso?")
-            if(respuesta == true){
-                return true;
-            }else{
-                return false;
-            }
-        }
-    </script>
 </body>
 </html>

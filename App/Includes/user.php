@@ -12,14 +12,17 @@ class User extends BD{
 
     //Metodo para comprobar si existe el usuario en la base de datos
     public function userExists($user, $pass){
-
+        
         //////////MODULO 1
-        //$md5pass = md5($pass);  
+        //DESENCRIPTAR LA CONTRASEÑA
+        #$md5pass = md5($pass);
+
         $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_usu = :user AND Contrasenia_usu = :pass');
         $query->bindParam(':user', $user);
         $query->bindParam(':pass', $pass);
-        
+  
         $query->execute();
+  
 
         //Comprobamos si el registro es exitoso
         //Validar el login
@@ -33,6 +36,7 @@ class User extends BD{
     }
 
     public function rolUser($user, $pass){
+        #$md5pass = md5($pass);
         $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_usu = :user AND Contrasenia_usu = :pass');
         $query->bindParam(':user', $user);
         $query->bindParam(':pass', $pass);

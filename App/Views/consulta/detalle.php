@@ -71,7 +71,7 @@
         </div>
 
         <p>
-            <input type="submit" name="submit" value="Actualizar curso">
+            <input type="submit" onclick="return confirmActualizar()" name="submit" value="Actualizar curso">
             
         </p>
     </form>

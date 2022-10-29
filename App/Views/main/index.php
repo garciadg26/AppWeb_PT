@@ -41,19 +41,18 @@
         $userForm = $_POST['username'];
         $passForm = $_POST['password'];
 
-        
-
+        $md5pass = md5($passForm);
         ///////////BLOQUE 2
         
         $user = new User();
 
         //1C+Comprobar si el usuario existe en la base de datos
-        if($user->userExists($userForm, $passForm)){
+        if($user->userExists($userForm, $md5pass)){
             //Asignar las sesion de usuario
             $userSession->setCurrentUser($userForm);
             //Llenar los datos del nombre y del username
             $user->setUser($userForm);
-            $user->rolUser($userForm, $passForm);
+            $user->rolUser($userForm, $md5pass);
         //1C-SiNo se indica error en las credenciales
         }else{
             

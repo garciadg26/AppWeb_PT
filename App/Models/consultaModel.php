@@ -141,8 +141,8 @@
                 return true;
 
             }catch(PDOException $e){
-                echo "ERROR: AL ACTUALIZAR DATOS: " . $e;
-                //return false;
+                //echo "ERROR: AL ACTUALIZAR DATOS: " . $e;
+                return false;
             }
         }
 
