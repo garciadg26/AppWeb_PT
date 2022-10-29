@@ -27,7 +27,7 @@
         switch($_SESSION['rol']){
             //ADMINISTRADOR
             case 1:
-                include_once 'App/Views/nuevo/index.php';
+                include_once 'App/Views/panelAdmin/index.php';
             break;
             //ALUMNO
             case 2:

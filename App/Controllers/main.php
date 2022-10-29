@@ -4,7 +4,7 @@
         
         public function __construct(){
             parent::__construct();
-            
+            $this->view->cursos = [];
         }
 
         /*Desde la libreria del router
