@@ -31,7 +31,6 @@ input[type=submit]{
 /* __MENSAJES */
 .msnErrorLogin{
     margin: 0 auto;
-    padding: 3px;
     border-radius: 4px;
     text-align: center;
     width: 80%;

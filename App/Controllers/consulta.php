@@ -80,9 +80,6 @@
             //Mostrar la vista del mensaje
             $this->view->mensaje = $mensaje;
             $this->render();
-            
-
         }
-
     }
 ?>

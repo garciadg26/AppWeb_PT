@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <title>Instituto de Artes Multimedia</title>
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?> Public/css/style.css?ver=1.0.1">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?> Public/css/style.css?ver=1.0.2">
 </head>
 <body>
     <?php 
