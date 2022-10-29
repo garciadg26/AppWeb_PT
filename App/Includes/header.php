@@ -7,11 +7,11 @@
         
         
         <?php #INICIO - ADMINISTRADOR ROL
-            if($_SESSION['rol'] == 1){
+            //if($_SESSION['rol'] == 1){
         ?>
-            <li><a href="<?php echo constant('URL'); ?>ayuda">Ayuda</a></li>
+            <li><a href="<?php //echo constant('URL'); ?>ayuda">Ayuda</a></li>
         <?php
-            }
+            //}
         #FIN - ADMINISTRADOR ROL ?>
         </ul>
     </header>

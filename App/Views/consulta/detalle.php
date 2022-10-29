@@ -6,7 +6,16 @@
 
     <a href="<?php echo constant('URL'); ?>App/Includes/logout.php">Cerrar sesión</a>
     <div><?php echo $this->mensaje; ?></div>
-    
+
+    <?php
+        echo "<div class='msnErrorLogin'>";
+        for($i = 0; $i < count($this->validarCurActual); $i++){
+            echo "<li>".$this->validarCurActual[$i]."</li>";
+        }
+        echo "</div>";
+    ?>
+
+
     <form action="<?php echo constant('URL'); ?>consulta/actualizarCurso" method="POST">
         <p>
             <label for="nombreCursoINP">Nombre del curso</label><br>
@@ -14,14 +23,14 @@
         </p>
         <p>
             <label for="costoCursoINP">Precio del curso</label><br>
-            <input type="number" name="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" required>
+            <input type="number" name="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" >
         </p>
         <p>
             <label for="duracionCursoINP">Duración del curso</label><br>
-            <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" required> <p>hrs</p>
+            <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" > <p>hrs</p>
         </p>
         <p>
-            <input type="submit" value="Actualizar curso">
+            <input type="submit" name="submit" value="Actualizar curso">
             
         </p>
     </form>
