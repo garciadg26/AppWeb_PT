@@ -24,53 +24,75 @@
 
 
     <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
-    <?php include_once __DIR__ . "/../../Template/header.php"; ?>
-    <h2>Sección de consulta</h2>
-    <h3>Bienvenido <?php //echo $user->getNombre(); ?></h3>
-    
-    <a href="<?php echo constant('URL') . 'altaCurso'?>">Crear nuevo curso</a>
-    <a href="<?php //echo constant('URL') . 'altaCurso'?>"></a>
 
-    <table width="50%">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Costo</th>
-                <th>Duración</th>
-                <th>Categoría</th>
-                <th>Tipo</th>
-                <th>Software</th>
-                <th>A</th>
-                <th>E</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                //Importamos libreria de la clase curso  
-                include_once 'App/models/curso.php';
+    <!-- Contenedor -->
+    <div class="cont_flex">
+        <!-- Aside -->
+        <div id="cont_aside">
+            <?php include_once __DIR__ . "/../../Template/asideMenu.php"; ?>
+            <?php include_once __DIR__ . "/../../Template/asideFooter.php"; ?>
+        </div>
+        <!-- Panel principal -->
+        <div id="cont_panel_principal_fijo">
+            <?php include_once __DIR__ . "/../../Template/menuSuperior.php"; ?>
+            <!-- Panel central -->
+            <div id="panel_central">
+                <div class="titulo_panel">
+                    <h4 class="tit_2">CONSULTAR : CURSOS</h4>
+                </div>
                 
-                foreach($this->cursos as $row){
-                    $cursos = new Curso();
-                    $cursos = $row; 
+                <div class="panel_central_unico">
+                    <div class="cont_titulo_cursos">
+                        <h3 class="tit_3">CURSOS</h3>
+                        <a class="btn_general btn_principal btn_icon_right" href="<?php echo constant('URL') . 'altaCurso'?>">CREAR NUEVO CURSO<i class="btn_icon icon_flecha"></i></a>
+                    </div>
+                    <a href="<?php //echo constant('URL') . 'altaCurso'?>"></a>
                 
-            ?>
-            <tr>
-                <td><?php echo $cursos->nombreC; ?></td>
-                <td><?php echo $cursos->costoC; ?></td>
-                <td><?php echo $cursos->duracionC; ?></td>
-                <td><?php echo $cursos->categoriaC; ?></td>
-                <td><?php echo $cursos->tipoC; ?></td>
-                <td><?php echo $cursos->softwareC; ?></td>
-                <th><a href="<?php echo constant('URL') . 'consulta/verCurso/'  . $cursos->idC ?>">Actualizar</a></th>
-                <th><a onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'consulta/eliminarCurso/'  . $cursos->idC ?>">Eliminar</a></th>
-            </tr>
-            <?php
-                }//Termina el ciclo Foreach  
-            ?>
-        </tbody>
-    </table>
-    
-    <a href="../iam/App/Includes/logout.php">Cerrar sesión</a>
+                    <table id="tabla_panel_consultar" class="tabla_panel">
+                        <thead class="titulo_tabla_panel">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Costo</th>
+                                <th>Duración</th>
+                                <th>Categoría</th>
+                                <th>Tipo</th>
+                                <th>Software</th>
+                                <th>Actualizar</th>
+                                <th>Borrar</th>
+                            </tr>
+                        </thead>
+                        <tbody class="cuerpo_tabla_panel">
+                            <?php
+                                //Importamos libreria de la clase curso  
+                                include_once 'App/models/curso.php';
+                                
+                                foreach($this->cursos as $row){
+                                    $cursos = new Curso();
+                                    $cursos = $row; 
+                                
+                            ?>
+                            <tr>
+                                <td><?php echo $cursos->nombreC; ?></td>
+                                <td><?php echo $cursos->costoC; ?></td>
+                                <td><?php echo $cursos->duracionC; ?></td>
+                                <td><?php echo $cursos->categoriaC; ?></td>
+                                <td><?php echo $cursos->tipoC; ?></td>
+                                <td><?php echo $cursos->softwareC; ?></td>
+                                <th><a class="btn_general btn_editar btn_icon_right" href="<?php echo constant('URL') . 'consulta/verCurso/'  . $cursos->idC ?>">EDITAR<i class="btn_icon icon_editar"></i></a></th>
+                                <th><a class="btn_general btn_eliminar btn_icon_right" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'consulta/eliminarCurso/'  . $cursos->idC ?>">ELIMINAR<i class="btn_icon icon_eliminar"></i></a></th>
+                            </tr>
+                            <?php
+                                }//Termina el ciclo Foreach  
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
 </body>
 </html>

@@ -19,10 +19,10 @@
             <?php include_once __DIR__ . "/../../Template/asideMenu.php"; ?>
             <?php include_once __DIR__ . "/../../Template/asideFooter.php"; ?>
         </aside>
-        <!-- Panel principal -->
+        <!-- Panel principal fijo -->
         <div id="cont_panel_principal_fijo">
             <?php include_once __DIR__ . "/../../Template/menuSuperior.php"; ?>
-            <!-- Panel principal -->
+            <!-- Panel central -->
             <dvi id="panel_central">
 
                 <div class="titulo_panel">
@@ -70,9 +70,9 @@
                 <div class="panel_central_right">
                     <div class="cont_titulo_cursos">
                         <h3 class="tit_3">CURSOS</h3>
-                        <a class="btn_general btn_principal btn_cursos_panel_admin" href="<?php echo constant('URL'); ?>consulta">VER CURSOS<i class="icon_flecha"></i></a>
+                        <a class="btn_general btn_principal btn_icon_right" href="<?php echo constant('URL'); ?>consulta">VER CURSOS<i class="btn_icon icon_flecha"></i></a>
                     </div>
-                    <table id="tabla_panel_admin">
+                    <table id="tabla_panel_admin" class="tabla_panel">
                         <thead class="titulo_tabla_panel">
                             <tr>
                                 <th>Nombre</th>

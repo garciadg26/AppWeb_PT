@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
 
 /* __VARIABLES*/
 
@@ -15,6 +15,10 @@
     --color-agua-marina:#01CCD0;
     --color-mazul-morado:#465FB9;
     --color-morado-vino:#A5017A;
+    --color-azul-editar:#12B4DC;
+    --color-azul-editar-hover:#0292B5;
+    --color-rojo-eliminar:#E70F0A;
+    --color-rojo-eliminar-hover:#B60B07;
 
     /* FUENTES */
     --font-bebas-neue: 'Bebas Neue', sans-serif;
@@ -174,7 +178,6 @@ a.btn_menu_aside{
     opacity: 1;
 }
 
-
 /* __LEGALES FOOTER*/
 .footer_aside{
     position: absolute;
@@ -199,27 +202,58 @@ a.btn_menu_aside{
     border-radius: 25px;
     transition: all 0.3s;
 }
-.btn_general:hover{
-    background-color: var(--color-verde-iam);
+
+    /* BTN ICONOS */
+.btn_icon_right{
+    padding: 4px 32px 4px 18px;
 }
-
-
-.icon_flecha{
+.btn_icon{
     position: absolute;
     content: "";
     width: 14px;
     height: 14px;
     right: 0;
     margin-right: 12px;
-    background-image: url('../images/icono_flecha_right_botones.png');
     background-repeat: no-repeat;
     background-position: center center;
 }
+.icon_flecha{
+    background-image: url('../images/icono_flecha_right_botones.png');
+}
+.icon_editar{
+    background-image: url('../images/icono_editar_botones.png');
+}
+.icon_eliminar{
+    background-image: url('../images/icono_eliminar_botones.png');
+}
 
+
+    /* BTN TIPOS*/
 .btn_principal{
-    padding: 4px 32px 4px 18px;
     background-color: var(--color-verde-claro);
 }
+.btn_editar{
+    background-color: var(--color-azul-editar);
+}
+.btn_eliminar{
+    background-color: var(--color-rojo-eliminar);
+}
+
+    /* BTN HOVER */
+.btn_principal:hover{
+    background-color: var(--color-verde-iam);
+}
+.btn_editar:hover{
+    background-color: var(--color-azul-editar-hover);
+}
+.btn_eliminar:hover{
+    background-color: var(--color-rojo-eliminar-hover);
+}
+
+
+
+
+
 
 /* __MENÚ PRINCIPAL */
 .cont_menu{
@@ -235,11 +269,6 @@ a.btn_menu_aside{
 .acceso_usuario img{
     padding: 17px 0px;
 }
-
-
-
-
-
 
 /* __PANEL PRINCIPAL*/
 #cont_panel_principal_fijo{
@@ -430,7 +459,7 @@ a.btn_menu_aside{
 }
 
     /* APARTADO CURSOS - TABLA */
-.tabla_panel_admin, tr, td, th{
+.tabla_panel, tr, td, th{
     width: 100%;
     padding: 0;
     margin: 0;
@@ -455,10 +484,23 @@ a.btn_menu_aside{
 .cuerpo_tabla_panel tr:nth-child(even){
     background-color: var(--color-gris-claro);
 }
+.cuerpo_tabla_panel tr td:nth-child(+n+2){
+    text-align: center;
+}
+#tabla_panel_consultar tr th:nth-child(7), #tabla_panel_consultar tr th:nth-child(8){
+    text-align: center;
+    min-width: 120px;
+}
 
-
-
-
+/* __PANEL CONSULTA CURSO*/
+    /* PANEL CENTRAL ÚNICO */
+.panel_central_unico{
+    background-color: var(--color-white);
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 
 
 /* __FORMULARIO*/
