@@ -11,7 +11,6 @@
 <body> -->
 
     <?php include_once __DIR__ . "/../../Includes/headHome.php"; ?>
-    <?php include_once __DIR__ . "/../../Template/header.php"; ?>
     
     <!-- Contenedor -->
     <div class="cont_flex">

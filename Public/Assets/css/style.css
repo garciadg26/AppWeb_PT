@@ -8,9 +8,10 @@
     --color-white:#ffffff;
     --color-black:#000000;
     --color-panel-principal:#F0F2F4;
-    --color-verde-iam:#9CCB3B;
-    --color-azul-iam:#9CCB3B;
+    --color-verde-claro:#9CCB3B;
+    --color-verde-iam:#82A931;
     --color-gris-claro:#F0F2F4;
+    --color-gris-medio:#939393;
     --color-agua-marina:#01CCD0;
     --color-mazul-morado:#465FB9;
     --color-morado-vino:#A5017A;
@@ -74,19 +75,103 @@ ul#menu_aside{
     position: fixed;
     background-color: var(--color-back-aside);
 }
-a.btn_menu_aside{
-    color: var(--color-white);
-}
 .logitipo_aside{
     text-align: center;
-    margin: 0 auto;
+    margin-bottom:16px; 
 }
 .logitipo_aside img{
     width:70px;
 }
 ul#menu_aside li{
     width: 100%;
-    background-color: #01CCD0;
+}
+a.btn_menu_aside{
+    text-decoration: none;
+}
+.btn_menu_aside .lista_aside{
+    color: var(--color-gris-medio);
+    padding: 12px 0px 12px 38px;
+    box-sizing: border-box;
+    font-family: var(--font-montserrat);
+    font-size: var(--body2-14);
+    font-weight: 600;
+    cursor: default! important;
+}
+
+    /* LISTA ACTIVO */
+.lista_aside_activo{
+    padding: 14px 0px 14px 38px;
+    font-family: var(--font-montserrat);
+    font-size: var(--body2-14);
+    font-weight: 600;
+    background-color: var(--color-verde-iam)!important;
+    color: #fff;
+    box-sizing: border-box;
+}
+.lista_aside_activo .icon_menu_aside{
+    opacity: 1!important;
+}
+
+
+    /* ICONOS MENU */
+.icon_menu_aside{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: 12px;
+}
+
+    /* ICONO 1*/
+.icon_ms_1{
+    background-image: url('../images/icono_panel_admin_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_2{
+    background-image: url('../images/icono_alumnos_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_3{
+    background-image: url('../images/icono_instructores_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_4{
+    background-image: url('../images/icono_grupos_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_5{
+    background-image: url('../images/icono_cursos_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_6{
+    background-image: url('../images/icono_certificados_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_7{
+    background-image: url('../images/icono_plantel_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_8{
+    background-image: url('../images/icono_equipo_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_9{
+    background-image: url('../images/icono_reportes_aside_menu_principal.png');
+    opacity: .5;
+}
+.icon_ms_10{
+    background-image: url('../images/icono_cerrar_aside_menu_principal.png');
+    opacity: .5;
+}
+
+    /* ICONOS HOVER */
+.lista_aside_hover:hover{
+    color: var(--color-white);
+    cursor: pointer!important;
+    background-color: var(--color-black)!important;
+}
+.lista_aside_hover:hover .icon_menu_aside{
+    opacity: 1;
 }
 
 
