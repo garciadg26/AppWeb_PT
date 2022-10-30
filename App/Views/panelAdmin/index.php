@@ -68,7 +68,10 @@
                 </div>
                 <!-- CURSOS -->
                 <div class="panel_central_right">
-                    <h3 class="tit_3">CRUSOS</h3>
+                    <div class="cont_titulo_cursos">
+                        <h3 class="tit_3">CURSOS</h3>
+                        <a class="btn_general btn_principal btn_cursos_panel_admin" href="<?php echo constant('URL'); ?>consulta">VER CURSOS<i class="icon_flecha"></i></a>
+                    </div>
                     <table id="tabla_panel_admin">
                         <thead class="titulo_tabla_panel">
                             <tr>
@@ -90,7 +93,7 @@
                             ?>
                             <tr>
                                 <td><?php echo $cursos->nombreC; ?></td>
-                                <td><?php echo $cursos->costoC; ?></td>
+                                <td>$<?php echo $cursos->costoC; ?></td>
                             </tr>
                             <?php
                                 }//Termina el ciclo Foreach  

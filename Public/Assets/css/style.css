@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* __VARIABLES*/
 
@@ -17,7 +17,7 @@
     --color-morado-vino:#A5017A;
 
     /* FUENTES */
-    --font-bebas-neue: 'Bebas Neue', cursive;
+    --font-bebas-neue: 'Bebas Neue', sans-serif;
     --font-raleway:'Raleway', sans-serif;
     --font-montserrat:'Montserrat', sans-serif;
 
@@ -90,7 +90,7 @@ a.btn_menu_aside{
 }
 .btn_menu_aside .lista_aside{
     color: var(--color-gris-medio);
-    padding: 12px 0px 12px 38px;
+    padding: 14px 0px 14px 38px;
     box-sizing: border-box;
     font-family: var(--font-montserrat);
     font-size: var(--body2-14);
@@ -182,11 +182,44 @@ a.btn_menu_aside{
     color: var(--color-white);
 }
 .footer_aside p{
+    font-family: var(--font-raleway);
     text-align: center;
-    width: 240px;
+    width: 220px;
     position: fixed;
 }
 
+/* __BOTONES*/
+.btn_general{
+    position: relative;
+    text-decoration: none;
+    font-family: var(--font-raleway);
+    font-weight: bold;
+    font-size: var(--boton-14);
+    color: #ffffff;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+.btn_general:hover{
+    background-color: var(--color-verde-iam);
+}
+
+
+.icon_flecha{
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    right: 0;
+    margin-right: 12px;
+    background-image: url('../images/icono_flecha_right_botones.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.btn_principal{
+    padding: 4px 32px 4px 18px;
+    background-color: var(--color-verde-claro);
+}
 
 /* __MENÚ PRINCIPAL */
 .cont_menu{
@@ -212,8 +245,8 @@ a.btn_menu_aside{
 #cont_panel_principal_fijo{
     background-color: var(--color-panel-principal);
     width: 100%;
-    box-sizing: border-box;
     padding: 0px 0px;
+    box-sizing: border-box;
     display: inherit; /*Heredamos el flex*/
     flex-direction: column;
 }
@@ -223,6 +256,13 @@ a.btn_menu_aside{
     padding: 0px 40px;
     display: inherit;
     flex-direction: column;
+}
+.cont_titulo_cursos{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .titulo_panel{
     padding: 34px 0px 24px 0px;
