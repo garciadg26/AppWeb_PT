@@ -9,7 +9,7 @@
 <body> -->
     
     <?php include_once __DIR__ . "/../../Includes/headHome.php"; ?>
-    <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
+    <?php include_once __DIR__ . "/../../Template/header.php"; ?>
         <h1>Esta es la vista de HomePage Alumno</h1>
         <section>
             <h1>Bienvenido <?php echo $user->getNombre(); ?></h1>

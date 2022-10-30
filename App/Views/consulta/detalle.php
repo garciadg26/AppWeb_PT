@@ -1,5 +1,5 @@
     <?php include_once __DIR__ . "/../../Includes/headHome.php"; ?>
-    <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
+    <?php include_once __DIR__ . "/../../Template/header.php"; ?>
     <h2>Actualizar curso</h2>
     <h3><?php echo $this->curso->nombreC; ?></h3>
     <h3>Bienvenido <?php //echo $user->getNombre(); ?></h3>

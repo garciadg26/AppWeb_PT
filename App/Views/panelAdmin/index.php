@@ -11,41 +11,54 @@
 <body> -->
 
     <?php include_once __DIR__ . "/../../Includes/headHome.php"; ?>
-    <?php include_once __DIR__ . "/../../Includes/header.php"; ?>
-    <h2>Sección de Nuevo</h2>
-    <h3>Bienvenido <?php echo $user->getNombre(); ?></h3>
-    <a href="<?php echo constant('URL'); ?>App/Includes/logout.php">Cerrar sesión</a>
+    <?php include_once __DIR__ . "/../../Template/header.php"; ?>
+    
+    <!-- Contenedor -->
+    <div class="cont_flex">
+        <!-- Aside -->
+        <aside id="cont_aside">
+            <?php include_once __DIR__ . "/../../Template/asideLogotipo.php"; ?>
+            <?php include_once __DIR__ . "/../../Template/asideMenu.php"; ?>
+            <?php include_once __DIR__ . "/../../Template/asideFooter.php"; ?>
+        </aside>
+        <!-- Panel principal -->
+        <div id="cont_panel_principal">
+            <?php include_once __DIR__ . "/../../Template/menuSuperior.php"; ?>
+            <h2>Sección de Nuevo</h2>
+            <h3>Bienvenido <?php echo $user->getNombre(); ?></h3>
+            <a href="<?php echo constant('URL'); ?>App/Includes/logout.php">Cerrar sesión</a>
 
+            <table width="50%">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        //Importamos libreria de la clase curso  
+                        
+                        include_once 'App/models/curso.php';
+                        $cursos = [];
+                        $cursos = $user->consultarCurso();
+                        foreach($cursos as $row){
+                            $cursos = new Curso();
+                            $cursos = $row; 
+                        
+                    ?>
+                    <tr>
+                        <td><?php echo $cursos->nombreC; ?></td>
+                        <td><?php echo $cursos->costoC; ?></td>
+                    </tr>
+                    <?php
+                        }//Termina el ciclo Foreach  
+                    ?>
+                </tbody>
+            </table>
+        </div><!-- Fin Panel principal -->
+    </div><!-- Fin Contenedor -->
 
-
-    <table width="50%">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Costo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                //Importamos libreria de la clase curso  
-                
-                include_once 'App/models/curso.php';
-                $cursos = [];
-                $cursos = $user->consultarCurso();
-                foreach($cursos as $row){
-                    $cursos = new Curso();
-                    $cursos = $row; 
-                
-            ?>
-            <tr>
-                <td><?php echo $cursos->nombreC; ?></td>
-                <td><?php echo $cursos->costoC; ?></td>
-            </tr>
-            <?php
-                }//Termina el ciclo Foreach  
-            ?>
-        </tbody>
-    </table>
 
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
