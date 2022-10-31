@@ -5,10 +5,10 @@
     <!-- Contenedor -->
     <div class="cont_flex">
         <!-- Aside -->
-        <div id="cont_aside">
+        <aside id="cont_aside">
             <?php include_once __DIR__ . "/../../Template/asideMenu.php"; ?>
             <?php include_once __DIR__ . "/../../Template/asideFooter.php"; ?>
-        </div>
+        </aside>
         <!-- Panel principal -->
         <div id="cont_panel_principal_fijo">
             <?php include_once __DIR__ . "/../../Template/menuSuperior.php"; ?>

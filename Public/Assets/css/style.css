@@ -22,6 +22,7 @@
     --color-rojo-eliminar-hover:#B60B07;
     --color-menta-regresar:#0DD6BB;
     --color-menta-regresar-hover:#0CB59E;
+    --color-gris-azulado-obscuro:#5B6D80;
 
     /* FUENTES */
     --font-bebas-neue: 'Bebas Neue', sans-serif;
@@ -60,6 +61,7 @@ h1, h2, h3, h4, h5, h6{
     font-family: var(--font-bebas-neue);
     font-weight: 400;
     padding: 0;
+    margin: 0;
 }
 
 /* __CONTENEDOR FLEX*/
@@ -255,6 +257,11 @@ a.btn_menu_aside{
 .btn_eliminar{
     background-color: var(--color-rojo-eliminar);
 }
+.btn_inhabil{
+    cursor: default;
+    width: 86px;
+    background-color: var(--color-gris-medio);
+}
 
     /* BTN HOVER */
 .btn_principal:hover{
@@ -291,6 +298,14 @@ a.btn_menu_aside{
 }
 
 /* __PANEL PRINCIPAL*/
+#cont_panel_principal{
+    background-color: var(--color-panel-principal);
+    width: 100%;
+    padding: 0px 0px;
+    box-sizing: border-box;
+    display: inherit; /*Heredamos el flex*/
+    flex-direction: column;
+}
 #cont_panel_principal_fijo{
     background-color: var(--color-panel-principal);
     width: 100%;
@@ -318,14 +333,21 @@ a.btn_menu_aside{
     text-align: center;
 }
 .tit_2{
-    margin: 0;
     font-family: var(--font-bebas-neue);
     font-size: var(--titulo2-44);
 }
 .tit_3{
-    margin: 0;
     font-family: var(--font-bebas-neue);
     font-size: var(--titulo3-34);
+}
+.tit_5{
+    font-family: var(--font-bebas-neue);
+    font-size: var(--titulo5-20);
+}
+.txt_base_raleway{
+    font-family: var(--font-raleway);
+    font-size: var(--body1-16);
+    font-weight: 400;
 }
 .txt_caption{
     font-family: var(--font-montserrat);
@@ -429,7 +451,7 @@ a.btn_menu_aside{
 .panel_central_left, .panel_central_right{
     background-color: var(--color-white);
     border-radius: 6px;
-    padding: 12px 20px;
+    padding: 20px 20px;
     box-sizing: border-box;
 }
 .panel_central_left{
@@ -629,7 +651,7 @@ input[type=submit]{
 .btn_form_actualizar input[type=submit]{
     background-color: var(--color-azul-editar);
 }
-/* BTN FOR CREAR HOVER */
+    /* BTN FOR CREAR HOVER */
 .btn_form_actualizar input[type=submit]:hover{
     cursor: pointer;
     background-color: var(--color-azul-editar-hover);
@@ -650,8 +672,129 @@ input[type=submit]{
     border-radius: 4px;
 }
 
-/* __FORMULARIO*/
-    /* INPUT */
+/* __ALUMNO HOMEPAGE*/
+#homePage .panel_inferior{
+    height: 600px;
+}
+#panel_superior{
+    width: 100%;
+}
+#panel_superior2{
+    width: 100%;
+    box-sizing: border-box;
+}
+#panel_superior img{
+    width: 100%;
+}
+.cont_central_encabezado{
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-white);
+}
+    /* TARJETA GRUPO ACTIVO ALUMNO */
+.tarjeta_encabezado{
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    box-shadow: 0px 1px 12px #0000003D;
+}
+.cont_img_tarjeta img{
+    border-radius: 8px 0px 0px 8px;
+}
+.cont_txt_tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 16px 8px 16px;
+}
+.cont_fecha_hora_tarjeta{
+    display: flex;
+    flex-direction: row;
+}
+.cont_fecha_hora_tarjeta p{
+    display: block;
+    font-family: var(--font-raleway);
+    color: var(--color-gris-medio);
+    font-size: var(--body3-12);
+    font-weight: 400;
+    padding: 0px 0px 12px 20px;
+}
+    /* ICONOS TARJETA */
+.icon_g_tarjeta{
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+}
+.cont_fecha_hora_tarjeta .icon_g1{
+    margin-left: -18px;
+    background-image: url('../images/icono_calendario_tarjeta_grupo_homePage.png');
+}
+.cont_fecha_hora_tarjeta .icon_g2{
+    margin-left: -16px;
+    background-image: url('../images/icono_reloj_tarjeta_grupo_homePage.png');
+}
+
+    /* LISTA DE CURSOS */
+.cont_cursos_card{
+    width: 100%;
+}
+.cont_grup_card_cursos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+.card_curso{
+    background-color: var(--color-white);
+    max-width: 240px;
+    border-radius: 8px;
+    padding: 0px 12px 0px 12px;
+    box-sizing: border-box;
+}
+.card_curso img{
+    width: 100%;
+}
+.card_curso .tit_5{
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+.cont_datos_card{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 26px;
+}
+.cont_datos_card p{
+    font-family: var(--font-montserrat);
+    font-size: var(--body2-14);
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--color-white);
+}
+.card_curso_precio{
+    background-color: #62DAF8;
+}
+.card_curso_duracion{
+    background-color: #D49DE6;
+}
+.cont_info_card{
+    margin-left: -12px;
+    margin-right: -12px;
+    height: 20px;
+    border-radius: 0px 0px 8px 8px;
+    background-color: var(--color-gris-azulado-obscuro);
+}
+
+
+
+
+
 
 
 
@@ -663,6 +806,9 @@ input[type=submit]{
     width: 80%;
     background-color: #FB5252;
     color: #fff;
+    margin-top: 10px;
+    font-family: var(--font-raleway);
+    font-size: var(--body3-12);
 }
 .msnSuccesLogin{
     margin: 0 auto;
@@ -672,4 +818,7 @@ input[type=submit]{
     width: 80%;
     background-color: #58CE6B;
     color: #fff;
+    margin-top: 2px;
+    font-family: var(--font-raleway);
+    font-size: var(--body3-12);
 }

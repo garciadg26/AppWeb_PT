@@ -23,7 +23,7 @@
         <div id="cont_panel_principal_fijo">
             <?php include_once __DIR__ . "/../../Template/menuSuperior.php"; ?>
             <!-- Panel central -->
-            <dvi id="panel_central">
+            <div id="panel_central">
 
                 <div class="titulo_panel">
                     <h4 class="tit_2">Bienvenido : <?php echo $user->getNombre(); ?></h4>
@@ -47,7 +47,7 @@
                         <p class="cont_descriptivo_ps">Cursos</p>
                     </div>
                 </div>
-            </dvi>
+            </div>
             <!-- Panel inferior -->
             <div class="panel_inferior">
                 <!-- GRUPOS -->
