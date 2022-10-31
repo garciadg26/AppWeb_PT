@@ -19,6 +19,8 @@
     --color-azul-editar-hover:#0292B5;
     --color-rojo-eliminar:#E70F0A;
     --color-rojo-eliminar-hover:#B60B07;
+    --color-menta-regresar:#0DD6BB;
+    --color-menta-regresar-hover:#0CB59E;
 
     /* FUENTES */
     --font-bebas-neue: 'Bebas Neue', sans-serif;
@@ -205,17 +207,27 @@ a.btn_menu_aside{
 
     /* BTN ICONOS */
 .btn_icon_right{
-    padding: 4px 32px 4px 18px;
+    padding: 6px 32px 6px 18px;
+}
+.btn_icon_left{
+    padding: 6px 18px 6px 32px;
 }
 .btn_icon{
     position: absolute;
     content: "";
     width: 14px;
     height: 14px;
-    right: 0;
-    margin-right: 12px;
     background-repeat: no-repeat;
     background-position: center center;
+}
+.btn_icon_right > i{
+    right: 0;
+    margin-right: 12px;
+}
+.btn_icon_left > i{
+    left: 0;
+    margin-left: 12px;
+    transform: rotate(180deg);
 }
 .icon_flecha{
     background-image: url('../images/icono_flecha_right_botones.png');
@@ -232,6 +244,10 @@ a.btn_menu_aside{
 .btn_principal{
     background-color: var(--color-verde-claro);
 }
+.btn_regresar{
+    background-color: var(--color-menta-regresar);
+    height: 16px;
+}
 .btn_editar{
     background-color: var(--color-azul-editar);
 }
@@ -242,6 +258,9 @@ a.btn_menu_aside{
     /* BTN HOVER */
 .btn_principal:hover{
     background-color: var(--color-verde-iam);
+}
+.btn_regresar:hover{
+    background-color: var(--color-menta-regresar-hover);
 }
 .btn_editar:hover{
     background-color: var(--color-azul-editar-hover);
@@ -502,21 +521,101 @@ a.btn_menu_aside{
     box-sizing: border-box;
 }
 
+/* __PANEL ALTA CURSO */
+.cont_descrip_alta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.txt_descripcion{
+    text-align: center;
+    max-width: 320px;
+    font-family: var(--font-raleway);
+    font-size: var(--subtitulo1-18);
+}
+.vacio{
+    width: 120px;
+    height: 20px;
+}
+
+    /* ALTA CURSOS - FORMULARIO */
+.form_general{
+    margin-top: 34px;
+}
+.form_general input{
+    width: 100%;
+    margin-top: 6px;
+    padding: 6px 4px;
+    background-color: var(--color-panel-principal);
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+}
+.form_general_row1, .form_general_row2{
+    display: flex;
+    flex-direction: row;
+    gap: 26px;
+}
+#form_alta_cursos .row1_col1{
+    width: 66%;
+}
+label{
+    font-family: var(--font-raleway);
+    font-size: var(--subtitulo2-14);
+    font-weight: 600;
+}
+.btn_form{
+    text-align: center;
+    margin: 0 auto;
+}
+input[type=submit]{
+    margin-top: 30px;
+    width: auto;
+    border: 1px solid #F1F1F152;
+    border-radius: 24px;
+    color: var(--color-white);
+    padding: 8px 16px;
+    font-family: var(--font-montserrat);
+    font-size: var(--boton-14);
+    font-weight: 600;
+    transition: all 0.3;
+}
+.btn_form input[type=submit]{
+    background: transparent linear-gradient(180deg, var(--unnamed-color-cee59d) 0%, var(--unnamed-color-82a931) 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #CEE59D 0%, #82A931 100%) 0% 0% no-repeat padding-box;
+}
+
+/* BTN FORMULARIO HOVER */
+.btn_form input[type=submit]:hover{
+    cursor: pointer;
+    background: transparent linear-gradient(180deg, #BAD87A 0%, #669900 100%) 0% 0% no-repeat padding-box;
+}
+
+
+#form_alta_cursos .row2_col1, #form_alta_cursos .row2_col2, #form_alta_cursos .row2_col3{
+    width: 33%;
+}
+.form_general_row2{
+    margin-top: 24px;
+}
+#form_alta_cursos select{
+    margin-top: 6px;
+    padding: 6px 4px;
+    width: 100%;
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+    background-color: var(--color-gris-claro);
+    box-sizing: border-box;
+}
+#form_alta_cursos select:focus{
+    border: 2px solid var(--color-black);
+    box-sizing: border-box;
+}
+
 
 /* __FORMULARIO*/
     /* INPUT */
-input[type=text], input[type=password]{
-    padding: 5px 12px;
-    width: 90%;
-    border-radius: 4px;
-}
-input{
-    width: 90%;
-}
-input[type=submit]{
-    margin: 0 auto;
-    width: 100px;
-}
+
 
 
 /* __MENSAJES */

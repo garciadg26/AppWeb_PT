@@ -34,3 +34,16 @@
     color: #212121;
 }
 
+/* __FORMULARIOS */
+input[type=text], input[type=password]{
+    padding: 5px 12px;
+    width: 90%;
+    border-radius: 4px;
+}
+input{
+    width: 90%;
+}
+input[type=submit]{
+    margin: 0 auto;
+    width: 100px;
+}

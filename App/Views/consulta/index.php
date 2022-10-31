@@ -40,7 +40,7 @@
                 <div class="titulo_panel">
                     <h4 class="tit_2">CONSULTAR : CURSOS</h4>
                 </div>
-                
+                <!-- Panel central único -->
                 <div class="panel_central_unico">
                     <div class="cont_titulo_cursos">
                         <h3 class="tit_3">CURSOS</h3>
