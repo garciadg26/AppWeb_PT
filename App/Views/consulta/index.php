@@ -73,8 +73,8 @@
                             ?>
                             <tr>
                                 <td><?php echo $cursos->nombreC; ?></td>
-                                <td><?php echo $cursos->costoC; ?></td>
-                                <td><?php echo $cursos->duracionC; ?></td>
+                                <td>$<?php echo $cursos->costoC; ?></td>
+                                <td><?php echo $cursos->duracionC; ?>hrs</td>
                                 <td><?php echo $cursos->categoriaC; ?></td>
                                 <td><?php echo $cursos->tipoC; ?></td>
                                 <td><?php echo $cursos->softwareC; ?></td>

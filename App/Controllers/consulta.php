@@ -32,10 +32,6 @@
             $tipos = $this->model->consultarTipo();
             $softwares = $this->model->consultarSoftware();
 
-            //ENCONTRAR EL ID PARA CATEGORIA DEL CURSO
-            $categoC = $curso->categoriaC;
-            echo "Categoria del curso: " . $categoC;
-
             //RENDERIZAMOS LA INFORMACION
             $this->view->curso = $curso;
             $this->view->categorias = $categorias;

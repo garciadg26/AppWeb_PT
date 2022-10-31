@@ -108,8 +108,8 @@
 
                         </div>
                 
-                        <div class="btn_form">
-                            <input class="btn_form_crear" type="submit" name="submit" value="REGISTRAR CURSO">
+                        <div class="btn_form btn_form_crear">
+                            <input type="submit" name="submit" value="REGISTRAR CURSO">
                         </div>
                     </form>
                     
