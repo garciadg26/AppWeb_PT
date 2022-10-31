@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php 
-    echo "Estoy en el encabezado head.php con inicio de sesion";
+    //echo "Estoy en el encabezado head.php con inicio de sesion";
         include_once 'App/Includes/user_session.php';
         include_once 'App/Includes/user.php';
         $userSession = new UserSession();

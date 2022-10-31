@@ -1,23 +1,21 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN - SISTEMA DE COMERCIAZACIÓN WEB</title>
-    <link rel="stylesheet" href="Public/assets/css/style.css?ver=1.1.1">
-    <link rel="stylesheet" href="Public/assets/css/login.css?ver=1.0.1">
-    <!-- FUENTES WEB -->
 
 </head>
-<body>
+<body> -->
 
-    <h1>Esta es la vista del LOGIN</h1>
-    
-
-    <div class="container" id="cont_login">
+    <?php include_once __DIR__ . "/../../Includes/headLogin.php"; ?>
+    <div class="container bgc_ilus_login" id="cont_login">
         <section class="cont_login">
-            <h2>Iniciar sesión</h2>
+            <div class="logotipo_img_login">
+                <img src="<?php echo constant('URL') ?>Public/Assets/images/Logotipo_IAM.png" alt="">
+            </div>
+            <h2 class="tit_3">Iniciar sesión</h2>
             <div ><?php echo $this->mensaje; ?></div>
 
 
@@ -32,14 +30,20 @@
                     <input type="password" id="input_pass" name="password" placeholder="Contraseña" >
                 </label>
                 <!-- <p class="olvidar_pas"><a href="#">Olvidé mi constraseña</a></p> -->
-                <input type="submit" value="Iniciar">
+                <div class="btn_form btn_form_crear">
+                    <input class type="submit" value="Iniciar">
+                </div>
             </form>
             <p class="new_cuenta">¿Deseas crear una nueva cuenta? <a href="<?php echo constant('URL'); ?>cuenta"> Registrar cuenta</a></p>
         </section>                                                       
-        <footer>
-            <p class="foote_legales">© IAM 2022. Todos los derechos reservados.</p>
-        </footer>
     </div>
-    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/assets/js/script.js"></script>                
+    <footer id="cont_foot_login">
+        <div class="before_ilus_left"></div>
+        <p class="foote_legales">© IAM 2022. Todos los derechos reservados.</p>
+        <div class="before_ilus_right"></div>
+    </footer>
+    
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/scriptAlturaLogin.js"></script>
+                    
 </body>
 </html>

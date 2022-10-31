@@ -87,6 +87,7 @@ ul#menu_aside{
 .logitipo_aside{
     text-align: center;
     margin-bottom:16px; 
+    margin-top: 20px;
 }
 .logitipo_aside img{
     width:70px;
@@ -821,4 +822,9 @@ input[type=submit]{
     margin-top: 2px;
     font-family: var(--font-raleway);
     font-size: var(--body3-12);
+}
+
+    /* COLOR DESTACADO */
+.col_destacado{
+    color: blueviolet;
 }

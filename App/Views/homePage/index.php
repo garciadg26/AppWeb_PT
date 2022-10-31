@@ -28,7 +28,7 @@
                 <section class="cont_central_encabezado">
                     <!-- TEXTO ENCABEZADO -->
                     <div class="cont_encabezado_tit">
-                        <h4 class="tit_2"><?php echo $user->getNombre(); ?>: CONTINUA DONDE TE QUEDASTE</h4>
+                        <h4 class="tit_2 "><span class="col_destacado"><?php echo $user->getNombre(); ?>:</span> CONTINUA DONDE TE QUEDASTE</h4>
                         <p class="txt_base_raleway">Seguir aprendiendo y mejorando te abre un mundo de nuevas posibilidades.</p>
                     </div> 
                     <!-- TARJETA ENCABEZADO -->

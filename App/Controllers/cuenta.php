@@ -40,13 +40,13 @@
                 $passA = $_POST['passA'];
                 $passAR = $_POST['passAR'];
                 $celularA = $_POST['celularA'];
-                echo "Mi pass: " . $passA;
+                //echo "Mi pass: " . $passA;
                 $passSec = md5($passA);
-                echo "Mi hash: ". $passSec;
+                //echo "Mi hash: ". $passSec;
                 
                 
                 //VALIDACIONES DE CAMPOS
-                if($nombreA == "" && $apellidosA == ""){
+                if($nombreA == "" || $apellidosA == ""){
                     array_push($campos, "El campo de Nombre y Apellidos no puede estar vacio.");
                 }
                 if(!is_numeric($celularA)){
@@ -80,9 +80,9 @@
                     $apellidosA = $_POST['apellidosA'];
                     $emailA = $_POST['emailA'];
                     $passA = $_POST['passA'];
-                    echo "Mi pass: " . $passA;
+                    //echo "Mi pass: " . $passA;
                     $passSec = md5($passA);
-                    echo "Mi hash: ". $passSec;
+                    //echo "Mi hash: ". $passSec;
 
                     $celularA = $_POST['celularA'];
         

@@ -7,6 +7,6 @@
     <meta name="description" content="">
     <title>Instituto de Artes Multimedia</title>
     <?php include_once 'App/Includes/headEstilos.php';?>
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>Public/Assets/css/login.css?ver=2.2.3">
 </head>
 <body>
-    <?php //echo "Estoy en el encabezado del HOMEPAGE - headHome"; ?>

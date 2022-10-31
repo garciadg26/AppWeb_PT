@@ -30,18 +30,18 @@
                         <div class="form_general_row1">
                             <div class="row1_col1"> <!-- R1 - COL 1 -->
                                 <label for="nombreCursoINP">Nombre del curso</label><br>
-                                <input type="text" name="nombreCursoINP" value="<?php echo $this->curso->nombreC; ?>">
+                                <input type="text" name="nombreCursoINP" value="<?php echo $this->curso->nombreC; ?>" required>
                             </div>
                         </div>
                         <!-- SEGUNDA FILA -->
                         <div class="form_general_row2">
                             <div class="row2_col1"> <!-- R2 - COL 2 -->
-                                <label for="costoCursoINP">Precio del curso (hrs)</label><br>
-                                <input type="number" name="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" >
+                                <label for="costoCursoINP">Precio del curso</label><br>
+                                <input type="number" name="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" required>
                             </div>
                             <div class="row2_col2"> <!-- R2 - COL 2 -->
-                                <label for="duracionCursoINP">Duración del curso</label><br>
-                                <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" >
+                                <label for="duracionCursoINP">Duración del curso (hrs)</label><br>
+                                <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" required>
                             </div>
                         </div>    
                         <!-- TERCERA FILA -->

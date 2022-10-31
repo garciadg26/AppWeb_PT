@@ -5,45 +5,130 @@
 .container{
     width: 100%;
 }
-
-#cont_login{
+.bgc_ilus_login{
     background-image: url(../images/fondo-login-iam.png);
     background-position: center center;
     background-size: cover;
 }
-
+.bgc_ilus_cuenta{
+    background-image: url(../images/fondo-cuenta-iam.png);
+    background-position: center center;
+    background-size: cover;
+}
+.cont_tit_cuenta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .cont_login{
+    position: relative;
+    top: 80px;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 560px;
     background-color: #232323;
     border-radius: 12px;
     box-sizing: border-box;
-    padding: 12px 24px;
+    padding: 20px 24px;
     color: #ffffff;
 }
-
+.logotipo_img_login{
+    text-align: center;
+    margin: 0 auto;
+}
+.logotipo_img_login img{
+    width: 80px;
+}
 .cont_login h2{
     color: #ffffff;
     text-align: center;
 }
 
-.cont_login > p > a{
+p.new_cuenta > a{
     border-radius: 4px;
     padding: 6px 12px;
-    background-color: aqua;
-    color: #212121;
+    color: #ffffff;
+}
+.new_cuenta{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* __FORMULARIOS */
+#cont_login form{
+    width: 94%;
+}
+#form_crear_cuenta .row1_col1{
+    width: 60%;
+    margin-right: 24px;
+}
+#form_crear_cuenta .row1_col2{
+    width: 40%;
+}
+#form_crear_cuenta .row1_col2 input{
+    width: 110%;
+}
+#form_crear_cuenta .row2_col1, #form_crear_cuenta .row3_col1{
+    width: 100%;
+}
+#form_crear_cuenta .row4_col1{
+    margin-right: 24px;
+}
+
+
 input[type=text], input[type=password]{
     padding: 5px 12px;
-    width: 90%;
+    width: 100%;
     border-radius: 4px;
 }
 input{
-    width: 90%;
+    width: 100%;
 }
 input[type=submit]{
     margin: 0 auto;
-    width: 100px;
+    width: 180px;
+}
+.cont_login .btn_form{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* FOOTER LOGIN */
+#cont_foot_login{
+    background-color: #000000;
+    width: 100%;
+    margin-top: -3px;
+    height: 62px;
+    display: flex;
+    flex-direction: row;
+}
+#cont_foot_login p{
+    text-align: center;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* __PSEUDOELEMENTOS */
+.before_ilus_left::before{
+    position: absolute;
+    content: "";
+    left: 40px;
+    bottom: 120px;
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/left_login_ilustracion.png');
+}
+.before_ilus_right::before{
+    position: absolute;
+    content: "";
+    right: 40px;
+    bottom: 120px;
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/right_login_ilustracion.png');
 }

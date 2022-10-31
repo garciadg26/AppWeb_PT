@@ -4,8 +4,6 @@ var hVentana;
 function asignarAltura(){
     var valorAltura = getAlturaVentana();
     console.log("Esta es la altura: " + valorAltura);
-    //var contElemento = document.getElementById('cont_login');
-    //contElemento.style.height = (valorAltura - 170) + 'px';
 
     //PANEL FIJO
     var aside_menu_fijo = document.getElementById('menu_aside');

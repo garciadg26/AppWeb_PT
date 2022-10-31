@@ -1,6 +1,7 @@
 <?php
 
-    define('URL', 'http://localhost/iam/');
+    //define('URL', 'http://localhost/iam/');
+    define('URL', 'https://ritchman.com/');
 
     //Constantes para la base de datos
     define('HOST', 'localhost');
