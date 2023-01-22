@@ -12,4 +12,4 @@ Primera versión de la aplicación web
 
 ## Proyecto terminal 2
     - Corrección de errores (nombres).
-    - Revisión del proyecto.
+    - Funcionando correctamente.

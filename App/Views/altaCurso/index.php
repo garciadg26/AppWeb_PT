@@ -1,5 +1,5 @@
 <?php include_once __DIR__ . "/../../Includes/head.php"; ?>
-<?php include_once 'App/models/curso.php'; ?>
+<?php include_once 'App/Models/curso.php'; ?>
     
     
     <!-- Contenedor -->

@@ -65,12 +65,12 @@
                             <?php
                                 //Importamos libreria de la clase curso  
                                 include_once 'App/Models/curso.php';
+                                //var_dump($this->$cursos);
                                 //$cursos = [];
                                 //$cursos = $user->consultarCurso();
                                 foreach($this->cursos as $row){
                                     $cursos = new Curso();
                                     $cursos = $row; 
-                                
                             ?>
                             <tr>
                                 <td><?php echo $cursos->nombreC; ?></td>
@@ -83,7 +83,7 @@
                                 <th><a class="btn_general btn_eliminar btn_icon_right" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'consulta/eliminarCurso/'  . $cursos->idC ?>">ELIMINAR<i class="btn_icon icon_eliminar"></i></a></th>
                             </tr>
                             <?php
-                                }//Termina el ciclo Foreach  
+                                } //Termina el ciclo Foreach  
                             ?>
                         </tbody>
                     </table>

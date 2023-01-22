@@ -9,6 +9,31 @@
 
         }
 
+        //FUNCION PARA CONSULTAR LA BASE DE DATOS
+        public function get(){
+            $items = [];
+
+            try{
+                $query = $this->db->conectar()->query("SELECT * FROM curso");
+                while($row = $query->fetch()){
+                    $item = new Curso();
+                    $item->idC = $row['idCurso'];
+                    $item->nombreC = $row['Nombre_cur'];
+                    $item->costoC = $row['Costo_cur'];
+                    $item->duracionC = $row['Duracion_cur'];
+                    $item->categoriaC = $row['Categoria_idCategoria'];
+                    $item->tipoC = $row['Tipo_idTipo'];
+                    $item->softwareC = $row['Software_idSoftware'];
+
+                    array_push($items, $item);
+                }
+
+                return $items;
+            }catch(PDOException $e){
+                return [];
+            }
+        }
+
         public function consultarCurso(){
 
             $items = [];

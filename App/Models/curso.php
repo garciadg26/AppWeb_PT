@@ -1,5 +1,6 @@
 <?php
 
+    //CLASE PARA MAPEAR LOS DATOS
     class Curso{
         public $idC;
         public $nombreC;
@@ -8,8 +9,6 @@
         public $categoriaC;
         public $tipoC;
         public $softwareC;
-
-
     }
 
     class Categorias{

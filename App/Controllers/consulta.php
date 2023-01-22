@@ -4,16 +4,15 @@
 
         public function __construct(){
             parent::__construct();
-
+            $this->view->cursos = [];
             //Definimos la variable del arreglo
             //$this->view->cursos = [];
         }
         
         public function render(){
-            $cursos = [];
             //Renderizamos los datos obtenidos del modelo
             //$cursos = $this->model->consultarCurso();
-            $cursos = $this->model->consultarCurso();
+            $cursos = $this->model->get();
             $this->view->cursos = $cursos;
             echo "Estoy en consulta";
             $this->view->render('consulta/index');

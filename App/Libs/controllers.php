@@ -12,7 +12,7 @@
         //Funcion especial para cargar el modelo
         function loadModel($model){
             //Nomenclatura para todos los archivos de modelo
-            $url = 'App/models/' . $model . 'model.php';
+            $url = 'App/Models/' . $model . 'Model.php';
 
             //Validar si existe el archivo
             if(file_exists($url)){
