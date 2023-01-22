@@ -65,6 +65,7 @@
     <footer id="cont_foot_login">
         <p class="foote_legales">© IAM 2022. Todos los derechos reservados.</p>
     </footer>
-    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/assets/js/scriptAlturaLogin.js"></script>    
+    
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/scriptAlturaLogin.js"></script>  
 </body>
 </html>

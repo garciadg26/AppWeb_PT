@@ -56,7 +56,7 @@
                     <div class="cont_grupos_panel">
                         <div class="cont_tarjeta_grupo_panel">
                             <span class="txt_caption">Grupo : 4</span>
-                            <img src="<?php echo constant('URL') ?>Public/assets/images/icon_grupo_tarjeta_panel_admin.png" alt="">
+                            <img src="https://ritchman.com/Public/assets/images/icon_grupo_tarjeta_panel_admin.png" alt="">
                             <p class="txt_tarjeta">Ilustración Digital con Ipad Procreate</p>
                         </div>
                         <div class="cont_tarjeta_grupo_panel">
@@ -70,7 +70,7 @@
                 <div class="panel_central_right">
                     <div class="cont_titulo_cursos">
                         <h3 class="tit_3">CURSOS</h3>
-                        <a class="btn_general btn_principal btn_icon_right" href="<?php echo constant('URL'); ?>consulta">VER CURSOS<i class="btn_icon icon_flecha"></i></a>
+                        <a class="btn_general btn_principal btn_icon_right" href="consulta">VER CURSO<i class="btn_icon icon_flecha"></i></a>
                     </div>
                     <table id="tabla_panel_admin" class="tabla_panel">
                         <thead class="titulo_tabla_panel">
@@ -83,7 +83,7 @@
                             <?php
                                 //Importamos libreria de la clase curso  
                                 
-                                include_once 'App/models/curso.php';
+                                include_once 'App/Models/curso.php';
                                 $cursos = [];
                                 $cursos = $user->consultarCurso();
                                 foreach($cursos as $row){

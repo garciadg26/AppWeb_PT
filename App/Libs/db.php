@@ -6,6 +6,14 @@
 
     //CLASE ABSTRACTA PARA LA CONEXION A LA BASE DE DATOS
     /*abstract*/ class BD{
+        /*
+        private static $db_usuario  = 'u254725936_user_app_web';
+        private static $db_pass = 'iAm$pass_23*';
+        private static $db_servidor = 'localhost';
+        private static $db_nombre  = 'u254725936_db_app_web';
+        private static $db_charset = 'utf8';
+        private $conexion; #conexion con al base de datos*/
+
         private static $db_usuario  = 'root';
         private static $db_pass = '';
         private static $db_servidor = 'localhost';

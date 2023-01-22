@@ -11,9 +11,10 @@
 <body>
     <?php 
     //echo "Estoy en el encabezado head.php con inicio de sesion";
+    /*
         include_once 'App/Includes/user_session.php';
         include_once 'App/Includes/user.php';
         $userSession = new UserSession();
         $user = new User();
-        $user->setUser($userSession->getCurrentUser());
+        $user->setUser($userSession->getCurrentUser());*/
     ?>

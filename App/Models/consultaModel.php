@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'App/models/curso.php';
+    include_once 'App/Models/curso.php';
 
     class ConsultaModel extends Model{
         

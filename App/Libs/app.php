@@ -18,13 +18,14 @@ require_once __DIR__ . '/../Controllers/home.php';
                 $archivoController = 'App/Controllers/main.php';
                 require_once $archivoController;
                 $controller = new Main();
-                $controller->loadModel('main');
                 $controller->render();
+                $controller->loadModel('main');
                 return false;
+            } else{
+                //var_dump($url);
+                $archivoController = 'App/Controllers/' . $url[0] . '.php';
             }
 
-            //var_dump($url);
-            $archivoController = 'App/Controllers/' . $url[0] . '.php';
             
             //Validamos si la ruta llama al controlador
             if(file_exists($archivoController)){
@@ -49,9 +50,11 @@ require_once __DIR__ . '/../Controllers/home.php';
                         }
                         $controller->{$url[1]}($param);
                     }else{
+                        // solo se llama al método
                         $controller->{$url[1]}();
                     }
                 }else{
+                    // si se llama a un controlador
                     $controller->render();
                 }
 

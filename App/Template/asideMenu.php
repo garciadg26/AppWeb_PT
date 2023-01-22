@@ -6,13 +6,11 @@
         <a href="<?php echo constant('URL'); ?>main" class="btn_menu_aside">
             <li class="lista_aside_activo"><i class="icon_menu_aside icon_ms_1"></i>Panel de administración</li>
         </a>
-            <?php //ADMINISTRADOR
-                if($_SESSION['rol'] == 1){
-            ?>
+
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_2"></i>Alumnos</li>
         </a>
-            <?php } ?>
+     
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_3"></i>Instructores</li>
         </a>
