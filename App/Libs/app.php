@@ -7,7 +7,6 @@ require_once __DIR__ . '/../Controllers/home.php';
         public function __construct(){
             //Nueva App
            
-
             $url = isset($_GET['url']) ? $_GET['url'] : null;
             $url = rtrim($url, '/');
             $url = explode('/', $url);

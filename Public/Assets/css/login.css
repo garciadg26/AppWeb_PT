@@ -2,35 +2,41 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+body{
+    height: 100vh;
+    background-image: url(../images/svg/fondo_bg_login.svg);
+    background-color: #fff;
+    background-position: center bottom 56px;
+    background-repeat: no-repeat;
+}
+#cont_login{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .container{
     width: 100%;
 }
-.bgc_ilus_login{
-    background-image: url(../images/fondo-login-iam.png);
-    background-position: center center;
-    background-size: cover;
-}
-.bgc_ilus_cuenta{
-    background-image: url(../images/fondo-cuenta-iam.png);
-    background-position: center center;
-    background-size: cover;
+.bgc_ilus_login, .bgc_ilus_cuenta{
+    background-image: url(../images/svg/fondo_bottom_login.svg);
+    background-position: center bottom 46px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .cont_tit_cuenta{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 .cont_login{
-    position: relative;
-    top: 80px;
     margin: 0 auto;
+    width: 100%;
     max-width: 560px;
     background-color: #232323;
     border-radius: 12px;
     box-sizing: border-box;
     padding: 20px 24px;
     color: #ffffff;
+    z-index: 2;
 }
 .logotipo_img_login{
     text-align: center;
@@ -47,7 +53,12 @@
 p.new_cuenta > a{
     border-radius: 4px;
     padding: 6px 12px;
-    color: #ffffff;
+    color: rgba(255,255,255,0.7);
+    transition: all 0.4s;
+}
+p.new_cuenta > a:hover{
+    color: rgba(255,255,255,1);
+    text-decoration: underline;
 }
 .new_cuenta{
     font-family: 'Raleway', sans-serif;
@@ -55,34 +66,35 @@ p.new_cuenta > a{
     font-weight: 600;
     text-align: center;
     margin: 0 auto;
+    color: rgba(255,255,255,0.5);
 }
 
 /* __FORMULARIOS */
 #cont_login form{
-    width: 94%;
-}
-#form_crear_cuenta .row1_col1{
-    width: 60%;
-    margin-right: 24px;
-}
-#form_crear_cuenta .row1_col2{
-    width: 40%;
-}
-#form_crear_cuenta .row1_col2 input{
-    width: 110%;
-}
-#form_crear_cuenta .row2_col1, #form_crear_cuenta .row3_col1{
     width: 100%;
 }
-#form_crear_cuenta .row4_col1{
-    margin-right: 24px;
+#form_crear_cuenta{
+    margin-top: 0px;
 }
 
-
-input[type=text], input[type=password]{
+#form_crear_cuenta .row1_col1, #form_crear_cuenta .row1_col2{
+    width: 50%;
+}/*
+#form_crear_cuenta .row1_col2{
+    width: 40%;
+} */
+#form_crear_cuenta .row1_col2 input{
+    width: 100%;
+}
+/* #form_crear_cuenta .row4_col1{
+    margin-right: 24px;
+} */
+input[type=text], input[type=password], input[type=email], input[type=tel]{
+    box-sizing: border-box;
     padding: 5px 12px;
     width: 100%;
     border-radius: 4px;
+    background-color: #ffffff!important;
 }
 input{
     width: 100%;
@@ -98,12 +110,14 @@ input[type=submit]{
 
 /* FOOTER LOGIN */
 #cont_foot_login{
+    position: absolute;
+    bottom: 0;
     background-color: #000000;
     width: 100%;
     margin-top: -3px;
-    height: 62px;
     display: flex;
     flex-direction: row;
+    padding: 16px 0px;
 }
 #cont_foot_login p{
     text-align: center;
@@ -111,14 +125,126 @@ input[type=submit]{
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     color: #ffffff;
+    font-size: .8rem;
 }
+
+    /* VALIDACION FORM */
+.formulario__grupo-input {
+    position: relative;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.formulario__input {
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {
+	border: 1px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 8px rgba(255,255,255, 0.4);
+}
+
+.formulario__input-error {
+    font-size: .8rem;
+    padding: 6px 16px 0px 16px;
+    border-radius: 6px;
+    font-family: 'montserrat', sans-serif;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__validacion-estado{
+    position: absolute;
+    top: 12px;
+    right: 6px;    
+}
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+    position: absolute;
+    top: 12px;
+    right: 6px;
+}
+
+#form_crear_cuenta .formulario__grupo-incorrecto .formulario__label {
+	color: #ffffff;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #FF2E2D;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+    position: absolute;
+    top: 12px;
+    right: 6px;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+    line-height: 1.2;
+    font-size: 14px;
+    font-family: 'montserrat';
+    background: #F66060;
+    padding: 10px 15px;
+    border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__mensaje-exito {
+    margin-top: 16px;
+    font-size: 14px;
+    font-family: 'montserrat';
+    padding: 10px 15px;
+	border-radius: 3px;
+    background-color: #1ed12d;
+    color: #fff!important;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    color: #119200;
+	display: block;
+}
+
 
 /* __PSEUDOELEMENTOS */
 .before_ilus_left::before{
     position: absolute;
     content: "";
     left: 40px;
-    bottom: 120px;
+    bottom: 56px;
     width: 200px;
     height: 200px;
     background-image: url('../images/left_login_ilustracion.png');
@@ -127,7 +253,7 @@ input[type=submit]{
     position: absolute;
     content: "";
     right: 40px;
-    bottom: 120px;
+    bottom: 56px;
     width: 200px;
     height: 200px;
     background-image: url('../images/right_login_ilustracion.png');

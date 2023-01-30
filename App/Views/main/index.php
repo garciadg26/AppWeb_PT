@@ -17,7 +17,7 @@
 
     //$app = new App();
 
-    //////////// BLOQUE 1 
+    //////////// BLOQUE 1
     //IMPLEMENTACION DE ROL DE SESIONES
     if(isset($_SESSION['rol'])){
         //echo 'hay sesion';
@@ -35,7 +35,8 @@
             break;
             default:
         }
-    //VALIDACION
+
+    //VALIDACION LOGIN
     }else if(isset($_POST['username']) && isset($_POST['password'])){
         //echo "Nuevo usuario Main";
         $userForm = $_POST['username'];
@@ -55,10 +56,8 @@
             $user->rolUser($userForm, $md5pass);
         //1C-SiNo se indica error en las credenciales
         }else{
-            
             //Mensaje de error en los datos
             $mensaje = "<div class='msnErrorLogin'>Error: El email y/o la contraseña son incorrectos</div>";
-
         }
 
         $this->mensaje = $mensaje;

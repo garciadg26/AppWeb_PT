@@ -33,3 +33,4 @@ Primera versión de la aplicación web
     10- Confirmación de datos mediante mensajes emergentes
     11- Tipos de datos correctos
     12- Diseño responsivo
+    13- Mejorar vista de error

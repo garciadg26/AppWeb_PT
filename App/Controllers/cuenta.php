@@ -23,16 +23,23 @@
 
         public function crearUsuario(){
             $campos = array();
-            $mensaje = "";
 
+            $mensaje = "";
             $nombreA = "";
             $apellidosA = "";
             $emailA = "";
             $celularA = "";
+            $passA = "";
 
             //BLOQUE 1
             ##VALIDACIONES DEL FORMULARIO
-            if(isset($_POST['submit'])){
+            // if(isset($_POST['submit'])){
+
+                $respuesta = [];
+                echo json_encode($respuesta);
+
+                //ENVIAMOS EL FORMULARIO
+                echo('DATOS ENVIADOS CON EXITO: ' . $nombreA . $apellidosA . $emailA . $celularA . $passA);
                 
                 $nombreA = $_POST['nombreA'];
                 $apellidosA = $_POST['apellidosA'];
@@ -98,7 +105,7 @@
                     $this->view->mensaje = $mensaje;
                 }
                 //echo "</div>";
-            }
+            // }
             
             $this->view->nombreA = $nombreA;
             $this->view->apellidosA = $apellidosA;

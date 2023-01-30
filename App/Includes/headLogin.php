@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <title>Instituto de Artes Multimedia</title>
     <?php include_once 'App/Includes/headEstilos.php';?>
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>Public/Assets/css/login.css?ver=2.2.3">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>Public/Assets/css/login.css?ver=2.3.11">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>Public/Assets/css/ionicons.min.css">
 </head>
 <body>
