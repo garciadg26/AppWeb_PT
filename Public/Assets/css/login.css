@@ -64,6 +64,7 @@ p.new_cuenta > a:hover{
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     font-weight: 600;
+    line-height: 2;
     text-align: center;
     margin: 0 auto;
     color: rgba(255,255,255,0.5);
@@ -76,19 +77,9 @@ p.new_cuenta > a:hover{
 #form_crear_cuenta{
     margin-top: 0px;
 }
-
-#form_crear_cuenta .row1_col1, #form_crear_cuenta .row1_col2{
-    width: 50%;
-}/*
-#form_crear_cuenta .row1_col2{
-    width: 40%;
-} */
 #form_crear_cuenta .row1_col2 input{
     width: 100%;
 }
-/* #form_crear_cuenta .row4_col1{
-    margin-right: 24px;
-} */
 input[type=text], input[type=password], input[type=email], input[type=tel]{
     box-sizing: border-box;
     padding: 5px 12px;
@@ -257,4 +248,34 @@ input[type=submit]{
     width: 200px;
     height: 200px;
     background-image: url('../images/right_login_ilustracion.png');
+}
+
+/* __RESPONSIVE__ */
+
+    /* MAX 922 */
+@media screen and (max-width:992px) {
+    .before_ilus_left, .before_ilus_right{
+        display: none;
+    }
+}
+
+    /* MAX 568 */
+@media screen and (max-width:568px) {
+    body{
+        background-position: center bottom;
+    }
+    .cont_login{
+        margin: 16px 16px;
+        width: calc(100% - 32px);
+        overflow-y: scroll;
+    }
+    .formulario__input-error{
+        padding: 6px 0px 0px 0px;
+    }
+    .form_general > div {
+        margin-top: 12px;
+    }
+    .form_general_row{
+        gap: 12px;
+    }
 }

@@ -287,37 +287,37 @@ a.btn_menu_aside{
 }
 
         /* COLUMNAS FORM */
-.row_12{
+.col_12{
     width: 100%;
 }
-.row_11{
+.col_11{
     width: 91.66%;
 }
-.row_10{
+.col_10{
     width: 83.33%;
 }
-.row_9{
+.col_9{
     width: 75%;
 }
-.row_8{
+.col_8{
     width: 66.67%;
 }
-.row_7{
+.col_7{
     width: 58.33%;
 }
-.row_6{
+.col_6{
     width: 50%;
 }
-.row_4{
+.col_4{
     width: 33.33%;
 }
-.row_3{
+.col_3{
     width: 25%;
 }
-.row_2{
+.col_2{
     width: 16.66%;
 }
-.row_1{
+.col_1{
     width: 8.33%;
 }
 
@@ -863,4 +863,15 @@ input[type=submit]{
     /* COLOR DESTACADO */
 .col_destacado{
     color: blueviolet;
+}
+
+/* __RESPONSIVE__ */
+
+@media screen and (max-width:568px) {
+    .form_general_row{
+        flex-direction: column;
+    }
+    .col_12, .col_11, .col_10, .col_9, .col_8, .col_7, .col_6, .col_5, .col_4, .col_3, .col_2, .col_1{
+        width: 100%;
+    } 
 }

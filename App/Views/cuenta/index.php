@@ -21,7 +21,7 @@
             <form id="form_crear_cuenta" class="form_general" action="" method="POST" autocomplete="off">
 
                 <div class="form_general_row">
-                    <div class="row_12">
+                    <div class="col_12">
                         <!-- Grupo: Nombre -->
                         <div class="formulario__grupo" id="grupo__nombreA">
                             <label for="nombreA" class="formulario__label">Nombre</label>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="form_general_row">
-                    <div class="row_12">
+                    <div class="col_12">
                         <!-- Grupo: Nombre -->
                         <div class="formulario__grupo" id="grupo__apellidosA">
                             <label for="apellidosA" class="formulario__label">Apellidos</label>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="form_general_row">
-                    <div class="row_6">
+                    <div class="col_6">
                         <!-- Grupo: Correo Electronico -->
                         <div class="formulario__grupo" id="grupo__emailA">
                             <label for="emailA" class="formulario__label">Correo Electrónico</label>
@@ -58,7 +58,7 @@
                             <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                         </div>
                     </div>
-                    <div class="row_6">
+                    <div class="col_6">
                         <!-- Grupo: Teléfono -->
                         <div class="formulario__grupo" id="grupo__celularA">
                             <label for="celularA" class="formulario__label">Teléfono</label>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="form_general_row">
-                    <div class="row_6">
+                    <div class="col_6">
                         <!-- Grupo: Contraseña -->
                         <div class="formulario__grupo" id="grupo__passA">
                             <label for="passA" class="formulario__label">Contraseña</label>
@@ -82,7 +82,7 @@
                             <p class="formulario__input-error">La contraseña debe tener al menos 8 caracteres, una letra en mayúscula, un número y un carácter especial.</p>
                         </div>
                     </div>
-                    <div class="row_6">
+                    <div class="col_6">
                         <!-- Grupo: Contraseña 2 -->
                         <div class="formulario__grupo" id="grupo__password2">
                             <label for="passAR" class="formulario__label">Repetir Contraseña</label>
