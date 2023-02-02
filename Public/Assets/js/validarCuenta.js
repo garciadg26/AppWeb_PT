@@ -109,7 +109,8 @@ formulario.addEventListener('submit', e=>{
             method:'POST',
             body:datos,
         }
-        fetch('http://localhost/iam/cuenta/crearUsuario', peticion)
+        fetch('https://ritchman.com/cuenta/crearUsuario', peticion)
+        //fetch('http://localhost/iam/cuenta/crearUsuario', peticion)
         .then(respuesta => respuesta.json())
         .then(respuesta =>{
     

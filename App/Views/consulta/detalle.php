@@ -27,26 +27,26 @@
                     <!-- FORMULARIO PARA DAR DE ALTA -->
                     <form id="form_actualizar_curso" class="form_general" action="<?php echo constant('URL'); ?>consulta/actualizarCurso" method="POST">
                         <!-- PRIMERA FILA -->
-                        <div class="form_general_row1">
-                            <div class="row1_col1"> <!-- R1 - COL 1 -->
+                        <div class="form_general_row">
+                            <div class="col_12"> <!-- R1 - COL 1 -->
                                 <label for="nombreCursoINP">Nombre del curso</label><br>
                                 <input type="text" name="nombreCursoINP" value="<?php echo $this->curso->nombreC; ?>" required>
                             </div>
                         </div>
                         <!-- SEGUNDA FILA -->
-                        <div class="form_general_row2">
-                            <div class="row2_col1"> <!-- R2 - COL 2 -->
+                        <div class="form_general_row">
+                            <div class="col_6"> <!-- R2 - COL 2 -->
                                 <label for="costoCursoINP">Precio del curso</label><br>
                                 <input type="number" name="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" required>
                             </div>
-                            <div class="row2_col2"> <!-- R2 - COL 2 -->
+                            <div class="col_6"> <!-- R2 - COL 2 -->
                                 <label for="duracionCursoINP">Duración del curso (hrs)</label><br>
                                 <input type="text" name="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" required>
                             </div>
                         </div>    
                         <!-- TERCERA FILA -->
-                        <div class="form_general_row3">
-                            <div class="row3_col1"> <!-- R2 - COL 1 -->
+                        <div class="form_general_row">
+                            <div class="col_12"> <!-- R2 - COL 1 -->
                                 <!-- SECCION DE CATEGORIAS -->
                                 <label for="catCursoINP">Categoría</label><br>
                                 <select name="catCursoINP" id="">
@@ -64,8 +64,8 @@
                                 </select><br>
                             </div>
                         </div>
-                        <div class="form_general_row4">
-                            <div class="row4_col1">
+                        <div class="form_general_row">
+                            <div class="col_6">
                                 <!-- SECCION DE TIPO -->
                                 <label for="tipoCursoINP">Tipo de curso</label><br>
                                 <select name="tipoCursoINP" id="">
@@ -82,7 +82,7 @@
                                         ?>
                                 </select><br>
                             </div>
-                            <div class="row4_col2">
+                            <div class="col_6">
                                 <!-- SECCION DE SOFTWARE -->
                                 <label for="softCursoINP">Software</label><br>
                                 <select name="softCursoINP" id="">

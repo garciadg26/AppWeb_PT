@@ -1,7 +1,7 @@
 <?php
 
 include_once 'App/Libs/db.php';
-include_once 'App/models/curso.php';
+include_once 'App/Models/curso.php';
 //include_once 'App/Includes/user_session.php';
 //$userSession = new UserSession();
 

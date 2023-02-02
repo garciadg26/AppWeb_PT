@@ -38,23 +38,23 @@
                     <!-- INICIO - FORMULARIO -->
                     <form id="form_alta_cursos" class="form_general" action="<?php echo constant('URL'); ?>altaCurso/crearCurso" method="POST">
                         <!-- PRIMERA FILA -->
-                        <div class="form_general_row1">
-                            <div class="row1_col1"> <!-- COL 1 -->
+                        <div class="form_general_row">
+                            <div class="col_4"> <!-- COL 1 -->
                                 <label for="nomCursoINP">Nombre del curso</label><br>
                                 <input type="text" name="nomCursoINP" id="" value="<?php echo $this->nomCurso ?>">
                              </div>
-                            <div class="row1_col2"> <!-- COL 2 -->
+                            <div class="col_4"> <!-- COL 2 -->
                                 <label for="cosCursoINP">Costo del curso</label><br>
                                 <input type="number" name="cosCursoINP" id="" value="<?php echo $this->costoCurso ?>">
                              </div>
-                            <div class="row1_col3"> <!-- COL 3 -->
+                            <div class="col_4"> <!-- COL 3 -->
                                 <label for="durCursoINP">Duración del curso</label><br>
                                 <input type="number" name="durCursoINP" id="" value="<?php echo $this->durCurso ?>">
                              </div>
                         </div>
                         <!-- SEGUNDA FILA -->
-                        <div class="form_general_row2">
-                            <div class="row2_col1">
+                        <div class="form_general_row">
+                            <div class="col_4">
                                 <!-- SECCION DE CATEGORIAS -->
                                 <label for="catCursoINP">Categoría</label><br>
                                 <select name="catCursoINP" id="">
@@ -71,7 +71,7 @@
                                         ?> 
                                 </select><br>
                             </div>
-                            <div class="row2_col2">
+                            <div class="col_4">
                                 <!-- SECCION DE TIPO -->
                                 <label for="tipoCursoINP">Tipo de curso</label><br>
                                 <select name="tipoCursoINP" id="">
@@ -88,7 +88,7 @@
                                         ?>
                                 </select><br>
                             </div>
-                            <div class="row2_col3">
+                            <div class="col_4">
                                 <!-- SECCION DE SOFTWARE -->
                                 <label for="softCursoINP">Software</label><br>
                                 <select name="softCursoINP" id="">

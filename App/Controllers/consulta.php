@@ -14,7 +14,6 @@
             //$cursos = $this->model->consultarCurso();
             $cursos = $this->model->get();
             $this->view->cursos = $cursos;
-            echo "Estoy en consulta";
             $this->view->render('consulta/index');
         }
 

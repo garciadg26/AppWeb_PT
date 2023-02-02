@@ -111,6 +111,6 @@
     <footer id="cont_foot_login">
         <p class="foote_legales">© IAM 2023. Todos los derechos reservados.</p>
     </footer>
-    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/Assets/js/validacionForm.js?ver=1.1.10"></script>
+    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/Assets/js/validarCuenta.js?ver=1.1.21"></script>
 </body>
 </html>
