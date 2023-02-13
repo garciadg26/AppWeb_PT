@@ -55,7 +55,7 @@
                                 <input autocomplete="off" type="email" class="formulario__input" name="emailA" id="emailA" placeholder="ejemplo@correo.com" value="<?php echo $this->emailA?>">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
-                            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                            <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
                         </div>
                     </div>
                     <div class="col_6">

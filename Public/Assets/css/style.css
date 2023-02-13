@@ -230,6 +230,7 @@ a.btn_menu_aside{
 }
 .btn_icon_left > i{
     left: 0;
+    top: 8px;
     margin-left: 12px;
     transform: rotate(180deg);
 }
@@ -569,6 +570,10 @@ a.btn_menu_aside{
 .cuerpo_tabla_panel tr td:nth-child(+n+2){
     text-align: center;
 }
+#tabla_panel_consultar tr th:not(:first-child){
+    text-align: center;
+}
+
 #tabla_panel_consultar tr th:nth-child(7), #tabla_panel_consultar tr th:nth-child(8){
     text-align: center;
     min-width: 120px;

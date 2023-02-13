@@ -14,16 +14,24 @@
             $items = [];
 
             try{
-                $query = $this->db->conectar()->query("SELECT * FROM curso");
+                // $query = $this->db->conectar()->query("SELECT * FROM curso");
+                $query = $this->db->conectar()->query("SELECT * 
+                FROM curso 
+                INNER JOIN categoria 
+                ON curso.Categoria_idCategoria = categoria.idCategoria
+                INNER JOIN tipo_curso
+                ON curso.Tipo_idTipo = tipo_curso.idTipo
+                INNER JOIN software
+                ON curso.Software_idSoftware = software.idSoftware");
                 while($row = $query->fetch()){
                     $item = new Curso();
                     $item->idC = $row['idCurso'];
                     $item->nombreC = $row['Nombre_cur'];
                     $item->costoC = $row['Costo_cur'];
                     $item->duracionC = $row['Duracion_cur'];
-                    $item->categoriaC = $row['Categoria_idCategoria'];
-                    $item->tipoC = $row['Tipo_idTipo'];
-                    $item->softwareC = $row['Software_idSoftware'];
+                    $item->categoriaC = $row['Nombre_cat'];
+                    $item->tipoC = $row['Nombre_tipo'];
+                    $item->softwareC = $row['Nombre_software'];
 
                     array_push($items, $item);
                 }

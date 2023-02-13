@@ -60,7 +60,7 @@
                         <?php
                             //Importamos libreria de la clase curso  
                             
-                            include_once 'App/models/curso.php';
+                            include_once 'App/Models/curso.php';
                             $cursos = [];
                             $cursos = $user->consultarCurso();
                             foreach($cursos as $row){
