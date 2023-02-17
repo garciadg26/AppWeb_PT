@@ -48,7 +48,12 @@
 
             //BLOQUE 1
             ##VALIDACIONES DEL FORMULARIO
-            if(isset($_POST['submit'])){
+            // if(isset($_POST['submit'])){
+
+                $respuesta = [];
+                echo json_encode($respuesta);
+
+                echo('DATOS ENVIADOS CON EXITO: ' . $nomCurso . $costoCurso . $durCurso . $catCurso . $tipoCurso . $softCurso);
 
                 $nomCurso   = $_POST['nomCursoINP'];
                 $costoCurso = $_POST['cosCursoINP'];
@@ -104,7 +109,7 @@
                         $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar el curso.</div>";
                     }
                 }
-            }
+            // }
 
 
 

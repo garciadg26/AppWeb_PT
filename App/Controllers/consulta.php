@@ -46,6 +46,10 @@
             //$validarCurActual = array();#E
 
             session_start();
+
+            $respuesta = [];
+            echo json_encode($respuesta);
+            
             //PROBAR CON GETTER Y SETTER
             $idC = $_SESSION['id_verCurso'];
 
@@ -55,6 +59,7 @@
             $categoriaC   = $_POST['catCursoINP'];
             $tipoC   = $_POST['tipoCursoINP'];
             $softwareC   = $_POST['softCursoINP'];
+
 
 
             ////////////// BLOQUE 2

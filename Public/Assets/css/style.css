@@ -589,7 +589,7 @@ a.btn_menu_aside{
     box-sizing: border-box;
 }
 
-/* __PANEL ALTA CURSO */
+/* __PANEL ALTA CURSO__ */
 .cont_descrip_alta{
     display: flex;
     flex-direction: row;
@@ -605,6 +605,9 @@ a.btn_menu_aside{
 .vacio{
     width: 120px;
     height: 20px;
+}
+#cosCursoINP, #durCursoINP{
+    text-align: right;
 }
 
     /* ALTA CURSOS - FORMULARIO */
@@ -648,6 +651,118 @@ input[type=submit]{
     background: transparent linear-gradient(180deg, var(--unnamed-color-cee59d) 0%, var(--unnamed-color-82a931) 100%) 0% 0% no-repeat padding-box;
     background: transparent linear-gradient(180deg, #CEE59D 0%, #82A931 100%) 0% 0% no-repeat padding-box;
 }
+
+    /* VALIDACION FORM */
+    .formulario__grupo-input {
+        position: relative;
+    }
+    
+    .formulario__label {
+        display: block;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    
+    .formulario__input {
+        transition: .3s ease all;
+    }
+    
+    .formulario__input:focus {
+        border: 1px solid #0075FF;
+        outline: none;
+        box-shadow: 3px 0px 8px rgba(255,255,255, 0.4);
+    }
+    
+    .formulario__input-error {
+        font-size: .8rem;
+        padding: 6px 16px 0px 16px;
+        border-radius: 6px;
+        font-family: 'montserrat', sans-serif;
+        margin-bottom: 0;
+        display: none;
+    }
+    
+    .formulario__input-error-activo {
+        display: block;
+    }
+    
+    
+    /* ----- -----  Estilos para Validacion ----- ----- */
+    .formulario__validacion-estado{
+        position: absolute;
+        top: 12px;
+        right: 6px;    
+    }
+    
+    .formulario__grupo-correcto .formulario__validacion-estado {
+        color: #1ed12d;
+        opacity: 1;
+        position: absolute;
+        top: 12px;
+        right: 6px;
+    }
+    
+    #form_crear_cuenta .formulario__grupo-incorrecto .formulario__label {
+        color: #ffffff;
+    }
+    
+    .formulario__grupo-incorrecto .formulario__label {
+        color: #FF2E2D;
+    }
+    
+    .formulario__grupo-incorrecto .formulario__validacion-estado {
+        color: #bb2929;
+        opacity: 1;
+        position: absolute;
+        top: 12px;
+        right: 6px;
+    }
+    
+    .formulario__grupo-incorrecto .formulario__input {
+        border: 3px solid #bb2929;
+    }
+    
+    .formulario__grupo-terminos, 
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar {
+        grid-column: span 2;
+    }
+    
+    .formulario__mensaje {
+        line-height: 1.2;
+        font-size: 14px;
+        font-family: 'montserrat';
+        background: #F66060;
+        padding: 10px 15px;
+        border-radius: 3px;
+        display: none;
+    }
+    
+    .formulario__mensaje-activo {
+        display: block;
+    }
+    
+    .formulario__mensaje p {
+        margin: 0;
+    }
+    
+    .formulario__mensaje-exito {
+        margin-top: 16px;
+        font-size: 14px;
+        font-family: 'montserrat';
+        padding: 10px 15px;
+        border-radius: 3px;
+        background-color: #1ed12d;
+        color: #fff!important;
+        display: none;
+    }
+    
+    .formulario__mensaje-exito-activo {
+        color: #119200;
+        display: block;
+    }
+    
+
 
 /* BTN FOR CREAR HOVER */
 .btn_form_crear input[type=submit]:hover{

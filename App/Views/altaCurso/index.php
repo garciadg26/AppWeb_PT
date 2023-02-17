@@ -28,28 +28,50 @@
                     ?></div>
                 
                     <?php //MENSAJE DE VALIDACIONES
-                        echo "<div class='msnErrorLogin'>";
-                        for($i = 0; $i < count($this->validarCursos); $i++){
-                            echo "<li>".$this->validarCursos[$i]."</li>";
-                        }
-                        echo "</div>";
+                        //echo "<div class='msnErrorLogin'>";
+                        //for($i = 0; $i < count($this->validarCursos); $i++){
+                        //    echo "<li>".$this->validarCursos[$i]."</li>";
+                        //}
+                        //echo "</div>";
                     ?>
             
                     <!-- INICIO - FORMULARIO -->
-                    <form id="form_alta_cursos" class="form_general" action="<?php echo constant('URL'); ?>altaCurso/crearCurso" method="POST">
+                    <!-- <form id="form_alta_cursos" class="form_general" action="<?php //echo constant('URL'); ?>altaCurso/crearCurso" method="POST"> -->
+                    <form id="form_alta_cursos" class="form_general" action="" method="POST">
                         <!-- PRIMERA FILA -->
                         <div class="form_general_row">
-                            <div class="col_4"> <!-- COL 1 -->
-                                <label for="nomCursoINP">Nombre del curso</label><br>
-                                <input type="text" name="nomCursoINP" id="" value="<?php echo $this->nomCurso ?>">
+                            <div class="col_8"> <!-- COL 1 -->
+                                <!-- Grupo: Nombre Curso -->
+                                <div class="formulario__grupo" id="grupo__nomCursoINP">
+                                    <label for="nomCursoINP" class="formulario__label">Nombre del curso</label>
+                                    <div class="formulario__grupo-input">
+                                        <input type="text" class="formulario__input" name="nomCursoINP" id="nomCursoINP" placeholder="Nombre completo del curso"  value="<?php echo $this->nomCurso ?>">
+                                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                    </div>
+                                    <p class="formulario__input-error">El nombre solo puede contener letras y números.</p>
+                                </div>
                              </div>
-                            <div class="col_4"> <!-- COL 2 -->
-                                <label for="cosCursoINP">Costo del curso</label><br>
-                                <input type="number" name="cosCursoINP" id="" value="<?php echo $this->costoCurso ?>">
+                            <div class="col_2"> <!-- COL 2 -->
+                                <!-- Grupo: Costo Curso -->
+                                <div class="formulario__grupo" id="grupo__cosCursoINP">
+                                    <label for="cosCursoINP" class="formulario__label">Costo del curso</label>
+                                    <div class="formulario__grupo-input">
+                                        <input type="number" class="formulario__input" name="cosCursoINP" id="cosCursoINP" placeholder="0"  value="<?php echo $this->costoCurso ?>">
+                                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                    </div>
+                                    <p class="formulario__input-error">El costo solo puede tener números enteros.</p>
+                                </div>
                              </div>
-                            <div class="col_4"> <!-- COL 3 -->
-                                <label for="durCursoINP">Duración del curso</label><br>
-                                <input type="number" name="durCursoINP" id="" value="<?php echo $this->durCurso ?>">
+                            <div class="col_2"> <!-- COL 3 -->
+                                <!-- Grupo: Duración Curso -->
+                                <div class="formulario__grupo" id="grupo__durCursoINP">
+                                    <label for="durCursoINP" class="formulario__label">Total de horas del curso</label>
+                                    <div class="formulario__grupo-input">
+                                        <input class="formulario__input" type="number" min="00:00" max="72:00" name="durCursoINP" id="durCursoINP" placeholder="00" value="<?php echo $this->durCurso ?>">
+                                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                    </div>
+                                    <p class="formulario__input-error">El total de horas del curso sólo pueder números.</p>
+                                </div>
                              </div>
                         </div>
                         <!-- SEGUNDA FILA -->
@@ -57,7 +79,7 @@
                             <div class="col_4">
                                 <!-- SECCION DE CATEGORIAS -->
                                 <label for="catCursoINP">Categoría</label><br>
-                                <select name="catCursoINP" id="">
+                                <select name="catCursoINP" id="catCursoINP">
                                     <option value="">Seleccionar una categoría</option>
                                         <?php          
                                             foreach($this->categorias as $row)
@@ -74,7 +96,7 @@
                             <div class="col_4">
                                 <!-- SECCION DE TIPO -->
                                 <label for="tipoCursoINP">Tipo de curso</label><br>
-                                <select name="tipoCursoINP" id="">
+                                <select name="tipoCursoINP" id="tipoCurso">
                                     <option value="">Seleccionar un tipo</option>
                                         <?php
                                             foreach($this->tipos as $row)
@@ -91,7 +113,7 @@
                             <div class="col_4">
                                 <!-- SECCION DE SOFTWARE -->
                                 <label for="softCursoINP">Software</label><br>
-                                <select name="softCursoINP" id="">
+                                <select name="softCursoINP" id="softwareCurso">
                                     <option value="">Seleccionar un software</option>
                                         <?php
                                             foreach($this->softwares as $row)
@@ -105,24 +127,25 @@
                                         ?>
                                 </select>
                             </div>
-
                         </div>
                 
                         <div class="btn_form btn_form_crear">
+                            <div class="formulario__mensaje" id="formulario__mensaje">
+                                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Todos los campos deben completarse correctamente. </p>
+                            </div>
                             <input type="submit" name="submit" value="REGISTRAR CURSO">
+                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
                         </div>
-                    </form>
-                    
+                    </form>  
                 </div>
             </div>
-
         </div>
-
     </div>
     
 
     
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarAltaCurso.js?ver=1.0.18"></script>
 </body>
 </html>
