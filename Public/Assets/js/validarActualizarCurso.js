@@ -2,27 +2,27 @@ let formulario = document.getElementById('form_actualizar_curso');
 const inputs = document.querySelectorAll('#form_actualizar_curso input');
 
 const expresiones = {
-    nomCursoINP: /^[a-zA-Z0-9\s]+$/, // Letras y espacios, pueden llevar acentos.
-    cosCursoINP: /^[1-9]\d{1,8}$/, // 10 a 14 numeros.
-    durCursoINP: /^[1-9]\d{0,8}$/ // 10 a 14 numeros.
+    nombreCursoINP: /^[a-zA-Z0-9\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+    costoCursoINP: /^[1-9]\d{1,8}$/, // 10 a 14 numeros.
+    duracionCursoINP: /^[1-9]\d{0,8}$/ // 10 a 14 numeros.
 }
 
 const campos = {
-    nomCursoINP: false,
-    cosCursoINP: false,
-    durCursoINP: false
+    nombreCursoINP: false,
+    costoCursoINP: false,
+    duracionCursoINP: false
 }
 
 const validarFormulario = (e) => {
     switch (e.target.name){
         case "nombreCursoINP":
-            validarCampo(expresiones.nomCursoINP, e.target, "nombreCursoINP");
+            validarCampo(expresiones.nombreCursoINP, e.target, "nombreCursoINP");
         break;
         case "costoCursoINP":
-            validarCampo(expresiones.cosCursoINP, e.target, "costoCursoINP");
+            validarCampo(expresiones.costoCursoINP, e.target, "costoCursoINP");
         break;
         case "duracionCursoINP":
-            validarCampo(expresiones.durCursoINP, e.target, "duracionCursoINP");
+            validarCampo(expresiones.duracionCursoINP, e.target, "duracionCursoINP");
         break;
     }
 }
@@ -59,7 +59,7 @@ formulario.addEventListener('submit', e=>{
     let softwareCurso = document.getElementById('softCursoINP');
 
     // if(campos.nombreCurso && campos.costoCurso && campos.duracionCurso && categoriaCurso.value > 0 && tipoCurso.value > 0 && softwareCurso.value > 0){
-    if(campos.nomCursoINP && campos.cosCursoINP && campos.durCursoINP && categoriaCurso.value > 0 && tipoCurso.value > 0 && softwareCurso.value > 0){
+    if(campos.costoCursoINP && campos.duracionCursoINP && categoriaCurso.value > 0 && tipoCurso.value > 0 && softwareCurso.value > 0){
         console.log('Formulario validado con exito');
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
@@ -102,6 +102,9 @@ formulario.addEventListener('submit', e=>{
 
     } else {
         console.log("Formulario rechazado");
+        console.log("Nombre: " + campos.nombreCursoINP);
+        console.log("Costo: " + campos.costoCursoINP);
+        console.log("Duracion: " + campos.duracionCursoINP);
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
