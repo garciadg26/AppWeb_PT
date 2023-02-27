@@ -2,7 +2,7 @@
 
 
 function confirmEliminar(){
-    var respuesta = confirm("¿Estas seguro que deseas ELIMINAR el curso?")
+    var respuesta = confirm("¿Estas seguro que deseas ELIMINAR la información?")
     if(respuesta == true){
         return true;
     }else{
@@ -10,7 +10,7 @@ function confirmEliminar(){
     }
 }
 function confirmActualizar(){
-    var respuesta = confirm("¿Estas seguro que deseas ACTUALIZAR el curso?")
+    var respuesta = confirm("¿Estas seguro que deseas ACTUALIZAR la información?")
     if(respuesta == true){
         return true;
     }else{

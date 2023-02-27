@@ -143,6 +143,6 @@
     </div>
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarActualizarCurso.js?ver=1.0.14"></script>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarActualizarCurso.js?ver=1.0.17"></script>
 </body>
 </html>

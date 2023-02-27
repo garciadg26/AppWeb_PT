@@ -146,6 +146,6 @@
     
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarAltaCurso.js?ver=1.0.18"></script>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarAltaCurso.js?ver=1.1.10"></script>
 </body>
 </html>

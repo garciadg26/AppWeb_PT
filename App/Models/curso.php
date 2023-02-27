@@ -10,7 +10,7 @@
         public $tipoC;
         public $softwareC;
     }
-
+    
     class Categorias{
         public $idCa;
         public $nombreCa;

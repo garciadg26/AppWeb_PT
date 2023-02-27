@@ -1,7 +1,7 @@
 <?php
 
 
-    class AltaCurso extends Controller{
+    class AltaCategoria extends Controller{
 
         public function __construct(){
             parent::__construct();
@@ -24,26 +24,21 @@
         public function render(){
             ##PRIMERA PARTE - CONSULTAR CATEGORIAS
             //Traemos un objeto con todos los datos
-            $categorias = $this->model->consultarCategoria();
-            $tipos      = $this->model->consultarTipo();
-            $softwares  = $this->model->consultarSoftware();
+            // $categorias = $this->model->consultarCategoria();
+            // $tipos      = $this->model->consultarTipo();
+            // $softwares  = $this->model->consultarSoftware();
             //$categoria->$nombreCat;
-            $this->view->categorias = $categorias;
-            $this->view->tipos = $tipos;
-            $this->view->softwares = $softwares;
-            $this->view->render('altaCurso/index');
+            // $this->view->categorias = $categorias;
+            // $this->view->tipos = $tipos;
+            // $this->view->softwares = $softwares;
+            $this->view->render('altaCategoria/index');
         }
 
-        public function crearCurso(){
-            $validarCursos = array();
+        public function crearCategoria(){
+            $validarCategoria = array();
             $mensaje = "";
 
-            $nomCurso = "";
-            $costoCurso = "";
-            $durCurso = "";
-            $catCurso = "";
-            $tipoCurso = "";
-            $softCurso = "";
+            $nomCategoria = "";
 
             //BLOQUE 1
             ##VALIDACIONES DEL FORMULARIO
@@ -52,44 +47,17 @@
                 $respuesta = [];
                 echo json_encode($respuesta);
 
-                echo('DATOS ENVIADOS CON EXITO: ' . $nomCurso . $costoCurso . $durCurso . $catCurso . $tipoCurso . $softCurso);
+                echo('DATOS ENVIADOS CON EXITO: ' . $nomCategoria);
 
-                $nomCurso   = $_POST['nomCursoINP'];
-                $costoCurso = $_POST['cosCursoINP'];
-                $durCurso   = $_POST['durCursoINP'];
-                $catCurso   = $_POST['catCursoINP'];
-                $tipoCurso  = $_POST['tipoCursoINP'];
-                $softCurso  = $_POST['softCursoINP'];
-
-
-                //VALIDACION SI EXISTE EL MISMO NOMBRE DEL CURSO
-                
+                $nomCategoria   = $_POST['nomCategoriaINP'];
 
                 //VALIDACIONES DE CAMPOS
-                if($nomCurso == ""){
-                    array_push($validarCursos, "El campo Nombre no puede estar vacio.");
+                if($nomCategoria == ""){
+                    array_push($validarCategoria, "El Nombre de la categoria no puede estar vacio.");
                 }
-                if($costoCurso == "" && $durCurso == ""){
-                    array_push($validarCursos, "El campo de Costo y Duración no pueden estar vacios.");
-                }
-                if(!is_numeric($costoCurso)){
-                    array_push($validarCursos, "El campo Costo sólo puede tener números.");
-                }
-                if(!is_numeric($durCurso)){
-                    array_push($validarCursos, "El campo Duración sólo puede tener números.");
-                }
-                if($catCurso == ""){
-                    array_push($validarCursos, "Selecciona una Categoría.");
-                }
-                if($tipoCurso == ""){
-                    array_push($validarCursos, "Selecciona un Tipo de curso.");
-                }
-                if($softCurso == ""){
-                    array_push($validarCursos, "Selecciona un Software.");
-                }
-                if(count($validarCursos) > 0){
+                if(count($validarCategoria) > 0){
                     //SI EXISTE UN ELEMENTO ALMACENADO  == HAY ERRORES Y MUESTRA LA VISTA
-                    $this->view->validarCursos = $validarCursos;
+                    $this->view->validarCategoria = $validarCategoria;
                 }else{
                     ////////////// BLOQUE 2
                     ##INGRESO DEL REGISTRO VALIDADO
@@ -102,23 +70,17 @@
                     $softCurso  = $_POST['softCursoINP'];
                     */
         
-                    if($this->model->insertarCurso(['nomCursoINP' => $nomCurso, 'cosCursoINP' => $costoCurso, 'durCursoINP' => $durCurso, 'catCursoINP' => $catCurso, 'tipoCursoINP' => $tipoCurso, 'softCursoINP' => $softCurso])){
+                    if($this->model->insertarCategoria(['nomCategoriaINP' => $nomCategoria])){
                         $mensaje = "<div class='msnSuccesLogin'>Registro exitoso</div>";
                         //REDIRECCIÓN USANDO HTML
-                        echo '<meta http-equiv="refresh" content="2;URL=\'../altaCurso\'">';
+                        echo '<meta http-equiv="refresh" content="2;URL=\'../altaCategoria\'">';
                         //echo '<meta http-equiv="refresh" content="2;URL=\'http:localhost/iam/cuenta/\'">';
                     }else{
                         //$mensaje = "El correo electrónico ya existe intenta con uno nuevo";
-                        $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar el curso.</div>";
+                        $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar la categoria.</div>";
                     }
                 }
             // }
-
-
-
-
-
-
 
             //BLOQUE 2
             /*
@@ -139,12 +101,7 @@
                 $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar el curso.</div>";
             }
             */
-            $this->view->nomCurso = $nomCurso;
-            $this->view->costoCurso = $costoCurso;
-            $this->view->durCurso = $durCurso;
-            $this->view->catCurso = $catCurso;
-            $this->view->tipoCurso = $tipoCurso;
-            $this->view->softCurso = $softCurso;
+            $this->view->nomCategoria = $nomCategoria;
             $this->view->mensaje = $mensaje;
             $this->render();
         }

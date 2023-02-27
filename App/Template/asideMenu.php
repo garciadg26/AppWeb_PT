@@ -20,8 +20,8 @@
         <a href="<?php echo constant('URL'); ?>consulta" class="btn_menu_aside">
             <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_5"></i>Cursos</li>
         </a>
-        <a href="#" class="btn_menu_aside">
-            <li class="lista_aside"><i class="icon_menu_aside icon_ms_6"></i>Certificaciones</li>
+        <a href="<?php echo constant('URL'); ?>categoria" class="btn_menu_aside">
+            <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_6"></i>Categoría</li>
         </a>
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_7"></i>Plantel</li>

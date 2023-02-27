@@ -79,7 +79,7 @@ formulario.addEventListener('submit', e=>{
             body:datos,
         }
         fetch('https://ritchman.com/altaCurso/crearCurso', peticion)
-        //fetch('http://localhost/iam/cuenta/crearUsuario', peticion)
+        // fetch('http://localhost/iam/altaCurso/crearCurso', peticion)
         .then(respuesta => respuesta.json())
         .then(respuesta =>{
     

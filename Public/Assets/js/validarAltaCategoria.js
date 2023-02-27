@@ -1,28 +1,19 @@
-let formulario = document.getElementById('form_actualizar_curso');
-const inputs = document.querySelectorAll('#form_actualizar_curso input');
+let formulario = document.getElementById('form_alta_cursos');
+const inputs = document.querySelectorAll('#form_alta_cursos input');
 
 const expresiones = {
-    nombreCursoINP: /^[a-zA-Z0-9\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
-    costoCursoINP: /^[1-9]\d{1,8}$/, // 10 a 14 numeros.
-    duracionCursoINP: /^[1-9]\d{0,8}$/ // 10 a 14 numeros.
+    nomCategoriaINP: /^[\w\s\u00C0-\u024F]{2,100}$/, // Letras y espacios, pueden llevar acentos.
+    // nomCategoriaINP: /^[a-zA-Z0-9\s]+$/, // Letras y espacios, pueden llevar acentos.
 }
 
 const campos = {
-    nombreCursoINP: false,
-    costoCursoINP: false,
-    duracionCursoINP: false
+    nomCategoriaINP: false
 }
 
 const validarFormulario = (e) => {
     switch (e.target.name){
-        case "nombreCursoINP":
-            validarCampo(expresiones.nombreCursoINP, e.target, "nombreCursoINP");
-        break;
-        case "costoCursoINP":
-            validarCampo(expresiones.costoCursoINP, e.target, "costoCursoINP");
-        break;
-        case "duracionCursoINP":
-            validarCampo(expresiones.duracionCursoINP, e.target, "duracionCursoINP");
+        case "nomCategoriaINP":
+            validarCampo(expresiones.nomCategoriaINP, e.target, "nomCategoriaINP");
         break;
     }
 }
@@ -54,15 +45,8 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', e=>{
     e.preventDefault();
 
-    let nombreCursoAct = document.getElementById('nombreCursoINP');
-    let costoCursoAct = document.getElementById('costoCursoINP');
-    let duracionCursoAct = document.getElementById('duracionCursoINP');
-    let categoriaCurso = document.getElementById('catCursoINP');
-    let tipoCurso = document.getElementById('tipoCursoINP');
-    let softwareCurso = document.getElementById('softCursoINP');
-
     // if(campos.nombreCurso && campos.costoCurso && campos.duracionCurso && categoriaCurso.value > 0 && tipoCurso.value > 0 && softwareCurso.value > 0){
-    if(nombreCursoAct != '' && costoCursoAct != ''  && duracionCursoAct != '' && categoriaCurso.value > 0 && tipoCurso.value > 0 && softwareCurso.value > 0){
+    if(campos.nomCategoriaINP){
         console.log('Formulario validado con exito');
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
@@ -81,8 +65,8 @@ formulario.addEventListener('submit', e=>{
             method:'POST',
             body:datos,
         }
-        fetch('https://ritchman.com/consulta/actualizarCurso', peticion)
-        //fetch('http://localhost/iam/cuenta/crearUsuario', peticion)
+        // fetch('https://ritchman.com/altaCategoria/crearCategoria', peticion)
+        fetch('http://localhost/iam/altaCategoria/crearCategoria', peticion)
         .then(respuesta => respuesta.json())
         .then(respuesta =>{
     
@@ -98,16 +82,13 @@ formulario.addEventListener('submit', e=>{
     
         }).catch(error => console.log('Error', error));
         //FIN DATOS PHP
-        document.location.reload();
+        formulario.reset();
         // return true;
         
 
 
     } else {
         console.log("Formulario rechazado");
-        console.log("Nombre: " + nombreCursoAct);
-        console.log("Costo: " + costoCursoAct);
-        console.log("Duracion: " + duracionCursoAct);
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
