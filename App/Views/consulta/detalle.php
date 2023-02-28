@@ -126,7 +126,7 @@
                                 <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Todos los campos deben completarse correctamente. </p>
                             </div>
                             <input type="submit" onclick="return confirmActualizar()" name="submit" value="Actualizar curso">   
-                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Actualización exitosa!</p>
                         </div>
                     </form>
 
@@ -143,6 +143,6 @@
     </div>
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarActualizarCurso.js?ver=1.0.17"></script>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarActualizarCurso.js?ver=1.0.21"></script>
 </body>
 </html>

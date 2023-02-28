@@ -75,6 +75,7 @@ h1, h2, h3, h4, h5, h6{
 #cont_aside{
     min-width: 260px;
     width: 260px;
+    height: 100vh;
     background-color: var(--color-back-aside);
 }
 ul#menu_aside{
@@ -109,7 +110,7 @@ a.btn_menu_aside{
 }
 
     /* LISTA ACTIVO */
-.lista_aside_activo{
+/* .lista_aside_activo{
     padding: 14px 0px 14px 38px;
     font-family: var(--font-montserrat);
     font-size: var(--body2-14);
@@ -120,8 +121,18 @@ a.btn_menu_aside{
 }
 .lista_aside_activo .icon_menu_aside{
     opacity: 1!important;
+} */
+#menu_aside a.active li{
+    font-family: var(--font-montserrat);
+    font-size: var(--body2-14);
+    font-weight: 600;
+    background-color: var(--color-verde-iam)!important;
+    color: #fff;
+    box-sizing: border-box;
 }
-
+#menu_aside a.active li i{
+    opacity: 1;
+}
 
     /* ICONOS MENU */
 .icon_menu_aside{

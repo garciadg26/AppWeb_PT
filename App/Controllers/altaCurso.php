@@ -45,6 +45,7 @@
             $tipoCurso = "";
             $softCurso = "";
 
+
             //BLOQUE 1
             ##VALIDACIONES DEL FORMULARIO
             // if(isset($_POST['submit'])){
@@ -60,10 +61,6 @@
                 $catCurso   = $_POST['catCursoINP'];
                 $tipoCurso  = $_POST['tipoCursoINP'];
                 $softCurso  = $_POST['softCursoINP'];
-
-
-                //VALIDACION SI EXISTE EL MISMO NOMBRE DEL CURSO
-                
 
                 //VALIDACIONES DE CAMPOS
                 if($nomCurso == ""){
@@ -108,15 +105,11 @@
                         echo '<meta http-equiv="refresh" content="2;URL=\'../altaCurso\'">';
                         //echo '<meta http-equiv="refresh" content="2;URL=\'http:localhost/iam/cuenta/\'">';
                     }else{
-                        //$mensaje = "El correo electrónico ya existe intenta con uno nuevo";
-                        $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar el curso.</div>";
+                        $mensaje = "El correo electrónico ya existe intenta con uno nuevo";
+                        // $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar el curso.</div>";
                     }
                 }
             // }
-
-
-
-
 
 
 
@@ -148,6 +141,5 @@
             $this->view->mensaje = $mensaje;
             $this->render();
         }
-
     }
 ?>

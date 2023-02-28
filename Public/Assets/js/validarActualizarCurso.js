@@ -2,7 +2,7 @@ let formulario = document.getElementById('form_actualizar_curso');
 const inputs = document.querySelectorAll('#form_actualizar_curso input');
 
 const expresiones = {
-    nombreCursoINP: /^[a-zA-Z0-9\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+    nombreCursoINP: /^[\w\s\u00C0-\u024F]{2,100}$/, // Letras y espacios, pueden llevar acentos.
     costoCursoINP: /^[1-9]\d{1,8}$/, // 10 a 14 numeros.
     duracionCursoINP: /^[1-9]\d{0,8}$/ // 10 a 14 numeros.
 }
@@ -67,7 +67,7 @@ formulario.addEventListener('submit', e=>{
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
 			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
+		}, 3000);
 
         // QUITAMOS LOS ICONOS DE LA VISTA DEL USUARIO
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
@@ -82,7 +82,7 @@ formulario.addEventListener('submit', e=>{
             body:datos,
         }
         fetch('https://ritchman.com/consulta/actualizarCurso', peticion)
-        //fetch('http://localhost/iam/cuenta/crearUsuario', peticion)
+        // fetch('http://localhost/iam/consulta/actualizarCurso', peticion)
         .then(respuesta => respuesta.json())
         .then(respuesta =>{
     
@@ -98,11 +98,13 @@ formulario.addEventListener('submit', e=>{
     
         }).catch(error => console.log('Error', error));
         //FIN DATOS PHP
-        document.location.reload();
+        
+        setTimeout(() => {
+            document.location.reload();
+        }, 3000);
+        // formulario.reset();
         // return true;
         
-
-
     } else {
         console.log("Formulario rechazado");
         console.log("Nombre: " + nombreCursoAct);
@@ -111,6 +113,6 @@ formulario.addEventListener('submit', e=>{
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        }, 5000);
+        }, 3000);
     }
 });

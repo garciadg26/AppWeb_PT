@@ -3,8 +3,8 @@
         <li class="logitipo_aside">
             <img src="<?php echo constant('URL')?>Public/Assets/images/Logotipo_IAM.png" alt="">
         </li>
-        <a href="<?php echo constant('URL'); ?>main" class="btn_menu_aside">
-            <li class="lista_aside_activo"><i class="icon_menu_aside icon_ms_1"></i>Panel de administración</li>
+        <a href="<?php echo constant('URL'); ?>main" class="btn_menu_aside active">
+            <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_1"></i>Panel de administración</li>
         </a>
 
         <a href="#" class="btn_menu_aside">
@@ -18,7 +18,7 @@
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_4"></i>Grupos</li>
         </a>
         <a href="<?php echo constant('URL'); ?>consulta" class="btn_menu_aside">
-            <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_5"></i>Cursos</li>
+            <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_5"></i>Academía</li>
         </a>
         <a href="<?php echo constant('URL'); ?>categoria" class="btn_menu_aside">
             <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_6"></i>Categoría</li>

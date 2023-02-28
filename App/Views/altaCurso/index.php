@@ -26,13 +26,14 @@
                     <div ><?php //MENSAJE DE ERROR 
                         echo $this->mensaje; 
                     ?></div>
+                                
                 
                     <?php //MENSAJE DE VALIDACIONES
-                        //echo "<div class='msnErrorLogin'>";
-                        //for($i = 0; $i < count($this->validarCursos); $i++){
+                        // echo "<div class='msnErrorLogin'>";
+                        // for($i = 0; $i < count($this->validarCursos); $i++){
                         //    echo "<li>".$this->validarCursos[$i]."</li>";
-                        //}
-                        //echo "</div>";
+                        // }
+                        // echo "</div>";
                     ?>
             
                     <!-- INICIO - FORMULARIO -->
@@ -134,7 +135,7 @@
                                 <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Todos los campos deben completarse correctamente. </p>
                             </div>
                             <input type="submit" name="submit" value="REGISTRAR CURSO">
-                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Curso creado exitosamente!</p>
                         </div>
                     </form>  
                 </div>
@@ -146,6 +147,6 @@
     
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarAltaCurso.js?ver=1.1.10"></script>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarAltaCurso.js?ver=1.1.27"></script>
 </body>
 </html>
