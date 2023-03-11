@@ -1,4 +1,4 @@
-# Aplicación web IAM - V1.2.11
+# Aplicación web IAM - V1.2.12
 ## Proyecto Terminal 1
 Primera versión de la aplicación web
 
@@ -32,13 +32,13 @@ Primera versión de la aplicación web
     - [ ] Reportes
 2. \(Observaciones) Medidas de seguridad.
     - [ ] Google recaptcha
-    - [ck] Cierres de sesión
-    - [ck] Certificado SSL
-    - [ck] Encriptado de contraseñas
-    - [ck] Prevención de inyección código SQL
-    - [ck] Contraseña segura
+    - [x] Cierres de sesión
+    - [x] Certificado SSL
+    - [x] Encriptado de contraseñas
+    - [x] Prevención de inyección código SQL
+    - [x] Contraseña segura
 3. \(Observaciones) Máscara de datos.
-    - [ck] Placeholder
+    - [x] Placeholder
 4. \(Observaciones) Refinar formularios.
 5. \(Observaciones) Manejo de excepciones.
 6. \(Observaciones) Mensajes de advertencia.
