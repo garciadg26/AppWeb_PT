@@ -1,4 +1,4 @@
-# Aplicación web IAM - V1.2.10
+# Aplicación web IAM - V1.2.11
 ## Proyecto Terminal 1
 Primera versión de la aplicación web
 
@@ -22,7 +22,7 @@ Primera versión de la aplicación web
 - [ ] Pruebas de caja negra.
     - [ ] \(Prueba 1) Paginación de tablas
 
-## PENDIENTES
+### Pendientes
 1. \(Recomendaciones) Sinodales.
     - [x] Filtros
     - [ ] Funciones avanzadas
@@ -51,10 +51,32 @@ Primera versión de la aplicación web
 9. Implementar el borrado lógico.
     - [x] Visible o no visible
 10. Confirmación de datos mediante mensajes emergentes
-    - [] Mensajes emergentes
+    - [ ] Mensajes emergentes
 11. Tipos de datos correctos.
     - [x] Validación de datos javascript
 12. Diseño responsivo
     - [x] Diseño Desktop
     - [ ] Diseño Tablet
     - [ ] Diseño Smartphone
+
+## Módulos completados
+### Historias de usuario = (10)
+1. \(3) Control de usuarios 
+    - [x] Mostrar Formulario para iniciar sesión
+    - [x] Autentificar usuarios con diferentes roles
+    - [x] Mostrar mensaje de error
+2. \(1) Mi cuenta
+    - [x] Crear una cuenta nueva
+3. Mis cursos
+4. Grupos
+5. Panel de administración
+6. \(6) Académica
+    - [x] Mostrar cursos (paginación)
+    - [x] Organizar cursos (order acendente y descendente)
+    - [x] Filtrar cursos (categorias, tipo, software)
+    - [x] Crear nuevo curso
+    - [x] Editar curso
+    - [x] Eliminar cursos
+7. Certificaciones
+8. Planel
+9. Equipo de cómputo
