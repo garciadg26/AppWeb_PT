@@ -1,4 +1,4 @@
-# Aplicación web IAM - V1.2.12
+# Aplicación web IAM - V1.2.13
 ## Proyecto Terminal 1
 Primera versión de la aplicación web
 
@@ -65,11 +65,16 @@ Primera versión de la aplicación web
     - [x] Mostrar Formulario para iniciar sesión
     - [x] Autentificar usuarios con diferentes roles
     - [x] Mostrar mensaje de error
+---
 2. \(1) Mi cuenta
     - [x] Crear una cuenta nueva
+---
 3. Mis cursos
+---
 4. Grupos
+---
 5. Panel de administración
+---
 6. \(6) Académica
     - [x] Mostrar cursos (paginación)
     - [x] Organizar cursos (order acendente y descendente)
@@ -77,6 +82,9 @@ Primera versión de la aplicación web
     - [x] Crear nuevo curso
     - [x] Editar curso
     - [x] Eliminar cursos
+---
 7. Certificaciones
+---
 8. Planel
+---
 9. Equipo de cómputo
