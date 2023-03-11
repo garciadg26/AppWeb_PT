@@ -1,44 +1,60 @@
-# Aplicación web IAM - V1.2
+# Aplicación web IAM - V1.2.10
 ## Proyecto Terminal 1
 Primera versión de la aplicación web
 
 ### Pantallas
-[ck]    - Inicio de sesión.
-[ck]    - Registro.
-[ck]    - Panel de administración.
-[ck]    - Consultar curso
-[ck]    - Detalle curso
-[ck]    - Alta Curso
-[ck]    - Actualizar Curso
-[ck]    - Eliminar curso
-    - Conexión a la base de datos.
-        - Conexión correcta (Revisar función correcta PDO)
-        - Función de Lectura (Incrustado en la vista para hacer el bucle).
+- [x] Inicio de sesión.
+- [x] Registro.
+- [x] Panel de administración.
+- [x] Consultar curso
+- [x] Detalle curso
+- [x] Alta Curso
+- [x] Actualizar Curso
+- [x] Eliminar curso
+1. Conexión a la base de datos.
+    - [ ] Conexión correcta (Revisar función correcta PDO)
+    - [ ] Función de Lectura (Incrustado en la vista para hacer el bucle).
 
 ## Proyecto terminal 2
-[ck]    - Corrección de errores (nombres).
-[ck]    - Funcionando correctamente.
-[ck]    - Pruebas de caja blanca.
-        - Pruebas de caja negra.
+- [x] Corrección de errores (nombres).
+- [x] Funcionando correctamente.
+- [x] Pruebas de caja blanca.
+- [ ] Pruebas de caja negra.
+    - [ ] \(Prueba 1) Paginación de tablas
 
 ## PENDIENTES
-    1- (Filtros), funciones avanzadas, transacciones, cálculos matemáticos, estadísticas, reportes, entre otros.
-    2- Medidas de seguridad.
-[ck]    a- Google recaptcha.
-[ck]    b- Cierres de sesión.
-[ck]    c- Certificado SSL.
-[ck]    d- Encriptado de contraseñas.
-[ck]    e- Prevención de inyección código SQL.
-[ck]    F- Contraseña segura.
-    3- Máscara de datos
-[ck]    - Placeholder
-[ck]4- Refinar el tamaño de los formularios
-    5- Manejo de excepciones
-[ck]6- Mensajes de advertencia
-        - Mejorar vista de error
-[ck]7- Intervalos mínimos y máximos de datos que se capturen
-[ck]8- Desplegar registros por páginas. (paginación)
-    9- Implementar el borrado lógico
-[ck]10- Confirmación de datos mediante mensajes emergentes
-[ck]11- Tipos de datos correctos
-    12- Diseño responsivo
+1. \(Recomendaciones) Sinodales.
+    - [x] Filtros
+    - [ ] Funciones avanzadas
+    - [ ] Transacciones
+    - [ ] Cálculos matemáticos
+    - [ ] Estadísticas
+    - [ ] Reportes
+2. \(Observaciones) Medidas de seguridad.
+    - [ ] Google recaptcha
+    - [ck] Cierres de sesión
+    - [ck] Certificado SSL
+    - [ck] Encriptado de contraseñas
+    - [ck] Prevención de inyección código SQL
+    - [ck] Contraseña segura
+3. \(Observaciones) Máscara de datos.
+    - [ck] Placeholder
+4. \(Observaciones) Refinar formularios.
+5. \(Observaciones) Manejo de excepciones.
+6. \(Observaciones) Mensajes de advertencia.
+    - [ ] Mejorar vista de error
+    - [ ] Diseño de vista de error genérico
+7.  \(Observaciones) Captura de datos.
+    - [ ] Intervalos mínimos y máximos de datos
+8. Desplegar registros por páginas.
+    - [x] Paginación de tablas
+9. Implementar el borrado lógico.
+    - [x] Visible o no visible
+10. Confirmación de datos mediante mensajes emergentes
+    - [] Mensajes emergentes
+11. Tipos de datos correctos.
+    - [x] Validación de datos javascript
+12. Diseño responsivo
+    - [x] Diseño Desktop
+    - [ ] Diseño Tablet
+    - [ ] Diseño Smartphone
