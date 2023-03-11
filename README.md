@@ -1,36 +1,44 @@
-# Aplicación web IAM
+# Aplicación web IAM - V1.2
 ## Proyecto Terminal 1
-
 Primera versión de la aplicación web
+
 ### Pantallas
-    - Inicio de sesión.
-    - Registro.
-    - Panel de administración.
+[ck]    - Inicio de sesión.
+[ck]    - Registro.
+[ck]    - Panel de administración.
+[ck]    - Consultar curso
+[ck]    - Detalle curso
+[ck]    - Alta Curso
+[ck]    - Actualizar Curso
+[ck]    - Eliminar curso
     - Conexión a la base de datos.
         - Conexión correcta (Revisar función correcta PDO)
-        - Función de Lectura (Incrustado en la vista para hacer el bucle). 
+        - Función de Lectura (Incrustado en la vista para hacer el bucle).
 
 ## Proyecto terminal 2
-    - Corrección de errores (nombres).
-    - Funcionando correctamente.
+[ck]    - Corrección de errores (nombres).
+[ck]    - Funcionando correctamente.
+[ck]    - Pruebas de caja blanca.
+        - Pruebas de caja negra.
 
 ## PENDIENTES
-    1- Filtros, funciones avanzadas, transacciones, cálculos matemáticos, estadísticas, reportes, entre otros.
-    2- Medidas de seguridad
-        a- Google recaptcha
-        b- Cierres de sesión
-        c- Certificado SSL
-        d- Encriptado de contraseñas
-        e- Prevención de inyección código SQL
-        F- Contraseña segura
+    1- (Filtros), funciones avanzadas, transacciones, cálculos matemáticos, estadísticas, reportes, entre otros.
+    2- Medidas de seguridad.
+[ck]    a- Google recaptcha.
+[ck]    b- Cierres de sesión.
+[ck]    c- Certificado SSL.
+[ck]    d- Encriptado de contraseñas.
+[ck]    e- Prevención de inyección código SQL.
+[ck]    F- Contraseña segura.
     3- Máscara de datos
-    4- Refinar el tamaño de los formularios 
+[ck]    - Placeholder
+[ck]4- Refinar el tamaño de los formularios
     5- Manejo de excepciones
-    6- Mensajes de advertencia
-    7- Intervalos mínimos y máximos de datos que se capturen
-    8- Desplegar registros por páginas. (paginación)
+[ck]6- Mensajes de advertencia
+        - Mejorar vista de error
+[ck]7- Intervalos mínimos y máximos de datos que se capturen
+[ck]8- Desplegar registros por páginas. (paginación)
     9- Implementar el borrado lógico
-    10- Confirmación de datos mediante mensajes emergentes
-    11- Tipos de datos correctos
+[ck]10- Confirmación de datos mediante mensajes emergentes
+[ck]11- Tipos de datos correctos
     12- Diseño responsivo
-    13- Mejorar vista de error
