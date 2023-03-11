@@ -4,6 +4,7 @@
 
         public function __construct(){
             parent::__construct();
+            $this->view->categorias = [];
             $this->view->cursos = [];
             //Definimos la variable del arreglo
             //$this->view->cursos = [];
@@ -12,7 +13,13 @@
         public function render(){
             //Renderizamos los datos obtenidos del modelo
             //$cursos = $this->model->consultarCurso();
+            $categorias = $this->model->consultarCategoria();
+            $tipos      = $this->model->consultarTipo();
+            $softwares  = $this->model->consultarSoftware();
             $cursos = $this->model->get();
+            $this->view->categorias = $categorias;
+            $this->view->tipos = $tipos;
+            $this->view->softwares = $softwares;
             $this->view->cursos = $cursos;
             $this->view->render('consulta/index');
         }

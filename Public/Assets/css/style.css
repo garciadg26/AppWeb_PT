@@ -9,12 +9,22 @@
     --color-black:#000000;
     --color-panel-principal:#F0F2F4;
     --color-gri-super-claro:#F7F9FB;
-    --color-verde-claro:#9CCB3B;
+    --color-verde-claro-100:#EFF6DE;
+    --color-verde-claro-200:#DEEEBE;
+    --color-verde-claro-300:#CEE59D;
+    --color-verde-claro-400:#BDDC7C;
+    --color-verde-claro-500:#ADD45C;
+    --color-verde-claro-600:#9CCB3B;
     --color-verde-iam:#82A931;
     --color-gris-claro:#F0F2F4;
     --color-gris-medio:#939393;
     --color-agua-marina:#01CCD0;
     --color-mazul-morado:#465FB9;
+    --color-morado-vino-000:#EEE8F4;
+    --color-morado-vino-100:#F1DEF7;
+    --color-morado-vino-200:#E2BEEE;
+    --color-morado-vino-300:#D49DE6;
+    --color-morado-vino-400:#C57CDD;
     --color-morado-vino:#A5017A;
     --color-azul-editar:#12B4DC;
     --color-azul-editar-hover:#0292B5;
@@ -211,54 +221,38 @@ a.btn_menu_aside{
 /* __BOTONES*/
 .btn_general{
     position: relative;
+    display: flex;
     text-decoration: none;
-    font-family: var(--font-raleway);
-    font-weight: bold;
+    font-family: var(--font-montserrat);
+    font-weight: 600;
     font-size: var(--boton-14);
     color: #ffffff;
     border-radius: 25px;
+    padding: 4px 18px;
+    font-size: 0.8rem;
     transition: all 0.3s;
 }
 
     /* BTN ICONOS */
-.btn_icon_right{
-    padding: 6px 32px 6px 18px;
-}
-.btn_icon_left{
-    padding: 6px 18px 6px 32px;
-}
-.btn_icon{
-    position: absolute;
-    content: "";
-    width: 14px;
-    height: 14px;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-.btn_icon_right > i{
-    right: 0;
-    margin-right: 12px;
-}
-.btn_icon_left > i{
-    left: 0;
-    top: 8px;
-    margin-left: 12px;
-    transform: rotate(180deg);
-}
 .icon_flecha{
     background-image: url('../images/icono_flecha_right_botones.png');
 }
-.icon_editar{
-    background-image: url('../images/icono_editar_botones.png');
+.btn_icon img{
+    width: 12px;
+    height: auto;
+    margin-left: 6px;
 }
-.icon_eliminar{
-    background-image: url('../images/icono_eliminar_botones.png');
+.btn_icon_reverse img{
+    width: 12px;
+    height: auto;
+    margin-right: 6px;
+    transform: rotate(180deg);
 }
 
 
     /* BTN TIPOS*/
 .btn_principal{
-    background-color: var(--color-verde-claro);
+    background-color: var(--color-verde-claro-600);
 }
 .btn_regresar{
     background-color: var(--color-menta-regresar);
@@ -553,14 +547,22 @@ a.btn_menu_aside{
 }
 
     /* APARTADO CURSOS - TABLA */
+
 .tabla_panel, tr, td, th{
     width: auto;
     padding: 0;
     margin: 0;
     padding: 12px 10px;
 }
-.titulo_tabla_panel tr{
-    background-color: var(--color-morado-vino);
+.tabla_panel{
+    padding: 0px;
+}
+.tabla_panel{
+    max-width: 100%!important;
+    width: 100%;
+}
+.tabla_panel thead tr{
+    background-color: var(--color-morado-vino)!important;
     color: var(--color-white);
     padding: 16px 20px;
     height: 40px;
@@ -569,25 +571,103 @@ a.btn_menu_aside{
     font-weight: 600;
     text-align: left;
 }
-.cuerpo_tabla_panel tr{
+.tabla_panel tbody tr{
     height: 40px;
     font-family: var(--font-montserrat);
     font-size: var(--body2-14);
-    font-weight: 400;
+    background-color: var(--color-gri-super-claro);
+    font-weight: 500!important;
+    color: var(--color-black);
+    transition: all 0.2s;
 }
-.cuerpo_tabla_panel tr:nth-child(even){
-    background-color: var(--color-gris-claro);
+.tabla_panel tbody tr:nth-child(even){
+    background-color: var(--color-white);
 }
-.cuerpo_tabla_panel tr td:nth-child(+n+2){
+.tabla_panel tbody tr td:nth-child(+n+2){
     text-align: center;
 }
-#tabla_panel_consultar tr th:not(:first-child){
+#tit_tabla{
     text-align: center;
+    background-color: var(--color-morado-vino);
+    color: var(--color-white);
+    
+}
+.tabla_panel tbody tr:hover{
+    background-color: var(--color-verde-claro-100);
 }
 
-#tabla_panel_consultar tr th:nth-child(7), #tabla_panel_consultar tr th:nth-child(8){
+    /* ERROR TABLA */
+#Error_filtro_vacio{
+    display: none;
     text-align: center;
-    min-width: 120px;
+    font-size: 1.5rem;
+    font-family: var(--font-montserrat);
+    padding: 12px 0px 20px 0px;
+}
+
+    /* BUSCADOR DE CURSOS */
+#buscadorINP{
+    background-color: #ffffff;
+    border: 1px solid var(--color-gris-azulado-obscuro);
+    color: #000000;
+    padding: 6px 24px;
+    border-radius: 25px;
+    font-family: var(--font-raleway);
+    background-image: url(../images/svg/Icon-material-buscador.svg);
+    background-repeat: no-repeat;
+    background-position: left 6px center;
+    background-size: 12px;
+    margin-right: 20px;
+}
+#buscadorINP:focus-visible {
+    outline: var(--color-azul-editar) auto 1px;    
+}
+.cont_sortable{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 12px 0px;
+}
+    /* FILTRO DE BUSQUEDA */
+.select_filter{
+    background-color: var(--color-back-aside);
+    border: none;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-family: var(--font-raleway);
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+    /* PAGINACION */
+#page{
+    background-color: var(--color-gris-claro);
+    font-family: var(--font-montserrat);
+    color: var(--color-gris-azulado-obscuro);
+    font-size: .8rem;
+    padding: 4px 10px 4px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+#btn_next, #btn_prev{
+    font-family: var(--font-raleway);
+    background-color: var(--color-morado-vino);
+    color: var(--color-gri-super-claro);
+    padding: 4px 28px;
+    font-size: .8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.cont_paginacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px 0px 0px 0px;
+}
+.cont_paginacion > *{
+    margin-right: 12px;
 }
 
 /* __PANEL CONSULTA CURSO*/
@@ -595,9 +675,11 @@ a.btn_menu_aside{
 .panel_central_unico{
     background-color: var(--color-white);
     width: 100%;
-    padding: 16px 20px;
+    padding: 16px 24px;
     border-radius: 8px;
     box-sizing: border-box;
+    height: 70vh;
+    overflow-y: scroll;
 }
 
 /* __PANEL ALTA CURSO__ */
@@ -663,15 +745,13 @@ input[type=submit]{
     background: transparent linear-gradient(180deg, #CEE59D 0%, #82A931 100%) 0% 0% no-repeat padding-box;
 }
 
-    /* PANEL CATEGORIA */
-#tabla_panel_categoria{
+    /* CATEGORIAS */
+#tabla_panel_categoria tr td:nth-child(2){
     width: 100%;
 }
-#tabla_panel_categoria th{
-    text-align: center;
-    font-weight: normal;
+#tabla_panel_categoria tr th{
+    cursor: pointer;
 }
-
     /* VALIDACION FORM */
     .formulario__grupo-input {
         position: relative;

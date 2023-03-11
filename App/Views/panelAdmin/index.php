@@ -56,7 +56,7 @@
                     <div class="cont_grupos_panel">
                         <div class="cont_tarjeta_grupo_panel">
                             <span class="txt_caption">Grupo : 4</span>
-                            <img src="https://ritchman.com/Public/assets/images/icon_grupo_tarjeta_panel_admin.png" alt="">
+                            <img src="<?php echo constant('URL') ?>Public/assets/images/icon_grupo_tarjeta_panel_admin.png" alt="">
                             <p class="txt_tarjeta">Ilustración Digital con Ipad Procreate</p>
                         </div>
                         <div class="cont_tarjeta_grupo_panel">
@@ -85,8 +85,11 @@
                                 
                                 include_once 'App/Models/curso.php';
                                 $cursos = [];
+                                $contador = 5;
                                 $cursos = $user->consultarCurso();
                                 foreach($cursos as $row){
+                                    // for($i = 0; $i <= $contador; $i ++){
+                                        
                                     $cursos = new Curso();
                                     $cursos = $row; 
                                 
@@ -110,5 +113,7 @@
 
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/tablaCorta.js?ver=1.1.12"></script>
+
 </body>
 </html>

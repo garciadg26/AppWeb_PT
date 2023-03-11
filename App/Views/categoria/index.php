@@ -44,13 +44,15 @@
                 <div class="panel_central_unico">
                     <div class="cont_titulo_cursos">
                         <h3 class="tit_3">CATEGORÍA</h3>
-                        <a class="btn_general btn_principal btn_icon_right" href="<?php echo constant('URL') . 'altaCategoria'?>">CREAR NUEVA CATEGORÍA<i class="btn_icon icon_flecha"></i></a>
+                        <a class="btn_general btn_principal btn_icon" href="<?php echo constant('URL') . 'altaCategoria'?>">CREAR NUEVA CATEGORÍA
+                            <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
+                        </a>
                     </div>
                     <a href="<?php //echo constant('URL') . 'altaCurso'?>"></a>
                 
                     <table id="tabla_panel_categoria" class="tabla_panel">
                         <thead class="titulo_tabla_panel">
-                            <tr>
+                            <tr id="tit_tabla">
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Actualizar</th>
@@ -69,10 +71,14 @@
                                     $categorias = $row; 
                             ?>
                             <tr>
-                                <th><?php echo $categorias->idCa; ?></th>
-                                <th><?php echo $categorias->nombreCa; ?></th>
-                                <th><a class="btn_general btn_editar btn_icon_right" href="<?php echo constant('URL') . 'categoria/verCategoria/'  . $categorias->idCa ?>">EDITAR<i class="btn_icon icon_editar"></i></a></th>
-                                <th><a class="btn_general btn_eliminar btn_icon_right" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'categoria/eliminarCategoria/'  . $categorias->idCa ?>">ELIMINAR<i class="btn_icon icon_eliminar"></i></a></th>
+                                <td><?php echo $categorias->idCa; ?></td>
+                                <td><?php echo $categorias->nombreCa; ?></td>
+                                <td><a class="btn_general btn_editar btn_icon" href="<?php echo constant('URL') . 'categoria/verCategoria/'  . $categorias->idCa ?>">EDITAR
+                                    <img src="Public/Assets/images/svg/icono_editar_botones.svg" alt="">
+                                </a></td>
+                                <td><a class="btn_general btn_eliminar btn_icon" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'categoria/eliminarCategoria/'  . $categorias->idCa ?>">ELIMINAR
+                                    <img src="Public/Assets/images/svg/icono_eliminar_botones.svg" alt="">
+                                </a></td>
                             </tr>
                             <?php
                                 } //Termina el ciclo Foreach  
@@ -87,5 +93,12 @@
 
     </div>
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
+    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/Assets/js/sortTable.js?ver=1.1.10"></script>
+    <script>
+    window.addEventListener("load", function(){      
+        
+        createTable("tabla_panel_categoria", null, "sortable");
+    });
+    </script>
 </body>
 </html>
