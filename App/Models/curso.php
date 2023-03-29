@@ -9,6 +9,7 @@
         public $categoriaC;
         public $tipoC;
         public $softwareC;
+        public $fotoC;
     }
     
     class Categorias{
@@ -24,6 +25,13 @@
     class Software{
         public $idSo;
         public $nombreSo;
+    }
+
+    class Fotos{
+        public $idFoC;
+        public $nombreFoC;
+        public $urlFoC;
+        public $fechaFoC;
     }
 
 ?>

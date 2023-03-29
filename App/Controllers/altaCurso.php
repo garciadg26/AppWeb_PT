@@ -61,33 +61,31 @@
                 $catCurso   = $_POST['catCursoINP'];
                 $tipoCurso  = $_POST['tipoCursoINP'];
                 $softCurso  = $_POST['softCursoINP'];
+                $idFotoCurso  = 1;
 
                 //VALIDACIONES DE CAMPOS
-                if($nomCurso == ""){
-                    array_push($validarCursos, "El campo Nombre no puede estar vacio.");
-                }
-                if($costoCurso == "" && $durCurso == ""){
-                    array_push($validarCursos, "El campo de Costo y Duración no pueden estar vacios.");
-                }
-                if(!is_numeric($costoCurso)){
-                    array_push($validarCursos, "El campo Costo sólo puede tener números.");
-                }
-                if(!is_numeric($durCurso)){
-                    array_push($validarCursos, "El campo Duración sólo puede tener números.");
-                }
-                if($catCurso == ""){
-                    array_push($validarCursos, "Selecciona una Categoría.");
-                }
-                if($tipoCurso == ""){
-                    array_push($validarCursos, "Selecciona un Tipo de curso.");
-                }
-                if($softCurso == ""){
-                    array_push($validarCursos, "Selecciona un Software.");
-                }
-                if(count($validarCursos) > 0){
-                    //SI EXISTE UN ELEMENTO ALMACENADO  == HAY ERRORES Y MUESTRA LA VISTA
-                    $this->view->validarCursos = $validarCursos;
-                }else{
+                // if($nomCurso == ""){
+                //     array_push($validarCursos, "El campo Nombre no puede estar vacio.");
+                // }
+                // if($costoCurso == "" && $durCurso == ""){
+                //     array_push($validarCursos, "El campo de Costo y Duración no pueden estar vacios.");
+                // }
+                // if(!is_numeric($costoCurso) && !is_numeric($durCurso)){
+                //     array_push($validarCursos, "El campo Costo y duración sólo puede tener números.");
+                // }
+                // if($catCurso == ""){
+                //     array_push($validarCursos, "Selecciona una Categoría.");
+                // }
+                // if($tipoCurso == ""){
+                //     array_push($validarCursos, "Selecciona un Tipo de curso.");
+                // }
+                // if($softCurso == ""){
+                //     array_push($validarCursos, "Selecciona un Software.");
+                // }
+                // if(count($validarCursos) > 0){
+                //     //SI EXISTE UN ELEMENTO ALMACENADO  == HAY ERRORES Y MUESTRA LA VISTA
+                //     $this->view->validarCursos = $validarCursos;
+                // }else{
                     ////////////// BLOQUE 2
                     ##INGRESO DEL REGISTRO VALIDADO
                     /*
@@ -99,7 +97,7 @@
                     $softCurso  = $_POST['softCursoINP'];
                     */
         
-                    if($this->model->insertarCurso(['nomCursoINP' => $nomCurso, 'cosCursoINP' => $costoCurso, 'durCursoINP' => $durCurso, 'catCursoINP' => $catCurso, 'tipoCursoINP' => $tipoCurso, 'softCursoINP' => $softCurso])){
+                    if($this->model->insertarCurso(['nomCursoINP' => $nomCurso, 'cosCursoINP' => $costoCurso, 'durCursoINP' => $durCurso, 'catCursoINP' => $catCurso, 'tipoCursoINP' => $tipoCurso, 'softCursoINP' => $softCurso], $idFotoCurso)){
                         $mensaje = "<div class='msnSuccesLogin'>Registro exitoso</div>";
                         //REDIRECCIÓN USANDO HTML
                         echo '<meta http-equiv="refresh" content="2;URL=\'../altaCurso\'">';
@@ -108,7 +106,7 @@
                         $mensaje = "El correo electrónico ya existe intenta con uno nuevo";
                         // $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar el curso.</div>";
                     }
-                }
+                // }
             // }
 
 

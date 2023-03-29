@@ -65,8 +65,8 @@ formulario.addEventListener('submit', e=>{
             method:'POST',
             body:datos,
         }
-        fetch('https://ritchman.com/categoria/actualizarCategoria', peticion)
-        // fetch('http://localhost/iam/altaCategoria/crearCategoria', peticion)
+        // fetch('https://ritchman.com/categoria/actualizarCategoria', peticion)
+        fetch('http://localhost/iam/altaCategoria/crearCategoria', peticion)
         .then(respuesta => respuesta.json())
         .then(respuesta =>{
     

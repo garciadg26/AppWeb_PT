@@ -22,7 +22,14 @@
 
                 <!-- FORMULARIO ACTUALIZAR CURSO -->
                 <div class="panel_central_left">
-                <a class="btn_general btn_regresar btn_icon_left" href="<?php echo constant('URL') ?>consulta"><i class="btn_icon icon_flecha"></i>REGRESAR</a>
+                    <div class="cont_descrip_alta">
+                        <a class="btn_general btn_regresar btn_icon_reverse" href="<?php echo constant('URL') ?>consulta">
+                            <img src="<?php echo constant('URL') ?>Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
+                            REGRESAR
+                        </a>
+                        <p class="txt_descripcion">Ingresa la información necesaria para actualizar el curso</p>
+                        <div class="vacio"></div>
+                    </div>
                     <div><?php //echo $this->mensaje; ?></div>
                     <!-- FORMULARIO PARA DAR DE ALTA -->
                     <!-- <form id="form_actualizar_curso" class="form_general" action="<?php //echo constant('URL'); ?>consulta/actualizarCurso" method="POST"> -->
@@ -135,8 +142,25 @@
                 <div class="panel_central_right">
                     <h4 class="tit_actualizar_curso"><?php echo $this->curso->nombreC; ?></h4>
                     <div class="cont_cover_curso">
-                        <img src="<?php echo constant('URL') ?>Public/Assets/images/cover_curso_individual.png" alt="">
+                        <?php 
+                            foreach($this->fotos as $row)
+                        {
+                            $fotos = new Curso();
+                            $fotos = $row;
+                        ?>
+                            <?php  if($this->curso->fotoC == $fotos->idFoC) {
+                            ?>
+                                <img class="img_foto_consulta_curso" src="<?php echo constant('URL');?><?php echo $fotos->urlFoC;?>" alt="">
+                                <p class="txt_caption"><b>Nombre:</b> <?php echo $fotos->nombreFoC; ?></p>
+                            <?php break; }
+                            ?>
+                        <?php
+                        }
+                        ?>
                     </div>
+                    <a class="btn_general btn_principal w-180 btn_icon m0-auto" href="<?php echo constant('URL') . 'consulta/verCover/'  . $this->curso->idC ?>">ACTUALIZAR PORTADA
+                        <img src="<?php echo constant('URL') ?>Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
+                    </a>                    
                 </div>
             </div>
         </div>

@@ -19,7 +19,12 @@
                 <!-- Panel central único -->
                 <div class="panel_central_unico">
                     <div class="cont_descrip_alta">
-                        <a class="btn_general btn_regresar btn_icon_left" href="<?php echo constant('URL') ?>categoria"><i class="btn_icon icon_flecha"></i>REGRESAR</a>
+                        <div class="cont_descrip_alta">
+                            <a class="btn_general btn_regresar btn_icon_reverse" href="<?php echo constant('URL') ?>categoria">
+                                <img src="<?php echo constant('URL') ?>Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
+                                REGRESAR
+                            </a>
+                        </div>
                         <p class="txt_descripcion">Ingresa la información necesaria para crear un nuevo curso.</p>
                         <div class="vacio"></div>
                     </div>

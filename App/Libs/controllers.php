@@ -21,8 +21,6 @@
                 $modelName = $model . 'Model';
                 $this->model = new $modelName();
             }
-
         }
     }
-
 ?>

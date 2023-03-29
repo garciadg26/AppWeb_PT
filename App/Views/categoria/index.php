@@ -55,6 +55,7 @@
                             <tr id="tit_tabla">
                                 <th>Id</th>
                                 <th>Nombre</th>
+                                <th>Fecha (Mes/Día/Año)</th>
                                 <th>Actualizar</th>
                                 <th>Borrar</th>
                             </tr>
@@ -68,11 +69,14 @@
                                 //$cursos = $user->consultarCurso();
                                 foreach($this->categorias as $row){
                                     $categorias = new Curso();
-                                    $categorias = $row; 
+                                    $categorias = $row;
+                                    $fechaC = $categorias->fechaCa;
+                                    $fechaN = date("F j, Y", strtotime($fechaC));
                             ?>
                             <tr>
                                 <td><?php echo $categorias->idCa; ?></td>
                                 <td><?php echo $categorias->nombreCa; ?></td>
+                                <td><?php echo $fechaN; ?></td>
                                 <td><a class="btn_general btn_editar btn_icon" href="<?php echo constant('URL') . 'categoria/verCategoria/'  . $categorias->idCa ?>">EDITAR
                                     <img src="Public/Assets/images/svg/icono_editar_botones.svg" alt="">
                                 </a></td>
@@ -85,6 +89,13 @@
                             ?>
                         </tbody>
                     </table>
+                    <p id="Error_filtro_vacio">Contenido vacio</p>
+                    <div class="cont_paginacion">
+                        <a href="javascript:prevPage()" id="btn_prev">Atras</a>
+                        <a href="javascript:nextPage()" id="btn_next">Siguiente</a>
+                        <p>páginas:</p>    
+                        <span id="page"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,11 +104,11 @@
 
     </div>
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/Assets/js/sortTable.js?ver=1.1.10"></script>
+    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/Assets/js/sortTable.js?ver=1.1.12"></script>
+    <script type="text/javascript" src="<?php echo constant('URL')?>Public/Assets/js/paginacionCategoria.js?ver1.1.11"></script>
     <script>
     window.addEventListener("load", function(){      
-        
-        createTable("tabla_panel_categoria", null, "sortable");
+        ordenarTabla("tabla_panel_categoria", null, "sortable");
     });
     </script>
 </body>

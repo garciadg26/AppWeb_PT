@@ -1,11 +1,13 @@
 <?php
 
     include_once 'App/Models/curso.php';
+    include_once 'App/Models/categoriaModel.php';
 
     class ConsultaModel extends Model{
         
         public function __construct(){
             parent::__construct();
+            $this->categoriaM = new CategoriaModel();
 
         }
 
@@ -22,7 +24,9 @@
                 INNER JOIN tipo_curso
                 ON curso.Tipo_idTipo = tipo_curso.idTipo
                 INNER JOIN software
-                ON curso.Software_idSoftware = software.idSoftware");
+                ON curso.Software_idSoftware = software.idSoftware
+                INNER JOIN foto_curso
+                ON curso.Foto_idFoto = foto_curso.idFoto_curso");
                 while($row = $query->fetch()){
                     $item = new Curso();
                     $item->idC = $row['idCurso'];
@@ -32,6 +36,7 @@
                     $item->categoriaC = $row['Nombre_cat'];
                     $item->tipoC = $row['Nombre_tipo'];
                     $item->softwareC = $row['Nombre_software'];
+                    $item->fotoURLC = $row['URL_foto_cur'];
 
                     array_push($items, $item);
                 }
@@ -72,25 +77,9 @@
             }
         }
 
+        //CATEGORÍA 
         public function consultarCategoria(){
-
-            $items = [];
-            try{
-                $query = $this->db->conectar()->query('SELECT * FROM categoria');
-                //Recorrer el arreglo para almacenar datos
-                while($row = $query->fetch()){
-                    //Objeto que encapsula las propiedades
-                    $item = new Curso();
-                    $item->idCa = $row['idCategoria'];
-                    $item->nombreCa = $row['Nombre_cat'];
-
-                    //Permite ingresar a un arreglo, un nuevo valor 
-                    array_push($items, $item);
-                }
-                return $items;
-            }catch(PDOException $e){
-                return [];
-            }
+            return $this->categoriaM->consultarCategoria();
         }
 
         public function consultarTipo(){
@@ -135,6 +124,28 @@
             }
         }
 
+        public function consultarFotoC(){
+            $items = [];
+            try{
+                $query = $this->db->conectar()->query('SELECT * FROM foto_curso');
+                // RECORRER EL ARREGLO PARA ALMACENAR LOS DATOS
+                while($row = $query->fetch()){
+                    // Objeto que encapsula las propiedades
+                    $item = new Curso();
+                    $item->idFoC = $row['idFoto_curso'];
+                    $item->nombreFoC = $row['Titulo_foto_cur'];
+                    $item->urlFoC = $row['URL_foto_cur'];
+                    $item->fechaFoC = $row['Fecha_subir_foto_cur'];
+
+                    //Permite ingresar a un arreglo, un nuevo valor
+                    array_push($items, $item);
+                }
+                return $items;
+            }catch(PDOException $e){
+                return [];
+            }
+        }
+
         public function getById($id){
             $item = new Curso();
 
@@ -150,6 +161,7 @@
                     $item->categoriaC = $row['Categoria_idCategoria'];
                     $item->tipoC = $row['Tipo_idTipo'];
                     $item->softwareC = $row['Software_idSoftware'];
+                    $item->fotoC = $row['Foto_idFoto'];
                 }
                 return $item;
             }catch(PDOException $e){
@@ -179,6 +191,52 @@
             }
         }
 
+        public function actualizarCoverC($item){
+            $query = $this->db->conectar()->prepare('UPDATE curso SET Foto_idFoto = ? WHERE idCurso = ?');
+            $query->bindParam(1,$item['fotoINP_curso']);
+            $query->bindParam(2,$item['id_verCover']);
+            try{
+                $query->execute();
+                return true;
+            }catch(PDOException $e){
+                return false;
+            }
+        }
+
+        public function consultaLastCover(){
+            $item = new Curso();
+            $query = $this->db->conectar()->prepare('SELECT * FROM foto_curso ORDER BY idFoto_curso DESC LIMIT 1');
+            try{
+                $query->execute();
+                //RECORRER EL ARREGLO PARA ALMACENAR LOS DATOS
+                while($row = $query->fetch()){
+                    // OBJETO QUE ENCAPSULA LAS PROPIEDADES
+                    $item->idFoC = $row['idFoto_curso'];
+                    $item->nombreFoC = $row['Titulo_foto_cur'];
+                    $item->urlFoC = $row['URL_foto_cur'];
+                    $item->fechaFoC = $row['Fecha_subir_foto_cur'];
+                    //PERMITE INGRESAR A UN ARREGLO, UN NUEVO VALOR
+                }
+                return $item;
+            }catch(PDOException $e){
+                echo "Error: " . $e->getMessage();
+                return null;
+            }
+        }
+
+        public function actualizarLastCover($idC, $idCover){
+            try{
+                $query = $this->db->conectar()->prepare('UPDATE curso SET Foto_idFoto = ? WHERE idCurso = ?');
+                $query->bindParam(1,$idCover);
+                $query->bindParam(2,$idC);
+                $query->execute();
+                return true;
+            }catch(PDOException $e){
+                echo "Error: " . $e->getMessage();
+                return false;
+            }
+        }
+
         //MODELO PARA ELIMINAR
         public function eliminar($idCurso){
             $query = $this->db->conectar()->prepare('DELETE FROM curso WHERE idCurso = ?');
@@ -190,6 +248,33 @@
                 return true;
 
             }catch(PDOException $e){
+                return false;
+            }
+        }
+
+        public function eliminarFoto($idFoC){
+            $query = $this->db->conectar()->prepare('DELETE FROM foto_curso WHERE idFoto_curso = ?');
+            $query->bindParam(1,$idFoC);
+            try{
+                $query->execute();
+                return true;
+            }catch(PDOException $e){
+                return false;
+            }
+        }
+
+        public function subirFotoCurso($datos, $archivo_subido, $dateF){
+            try{
+                $query = $this->db->conectar()->prepare('INSERT INTO foto_curso (Titulo_foto_cur, URL_foto_cur, Fecha_subir_foto_cur) values(?,?,?)');
+                // Mapeamos los datos con un bindParam() para hacer referencia a las variables
+                $query->bindParam(1, $datos['titNameINP']);
+                $query->bindParam(2, $archivo_subido);
+                $query->bindParam(3, $dateF);
+                $query->execute();
+                return true;
+
+            }catch(PDOException $e){
+                echo "Error: " . $e->getMessage();
                 return false;
             }
         }

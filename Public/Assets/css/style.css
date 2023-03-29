@@ -113,11 +113,19 @@ a.btn_menu_aside{
     color: var(--color-gris-medio);
     padding: 14px 0px 14px 38px;
     box-sizing: border-box;
+    display: block;
     font-family: var(--font-montserrat);
     font-size: var(--body2-14);
     font-weight: 600;
     cursor: default! important;
 }
+#submenu{
+    display: none;
+}
+#active_submenu{
+    display: block;
+}
+
 
     /* LISTA ACTIVO */
 /* .lista_aside_activo{
@@ -132,7 +140,7 @@ a.btn_menu_aside{
 .lista_aside_activo .icon_menu_aside{
     opacity: 1!important;
 } */
-#menu_aside a.active li{
+#menu_aside .active div:nth-child(1){
     font-family: var(--font-montserrat);
     font-size: var(--body2-14);
     font-weight: 600;
@@ -140,7 +148,7 @@ a.btn_menu_aside{
     color: #fff;
     box-sizing: border-box;
 }
-#menu_aside a.active li i{
+#menu_aside .active div i{
     opacity: 1;
 }
 
@@ -249,7 +257,6 @@ a.btn_menu_aside{
     transform: rotate(180deg);
 }
 
-
     /* BTN TIPOS*/
 .btn_principal{
     background-color: var(--color-verde-claro-600);
@@ -259,10 +266,21 @@ a.btn_menu_aside{
     height: 16px;
 }
 .btn_editar{
+    width: 66px;
     background-color: var(--color-azul-editar);
 }
 .btn_eliminar{
+    width: 82px;
     background-color: var(--color-rojo-eliminar);
+}
+.btn_eliminar_foto{
+    width: 28px;
+    position: absolute;
+    background-color: var(--color-rojo-eliminar);
+    z-index: 2;
+    right: 12px;
+    padding: 4px 0px;
+    top: 12px;
 }
 .btn_inhabil{
     cursor: default;
@@ -327,6 +345,14 @@ a.btn_menu_aside{
     width: 8.33%;
 }
 
+    /* __MARGENES */
+.m0-auto{
+    margin: 0 auto;
+}
+    /* __ANCHO */
+.w-180{
+    max-width: 180px;
+}
 
 /* __MENÚ PRINCIPAL */
 .cont_menu{
@@ -494,11 +520,12 @@ a.btn_menu_aside{
     padding: 20px 40px 0px 40px;
     justify-content: space-evenly;
 }
-.panel_central_left, .panel_central_right{
+.panel_central_left, .panel_central_right, .panel_central_left_30, .panel_central_right_70{
     background-color: var(--color-white);
     border-radius: 6px;
     padding: 20px 20px;
     box-sizing: border-box;
+    height: fit-content;
 }
 .panel_central_left{
     width: 60%;
@@ -509,6 +536,15 @@ a.btn_menu_aside{
 }
 .panel_central_right{
     width: 40%;
+}
+
+.panel_central_left_30{
+    width: 30%;
+    margin-right: 16px;
+}
+.panel_central_right_70{
+    width: 70%;
+    margin-right: 16px;
 }
 
     /* TARJETA GRUPO */
@@ -567,14 +603,14 @@ a.btn_menu_aside{
     padding: 16px 20px;
     height: 40px;
     font-family: var(--font-raleway);
-    font-size: var(--subtitulo1-18);
+    font-size: var(--subtitulo2-14);
     font-weight: 600;
     text-align: left;
 }
 .tabla_panel tbody tr{
     height: 40px;
     font-family: var(--font-montserrat);
-    font-size: var(--body2-14);
+    font-size: var(--body3-12);
     background-color: var(--color-gri-super-claro);
     font-weight: 500!important;
     color: var(--color-black);
@@ -695,6 +731,15 @@ a.btn_menu_aside{
     font-family: var(--font-raleway);
     font-size: var(--subtitulo1-18);
 }
+.txt_descripcion_p{
+    text-align: center;
+    font-family: var(--font-raleway);
+    font-size: var(--subtitulo1-18);
+}
+.panel_central_left_30 .txt_descripcion{
+    margin:12px 0px;
+}
+
 .vacio{
     width: 120px;
     height: 20px;
@@ -904,6 +949,17 @@ input[type=submit]{
 /* #form_actualizar_curso .row4_col1, #form_actualizar_curso .row4_col2{
     width: 50%;
 } */
+.btn_form_subir input[type=submit]{
+    background-color: var(--color-white);
+    border:1px solid var(--color-azul-editar);
+    color: var(--color-azul-editar);
+}
+    /* BTN FOR CREAR HOVER */
+.btn_form_subir input[type=submit]:hover{
+    cursor: pointer;
+    background-color: var(--color-gris-claro);
+}
+
 .btn_form_actualizar input[type=submit]{
     background-color: var(--color-azul-editar);
 }
@@ -912,6 +968,8 @@ input[type=submit]{
     cursor: pointer;
     background-color: var(--color-azul-editar-hover);
 }
+
+
 .tit_actualizar_curso{
     text-align: center;
     font-family: var(--font-raleway);
@@ -924,9 +982,64 @@ input[type=submit]{
 .cont_cover_curso{
     background-color: var(--color-gri-super-claro);
     text-align: center;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+    /* FOTO CURSO */
+.img_foto_consulta_curso{
+    width: 100%;
+    border-radius: 8px;
+}
+#form_img{
+    margin-top: 16px;
+}
+.cont_cover_curso .txt_caption{
     padding: 8px 0px;
+}
+.cont_form_galeria{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.group_form_img{
+    position: relative;
+    width: 33%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+.group_form_img img{
+    width: 100%;
+    position: relative;
+    top: 4px;
+}
+.card_img{
+    transition: all 0.3s;
+}
+.card_img:focus-within{
+    display: inline-block;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+    background-color: var(--color-gri-super-claro);
     border-radius: 4px;
 }
+.group_form_img input{
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    width: auto;
+}
+.group_form_img .txt_caption{
+    position: relative;
+    left: 24px;
+    width: calc(100% - 32px);
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+.group_form_img .btn_icon img{
+    width: 12px;
+    top: 0;
+}
+
 
 /* __ALUMNO HOMEPAGE*/
 #homePage .panel_inferior{
@@ -1078,6 +1191,10 @@ input[type=submit]{
     margin-top: 2px;
     font-family: var(--font-raleway);
     font-size: var(--body3-12);
+    animation-fill-mode: forwards;
+    animation-name: animaMsnSuccess;
+    animation-duration: 1s;
+    animation-delay: 2s;
 }
 
     /* COLOR DESTACADO */
@@ -1094,4 +1211,16 @@ input[type=submit]{
     .col_12, .col_11, .col_10, .col_9, .col_8, .col_7, .col_6, .col_5, .col_4, .col_3, .col_2, .col_1{
         width: 100%;
     } 
+}
+
+/* ANIMACIONES */
+@keyframes animaMsnSuccess {
+    from{
+        opacity: 1;
+        height: 18px;
+    }
+    to{
+        opacity: 0;
+        height: 0px;
+    }
 }

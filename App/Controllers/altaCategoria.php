@@ -1,5 +1,7 @@
 <?php
 
+    include_once 'App/Includes/fechaTiempo.php';
+    
 
     class AltaCategoria extends Controller{
 
@@ -50,6 +52,9 @@
                 echo('DATOS ENVIADOS CON EXITO: ' . $nomCategoria);
 
                 $nomCategoria   = $_POST['nomCategoriaINP'];
+                $DateF = new FechaTiempo();
+                $DateF = $DateF->mostrarFecha();
+                echo "Valor fecha: " . $DateF;
 
                 //VALIDACIONES DE CAMPOS
                 if($nomCategoria == ""){
@@ -70,7 +75,7 @@
                     $softCurso  = $_POST['softCursoINP'];
                     */
         
-                    if($this->model->insertarCategoria(['nomCategoriaINP' => $nomCategoria])){
+                    if($this->model->insertarCategoria(['nomCategoriaINP' => $nomCategoria], $DateF)){
                         $mensaje = "<div class='msnSuccesLogin'>Registro exitoso</div>";
                         //REDIRECCIÓN USANDO HTML
                         echo '<meta http-equiv="refresh" content="2;URL=\'../altaCategoria\'">';

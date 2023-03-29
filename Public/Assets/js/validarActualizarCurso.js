@@ -81,8 +81,8 @@ formulario.addEventListener('submit', e=>{
             method:'POST',
             body:datos,
         }
-        fetch('https://ritchman.com/consulta/actualizarCurso', peticion)
-        // fetch('http://localhost/iam/consulta/actualizarCurso', peticion)
+        // fetch('https://ritchman.com/consulta/actualizarCurso', peticion)
+        fetch('http://localhost/iam/consulta/actualizarCurso', peticion)
         .then(respuesta => respuesta.json())
         .then(respuesta =>{
     
@@ -106,10 +106,6 @@ formulario.addEventListener('submit', e=>{
         // return true;
         
     } else {
-        console.log("Formulario rechazado");
-        console.log("Nombre: " + nombreCursoAct);
-        console.log("Costo: " + costoCursoAct);
-        console.log("Duracion: " + duracionCursoAct);
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');

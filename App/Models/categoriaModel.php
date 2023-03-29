@@ -73,16 +73,16 @@
         }
 
         public function consultarCategoria(){
-
             $items = [];
             try{
-                $query = $this->db->conectar()->query('SELECT * FROM categoria');
+                $query = $this->db->conectar()->query('SELECT * FROM categoria ORDER BY Nombre_cat');
                 //Recorrer el arreglo para almacenar datos
                 while($row = $query->fetch()){
                     //Objeto que encapsula las propiedades
                     $item = new Curso();
                     $item->idCa = $row['idCategoria'];
                     $item->nombreCa = $row['Nombre_cat'];
+                    $item->fechaCa = $row['Fecha_cat'];
 
                     //Permite ingresar a un arreglo, un nuevo valor 
                     array_push($items, $item);
@@ -145,6 +145,7 @@
                 while($row = $query->fetch()){
                     $item->idCa = $row['idCategoria'];
                     $item->nombreCa = $row['Nombre_cat'];
+                    $item->fechaCa = $row['Fecha_cat'];
                 }
                 return $item;
             }catch(PDOException $e){

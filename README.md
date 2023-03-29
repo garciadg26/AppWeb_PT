@@ -1,4 +1,4 @@
-# Aplicación web IAM - V1.2.13
+# Aplicación web IAM - V1.2.14
 ## Proyecto Terminal 1
 Primera versión de la aplicación web
 ---
@@ -19,14 +19,15 @@ Primera versión de la aplicación web
 - [x] Corrección de errores (nombres).
 - [x] Funcionando correctamente.
 - [x] Pruebas de caja blanca.
-- [ ] Pruebas de caja negra.
-    - [ ] \(Prueba 1) Paginación de tablas
+- [x] Pruebas de caja negra.
+    - [x] \(Prueba 1) Paginación de tablas
+- [ ] Proyecto final.
 ---
 ### Pendientes
 1. \(Recomendaciones) Sinodales.
     - [x] Filtros
     - [ ] Funciones avanzadas
-    - [ ] Transacciones
+    - [x] Transacciones
     - [ ] Cálculos matemáticos
     - [ ] Estadísticas
     - [ ] Reportes

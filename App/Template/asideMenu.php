@@ -17,11 +17,19 @@
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_4"></i>Grupos</li>
         </a>
-        <a href="<?php echo constant('URL'); ?>consulta" class="btn_menu_aside">
-            <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_5"></i>Academía</li>
-        </a>
-        <a href="<?php echo constant('URL'); ?>categoria" class="btn_menu_aside">
-            <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_6"></i>Categoría</li>
+        <!-- <a href="<?php echo constant('URL'); ?>consulta" class="btn_menu_aside"> -->
+        <li class="btn_menu_aside lista_aside_hover">
+            <div class="lista_aside" id="menu-button">
+                <i class="icon_menu_aside icon_ms_5"></i>Academía
+            </div>
+            <div id="submenu">
+                <a href="<?php echo constant('URL'); ?>consulta" class="lista_aside"> Cursos</a>
+                <a href="<?php echo constant('URL'); ?>categoria" class="lista_aside"> Categoría</a>
+            </div>
+        </li>
+        <!-- </a> -->
+        <a href="#" class="btn_menu_aside">
+            <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_6"></i>Certificaciones</li>
         </a>
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_7"></i>Plantel</li>

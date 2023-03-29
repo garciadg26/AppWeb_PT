@@ -1,35 +1,19 @@
 <?php
 
 include_once 'App/Models/curso.php';
-//include_once 'App/models/categorias.php';
+include_once 'App/Models/categoriaModel.php';
 
     class AltaCursoModel extends Model{
         
         public function __construct(){
             parent::__construct();
-
+            //DECLARAMOS
+            $this->categoriaM = new CategoriaModel();
         }
 
-        
+        //CONSULTAR CATEGORÍA
         public function consultarCategoria(){
-
-            $items = [];
-            try{
-                $query = $this->db->conectar()->query('SELECT * FROM categoria');
-                //Recorrer el arreglo para almacenar datos
-                while($row = $query->fetch()){
-                    //Objeto que encapsula las propiedades
-                    $item = new Curso();
-                    $item->idCa = $row['idCategoria'];
-                    $item->nombreCa = $row['Nombre_cat'];
-
-                    //Permite ingresar a un arreglo, un nuevo valor 
-                    array_push($items, $item);
-                }
-                return $items;
-            }catch(PDOException $e){
-                return [];
-            }
+            return $this->categoriaM->consultarCategoria();
         }
 
 
@@ -75,15 +59,11 @@ include_once 'App/Models/curso.php';
             }
         }
 
-        public function insertarCurso($datos){
+        public function insertarCurso($datos, $idFotoCurso){
             //echo "Registro exitoso de usuario";
 
             try{
-                //$usuarioAlumno = 2;
-
-                //insertar datos en la base de datos
-                //$query = $this->db->conectar()->prepare('INSERT INTO usuarios (Nombre_usu, Apellidos_usu, Email_usu, Contrasenia_usu, Telefono_usu, Tipo_idTipo_usuario) values(:nombreA, :apellidosA, :emailA, :passA, :celularA, 2)');
-                $query = $this->db->conectar()->prepare('INSERT INTO curso (Nombre_cur, Costo_cur, Duracion_cur, Categoria_idCategoria, Tipo_idTipo, Software_idSoftware) values(?,?,?,?,?,?)');
+                $query = $this->db->conectar()->prepare('INSERT INTO curso (Nombre_cur, Costo_cur, Duracion_cur, Categoria_idCategoria, Tipo_idTipo, Software_idSoftware, Foto_idFoto) values(?,?,?,?,?,?,?)');
                 //Mapeamos los datos con un bindParam() para hacer referencia a las variables
                 $query->bindParam(1, $datos['nomCursoINP']);
                 $query->bindParam(2, $datos['cosCursoINP']);
@@ -91,6 +71,7 @@ include_once 'App/Models/curso.php';
                 $query->bindParam(4, $datos['catCursoINP']);
                 $query->bindParam(5, $datos['tipoCursoINP']);
                 $query->bindParam(6, $datos['softCursoINP']);
+                $query->bindParam(7, $idFotoCurso);
                 $query->execute();
                 //$query->execute(['nombreA' => $datos['nombreA'], 'apellidosA' => $datos['apellidosA'], 'emailA' => $datos['emailA'], 'passA' => $datos['passA'], 'celularA' => $datos['celularA'], 2 => $datos[$usuarioAlumno]]);
                 return true;

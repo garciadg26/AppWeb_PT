@@ -1,5 +1,7 @@
 <?php
 
+    include_once 'App/Includes/fechaTiempo.php';
+
     class Consulta extends Controller{
 
         public function __construct(){
@@ -39,13 +41,40 @@
             $categorias = $this->model->consultarCategoria();
             $tipos = $this->model->consultarTipo();
             $softwares = $this->model->consultarSoftware();
+            $fotos = $this->model->consultarFotoC();
 
             //RENDERIZAMOS LA INFORMACION
             $this->view->curso = $curso;
             $this->view->categorias = $categorias;
             $this->view->tipos = $tipos;
             $this->view->softwares = $softwares;
+            $this->view->fotos = $fotos;
             $this->view->render('consulta/detalle');
+        }
+
+        // VER GALERÍA DE FOTOS
+        public function verCover($param = null){
+            //ASIGNAMOS SOLO UN PARÁMETRO
+            $idCurso = $param[0];
+            //TRAEMOS UN OBJETO CON TODO LOS DATOS
+            $curso = $this->model->getById($idCurso);
+            //INICIAMOS SESIÓN PARA EVITAR QUE SE EDITE EL ID DEL CURSO
+            session_start();
+            $_SESSION['id_verCover'] = $curso->idC;
+
+            //TRAEMOS UN OBJETO CON TODOS LOS DATOS ENLAZADOS
+            $categorias = $this->model->consultarCategoria();
+            $tipos = $this->model->consultarTipo();
+            $softwares = $this->model->consultarSoftware();
+            $fotos = $this->model->consultarFotoC();
+            
+            //RENDERIZAMOS LA INFORMACIÓN
+            $this->view->curso = $curso;
+            $this->view->categorias = $categorias;
+            $this->view->tipos = $tipos;
+            $this->view->softwares = $softwares;
+            $this->view->fotos = $fotos;
+            $this->view->render('consulta/foto');
         }
 
         //Actualizar curso
@@ -103,15 +132,6 @@
             $this->view->render('consulta/detalle');
 
 
-
-
-
-
-
-
-
-
-
             ////////////// BLOQUE 2
             //Por seguridad se actualiza el id de la sesion
             /*
@@ -147,11 +167,36 @@
 
         }
 
+        //ACTUALIZAR FOTO
+        public function actualizarFotoC(){
+
+            session_start();
+
+            $idC = $_SESSION['id_verCover'];
+            $fotoC = $_POST['fotoINP_curso'];
+
+            if($this->model->actualizarCoverC(['id_verCover' => $idC, 'fotoINP_curso' => $fotoC])){
+                $curso = new Curso();
+                $fotos = $this->model->consultarFotoC();
+                $curso = $this->model->getById($idC); 
+                $this->view->fotos = $fotos;
+                $this->view->curso = $curso;
+
+
+                $mensaje = "<div class='msnSuccesLogin'>Foto actualizada exitosamente</div>";
+            }else{
+                //MENSAJE DE ERROR
+                $mensaje = "<div class='msnErrorLogin'>Error: No se pudo actualizar </div>";
+            }
+            //Mostrar la vista del mensaje
+            $this->view->mensaje = $mensaje;
+            $this->view->render('consulta/foto');
+        }
+
         //Eliminar curso
         public function eliminarCurso($param = null){
             //Asignamos solo un parametro
             $idCurso = $param[0];
-
             
             //CONDICIONAL PARA ACTUALIZAR
             if($this->model->eliminar($idCurso)){
@@ -164,7 +209,93 @@
             //Mostrar la vista del mensaje
             $this->view->mensaje = $mensaje;
             $this->render();
-        
+        }
+
+
+        public function eliminarCover($param = null){
+            //Asignamos solo un parametro
+            session_start();
+
+            $idC = $_SESSION['id_verCover'];
+            $idFoC = $param[0];
+
+            $curso = new Curso();
+            $fotos = $this->model->consultarFotoC();
+            $curso = $this->model->getById($idC); 
+
+            //CONDIIONAL PARA ACTUALIZAR
+            if($this->model->eliminarFoto($idFoC)){
+                //Mostrar la vista del mensaje
+                $mensaje = "<div class='msnSuccesLogin'>Foto <b>eliminada</b> exitosamente</div>";
+            }else{
+                $mensaje = "<div class='msnErrorLogin'>Error: No se puede eliminar la foto de un curso vigente.</div>";
+            }
+            //Mostrar la vista del mensaje
+            $this->view->fotos = $fotos;
+            $this->view->curso = $curso;
+            $this->view->mensaje = $mensaje;
+            header("Location: " . constant('URL') . "consulta/verCover/" . $idC);
+            //$this->view->render('consulta/foto');
+        }
+
+        public function subirImg(){
+
+            session_start();
+            
+            $idC = $_SESSION['id_verCover'];
+            $curso = $this->model->getById($idC);
+            $idfoto =  $curso->fotoC;
+            
+            // if(!empty($_FILES)){
+            //     echo "vacio";
+            // }else{
+            //     echo "lleno";
+            // }
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)){
+                $check = @getimagesize($_FILES['foto']['tmp_name']);
+
+                //COMPROBAMOS SI ES FORMATO JPG
+                if($check !== false){
+
+                    //RUTA DEL ARCHIVO
+                    $carpeta_destino = 'Public/upload/';
+
+                    $archivo_subido = $carpeta_destino . $_FILES['foto']['name'];
+                    $titImgCur = $_POST['titNameINP'];
+                    $dateF = new FechaTiempo();
+                    $dateF = $dateF->mostrarFecha();
+
+                    // CONDICONAL PARA SUBIR LA 
+                    if($this->model->subirFotoCurso(['titNameINP' => $titImgCur], $archivo_subido, $dateF)){
+                        // SUBIMOS LA IMAGEN A UNA CARPETA DENTRO DEL SERVIDOR
+                        move_uploaded_file($_FILES['foto']['tmp_name'], $archivo_subido);
+                        $mensaje = "<div class='msnSuccesLogin'>Registro exitoso</div>";
+                    } else{
+                        $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar la imagen.</div>";
+                    }
+
+                    $cover = $this->model->consultaLastCover();
+                    $idCover = $cover->idFoC;
+
+                    // ACTUALIZAMOS FOTO DEL CURSO
+                    if($this->model->actualizarLastCover($idC, $idCover)){
+                        //Mostrar la vista del mensaje
+                        $curso = new Curso();
+                        $fotos = $this->model->consultarFotoC();
+                        $curso = $this->model->getById($idC); 
+                        $this->view->fotos = $fotos;
+                        $this->view->curso = $curso;
+                    } else{
+                    }
+                }
+            } else{
+                $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar la imagen.</div>";
+            }
+
+
+            $this->view->mensaje = $mensaje;
+            $this->view->render('consulta/foto');
         }
     }
 ?>

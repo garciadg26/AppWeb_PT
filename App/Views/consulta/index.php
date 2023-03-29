@@ -128,10 +128,10 @@
                                 <td><?php echo $cursos->categoriaC; ?></td>
                                 <td><?php echo $cursos->tipoC; ?></td>
                                 <td><?php echo $cursos->softwareC; ?></td>
-                                <td><a class="btn_general btn_editar btn_icon" href="<?php echo constant('URL') . 'consulta/verCurso/'  . $cursos->idC ?>">EDITAR
+                                <td><a class="btn_general btn_editar btn_icon m0-auto" href="<?php echo constant('URL') . 'consulta/verCurso/'  . $cursos->idC ?>">EDITAR
                                     <img src="Public/Assets/images/svg/icono_editar_botones.svg" alt="">
                                 </a></td>
-                                <td><a class="btn_general btn_eliminar btn_icon" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'consulta/eliminarCurso/'  . $cursos->idC ?>">ELIMINAR
+                                <td><a class="btn_general btn_eliminar btn_icon m0-auto" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'consulta/eliminarCurso/'  . $cursos->idC ?>">ELIMINAR
                                     <img src="Public/Assets/images/svg/icono_eliminar_botones.svg" alt="">    
                                 </a></td>
                             </tr>
@@ -144,7 +144,7 @@
                     <div class="cont_paginacion">
                         <a href="javascript:prevPage()" id="btn_prev">Atras</a>
                         <a href="javascript:nextPage()" id="btn_next">Siguiente</a>
-                        <p>páginas:</p>    
+                        <p class="txt_caption">páginas:</p>    
                         <span id="page"></span>
                     </div>
                 </div>
