@@ -86,7 +86,7 @@
                                 include_once 'App/Models/curso.php';
                                 $cursos = [];
                                 $contador = 5;
-                                $cursos = $user->consultarCurso();
+                                $cursos = $user->getCurso();
                                 foreach($cursos as $row){
                                     // for($i = 0; $i <= $contador; $i ++){
                                         

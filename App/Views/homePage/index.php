@@ -9,6 +9,7 @@
 <body> -->
     
     <?php include_once __DIR__ . "/../../Includes/headHome.php"; ?>
+    <?php include_once 'App/Models/curso.php'; ?>
 
     <!-- Contenedor -->
     <div id="homePage" class="cont_flex">
@@ -58,25 +59,21 @@
                     <div class="cont_grup_card_cursos">
 
                         <?php
-                            //Importamos libreria de la clase curso  
-                            
-                            include_once 'App/Models/curso.php';
+
                             $cursos = [];
-                            $cursos = $user->consultarCurso();
+                            $cursos = $user->getCurso();
                             foreach($cursos as $row){
                                 $cursos = new Curso();
-                                $cursos = $row; 
-                            
+                                $cursos = $row;  
                         ?>
                         <div class="card_curso">
-                            <img src="<?php echo constant('URL') ?>Public/Assets/images/cover_curso_default.jpg" alt="">
+                            <img src="<?php echo constant('URL') . $cursos->fotoURLC; ?>" alt="">
                             <h4 class="tit_5"><?php echo $cursos->nombreC; ?></h4>
                             <p class="txt_caption">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
                             <div class="cont_datos_card">
                                 <p class="card_curso_precio">$<?php echo $cursos->costoC; ?></p>
                                 <p class="card_curso_duracion"><?php echo $cursos->duracionC; ?>hrs</p>
                             </div>
-                            <div class="cont_info_card"></div>
                         </div>
                         <?php
                             }//Termina el ciclo Foreach  

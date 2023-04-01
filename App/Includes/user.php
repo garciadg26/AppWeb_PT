@@ -2,6 +2,7 @@
 
 include_once 'App/Libs/db.php';
 include_once 'App/Models/curso.php';
+include_once 'App/Models/consultaModel.php';
 //include_once 'App/Includes/user_session.php';
 //$userSession = new UserSession();
 
@@ -77,34 +78,36 @@ class User extends BD{
     }
 
     //METODO ABSTRACTO - CLASE ABSTRACTA 
-    public function consultarCurso(){
+    public function getCurso(){
+        $this->consultarM = new ConsultaModel();
+        return $this->consultarM->get();
 
-        $items = [];
+        // $items = [];
 
-        try{
+        // try{
 
-            $query = $this->conectar()->query('SELECT * FROM curso');
-            //Recorrer el arreglo para almacenar datos
-            while($row = $query->fetch()){
-                //Objeto que encapsula las propiedades
-                $item = new Curso();
-                $item->idC = $row['idCurso'];
-                $item->nombreC = $row['Nombre_cur'];
-                $item->costoC = $row['Costo_cur'];
-                $item->duracionC = $row['Duracion_cur'];
-                $item->categoriaC = $row['Categoria_idCategoria'];
-                $item->tipoC = $row['Tipo_idTipo'];
-                $item->softwareC = $row['Software_idSoftware'];
+        //     $query = $this->conectar()->query('SELECT * FROM curso');
+        //     //Recorrer el arreglo para almacenar datos
+        //     while($row = $query->fetch()){
+        //         //Objeto que encapsula las propiedades
+        //         $item = new Curso();
+        //         $item->idC = $row['idCurso'];
+        //         $item->nombreC = $row['Nombre_cur'];
+        //         $item->costoC = $row['Costo_cur'];
+        //         $item->duracionC = $row['Duracion_cur'];
+        //         $item->categoriaC = $row['Categoria_idCategoria'];
+        //         $item->tipoC = $row['Tipo_idTipo'];
+        //         $item->softwareC = $row['Software_idSoftware'];
 
-                //Permite ingresar a un arreglo, un nuevo valor 
-                array_push($items, $item);
-            }
+        //         //Permite ingresar a un arreglo, un nuevo valor 
+        //         array_push($items, $item);
+        //     }
 
-            return $items;
+        //     return $items;
 
-        }catch(PDOException $e){
-            return [];
-        }
+        // }catch(PDOException $e){
+        //     return [];
+        // }
     }
 
 }

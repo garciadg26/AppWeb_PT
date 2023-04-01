@@ -22,7 +22,7 @@
             <div class="lista_aside" id="menu-button">
                 <i class="icon_menu_aside icon_ms_5"></i>Academía
             </div>
-            <div id="submenu">
+            <div id="submenu" class="submenu_gen">
                 <a href="<?php echo constant('URL'); ?>consulta" class="lista_aside"> Cursos</a>
                 <a href="<?php echo constant('URL'); ?>categoria" class="lista_aside"> Categoría</a>
             </div>

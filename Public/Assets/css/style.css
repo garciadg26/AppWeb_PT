@@ -87,6 +87,8 @@ h1, h2, h3, h4, h5, h6{
     width: 260px;
     height: 100vh;
     background-color: var(--color-back-aside);
+    position: sticky;
+    top: 0;
 }
 ul#menu_aside{
     width: 260px;
@@ -118,12 +120,19 @@ a.btn_menu_aside{
     font-size: var(--body2-14);
     font-weight: 600;
     cursor: default! important;
+    text-decoration: none;
+}
+.submenu_gen .lista_aside:hover{
+    color: var(--color-white);
 }
 #submenu{
     display: none;
 }
 #active_submenu{
     display: block;
+}
+.submenu_gen .active{
+    background-color: var(--color-black);
 }
 
 
@@ -791,9 +800,6 @@ input[type=submit]{
 }
 
     /* CATEGORIAS */
-#tabla_panel_categoria tr td:nth-child(2){
-    width: 100%;
-}
 #tabla_panel_categoria tr th{
     cursor: pointer;
 }
@@ -1042,9 +1048,6 @@ input[type=submit]{
 
 
 /* __ALUMNO HOMEPAGE*/
-#homePage .panel_inferior{
-    height: 600px;
-}
 #panel_superior{
     width: 100%;
 }
@@ -1110,6 +1113,11 @@ input[type=submit]{
     /* LISTA DE CURSOS */
 .cont_cursos_card{
     width: 100%;
+    background-color: var(--color-white);
+    border-radius: 6px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    height: fit-content;
 }
 .cont_grup_card_cursos{
     display: flex;
@@ -1118,25 +1126,42 @@ input[type=submit]{
     gap: 26px;
 }
 .card_curso{
+    position: relative;
     background-color: var(--color-white);
-    max-width: 240px;
+    max-width: calc(25% - 26px);
     border-radius: 8px;
-    padding: 0px 12px 0px 12px;
     box-sizing: border-box;
+    min-height: 320px;
+    border: 2px solid var(--color-gris-claro);
+}
+.card_curso::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 0px 0px 8px 8px;
+    background-color: var(--color-morado-vino);
 }
 .card_curso img{
     width: 100%;
+    border-radius: 8px 8px 0px 0px;
 }
 .card_curso .tit_5{
     margin-top: 12px;
     margin-bottom: 4px;
+    padding: 0px 12px;
+}
+.card_curso .txt_caption{
+    padding: 0px 12px;
 }
 .cont_datos_card{
     margin-top: 8px;
     margin-bottom: 8px;
     display: flex;
     flex-direction: row;
-    gap: 26px;
+    gap: 12px;
+    padding: 0 12px;
 }
 .cont_datos_card p{
     font-family: var(--font-montserrat);
@@ -1153,11 +1178,12 @@ input[type=submit]{
     background-color: #D49DE6;
 }
 .cont_info_card{
-    margin-left: -12px;
     margin-right: -12px;
-    height: 20px;
+    height: 10px;
+    width: 100%;
+    margin-left: 0px;
     border-radius: 0px 0px 8px 8px;
-    background-color: var(--color-gris-azulado-obscuro);
+    background-color: var(--color-morado-vino);
 }
 
 

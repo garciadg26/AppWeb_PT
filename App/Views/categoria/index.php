@@ -53,7 +53,6 @@
                     <table id="tabla_panel_categoria" class="tabla_panel">
                         <thead class="titulo_tabla_panel">
                             <tr id="tit_tabla">
-                                <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Fecha (Mes/Día/Año)</th>
                                 <th>Actualizar</th>
@@ -74,13 +73,12 @@
                                     $fechaN = date("F j, Y", strtotime($fechaC));
                             ?>
                             <tr>
-                                <td><?php echo $categorias->idCa; ?></td>
                                 <td><?php echo $categorias->nombreCa; ?></td>
                                 <td><?php echo $fechaN; ?></td>
-                                <td><a class="btn_general btn_editar btn_icon" href="<?php echo constant('URL') . 'categoria/verCategoria/'  . $categorias->idCa ?>">EDITAR
+                                <td><a class="btn_general btn_editar btn_icon m0-auto" href="<?php echo constant('URL') . 'categoria/verCategoria/'  . $categorias->idCa ?>">EDITAR
                                     <img src="Public/Assets/images/svg/icono_editar_botones.svg" alt="">
                                 </a></td>
-                                <td><a class="btn_general btn_eliminar btn_icon" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'categoria/eliminarCategoria/'  . $categorias->idCa ?>">ELIMINAR
+                                <td><a class="btn_general btn_eliminar btn_icon m0-auto" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'categoria/eliminarCategoria/'  . $categorias->idCa ?>">ELIMINAR
                                     <img src="Public/Assets/images/svg/icono_eliminar_botones.svg" alt="">
                                 </a></td>
                             </tr>
