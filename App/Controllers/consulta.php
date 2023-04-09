@@ -287,7 +287,10 @@
                         $this->view->fotos = $fotos;
                         $this->view->curso = $curso;
                     } else{
+                        $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar la imagen.</div>";
                     }
+                }else{
+                    $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar la imagen.</div>";
                 }
             } else{
                 $mensaje = "<div class='msnErrorLogin'>Error: No se pudo registrar la imagen.</div>";

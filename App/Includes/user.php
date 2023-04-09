@@ -9,6 +9,7 @@ include_once 'App/Models/consultaModel.php';
 
 class User extends BD{
     private $nombre;
+    private $apellido;
     private $username;
     
 
@@ -58,56 +59,96 @@ class User extends BD{
 
         }else{
             //No existe
-            echo "El usuario o ontrase;a no encontrado";
+            echo "El usuario o ontraseña no encontrado";
             include_once 'App/Views/login/index.php';
         }
     }
 
     public function setUser($user){
-        $query = $this->conectar()->prepare('SELECT * FROM usuarios WHERE Email_usu = :user');
+        $query = $this->conectar()->prepare('SELECT * 
+        FROM usuarios 
+        INNER JOIN tipo_usuario
+        ON usuarios.Tipo_idTipo_usuario = tipo_usuario.idTipo_usuario
+        WHERE Email_usu = :user');
         $query->execute(['user' => $user]);
 
         foreach($query as $currentUser){
+            $this->idUser = $currentUser['idUsuario'];
             $this->nombre = $currentUser['Nombre_usu'];
-            $this->username = $currentUser['Email_usu'];
+            $this->apellido = $currentUser['Apellidos_usu'];
+            $this->userName = $currentUser['Email_usu'];
+            $this->tipoUser = $currentUser['Nombre_tipo_usu'];
+            $this->userTelFijo = $currentUser['Telefono_fijo_usu'];
+            $this->userCiudad = $currentUser['Ciudad_usu'];
+            $this->userCURP = $currentUser['CURP_usu'];
+            $this->userTel = $currentUser['Telefono_usu'];
+            $this->userPais = $currentUser['Pais_usu'];
+            $this->userFechaN = $currentUser['Fecha_nacimiento_usu'];
+            $this->userDireccion = $currentUser['Direccion_usu'];
+            $this->userCodigoPostal = $currentUser['Codigo_postal_usu'];
         }
     }
 
+    public function idUser(){
+        return $this->idUser;
+    }
     public function getNombre(){
         return $this->nombre;
     }
+    public function getApellido(){
+        return $this->apellido;
+    }
+    public function getUserName(){
+        return $this->userName;
+    }
+    public function getTipoUser(){
+        return $this->tipoUser;
+    }
+    public function getTelFijo(){
+        return $this->userTelFijo;
+    }
+    public function getCiudad(){
+        return $this->userCiudad;
+    }
+    public function getCURP(){
+        return $this->userCURP;
+    }
+    public function getTel(){
+        return $this->userTel;
+    }
+    public function getPais(){
+        return $this->userPais;
+    }
+    public function getFechaNacimiento(){
+        return $this->userFechaN;
+    }
+    public function getDireccion(){
+        return $this->userDireccion;
+    }
+    public function getCodigoPostal(){
+        return $this->userCodigoPostal;
+    }
+    
 
     //METODO ABSTRACTO - CLASE ABSTRACTA 
     public function getCurso(){
         $this->consultarM = new ConsultaModel();
         return $this->consultarM->get();
+    }
 
-        // $items = [];
+    public function getCategorias(){
+        $this->consultarM = new ConsultaModel();
+        return $this->consultarM->consultarCategoria();
+    }
 
-        // try{
+    public function getTipo(){
+        $this->consultarM = new ConsultaModel();
+        return $this->consultarM->consultarTipo();
+    }
 
-        //     $query = $this->conectar()->query('SELECT * FROM curso');
-        //     //Recorrer el arreglo para almacenar datos
-        //     while($row = $query->fetch()){
-        //         //Objeto que encapsula las propiedades
-        //         $item = new Curso();
-        //         $item->idC = $row['idCurso'];
-        //         $item->nombreC = $row['Nombre_cur'];
-        //         $item->costoC = $row['Costo_cur'];
-        //         $item->duracionC = $row['Duracion_cur'];
-        //         $item->categoriaC = $row['Categoria_idCategoria'];
-        //         $item->tipoC = $row['Tipo_idTipo'];
-        //         $item->softwareC = $row['Software_idSoftware'];
-
-        //         //Permite ingresar a un arreglo, un nuevo valor 
-        //         array_push($items, $item);
-        //     }
-
-        //     return $items;
-
-        // }catch(PDOException $e){
-        //     return [];
-        // }
+    public function getSoftware(){
+        $this->consultarM = new ConsultaModel();
+        return $this->consultarM->consultarSoftware();
     }
 
 }

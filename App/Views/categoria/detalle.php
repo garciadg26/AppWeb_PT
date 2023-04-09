@@ -70,6 +70,6 @@
     </div>
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarActualizarCategoria.js?ver=1.0.11"></script>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validar/validarActualizarCategoria.js?ver=1.0.12"></script>
 </body>
 </html>

@@ -6,6 +6,15 @@
         <a href="<?php echo constant('URL'); ?>main" class="btn_menu_aside active">
             <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_1"></i>Panel de administración</li>
         </a>
+        <li class="btn_menu_aside lista_aside_hover">
+            <div class="lista_aside" id="menu-button">
+                <i class="icon_menu_aside icon_ms_5"></i>Academía
+            </div>
+            <div id="submenu" class="submenu_gen">
+                <a href="<?php echo constant('URL'); ?>consulta" class="lista_aside"> Cursos</a>
+                <a href="<?php echo constant('URL'); ?>categoria" class="lista_aside"> Categoría</a>
+            </div>
+        </li>
 
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_2"></i>Alumnos</li>
@@ -18,15 +27,6 @@
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_4"></i>Grupos</li>
         </a>
         <!-- <a href="<?php echo constant('URL'); ?>consulta" class="btn_menu_aside"> -->
-        <li class="btn_menu_aside lista_aside_hover">
-            <div class="lista_aside" id="menu-button">
-                <i class="icon_menu_aside icon_ms_5"></i>Academía
-            </div>
-            <div id="submenu" class="submenu_gen">
-                <a href="<?php echo constant('URL'); ?>consulta" class="lista_aside"> Cursos</a>
-                <a href="<?php echo constant('URL'); ?>categoria" class="lista_aside"> Categoría</a>
-            </div>
-        </li>
         <!-- </a> -->
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_6"></i>Certificaciones</li>

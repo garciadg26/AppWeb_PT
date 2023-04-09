@@ -74,6 +74,6 @@
     
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarAltaCategoria.js?ver=1.0.10"></script>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validar/validarAltaCategoria.js?ver=1.0.11"></script>
 </body>
 </html>

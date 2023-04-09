@@ -20,7 +20,7 @@
             <form action="" method="POST">
                 </br>
                 <label for="input_nombre"> Correo de usuario<br>
-                    <input type="text" id="input_nombre" name="username" placeholder="ejemplo@mail.com" >
+                    <input type="text" id="input_nombre" name="username" placeholder="Ingresa tu correo electrónico" >
                 </label>
                 <br>
                 <br>

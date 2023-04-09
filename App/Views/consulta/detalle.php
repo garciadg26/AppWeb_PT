@@ -41,7 +41,7 @@
                                 <div class="formulario__grupo" id="grupo__nombreCursoINP">
                                     <label for="nombreCursoINP" class="formulario__label">Nombre del curso</label>
                                     <div class="formulario__grupo-input">
-                                        <input type="text" name="nombreCursoINP" id="nombreCursoINP" value="<?php echo $this->curso->nombreC; ?>" required>
+                                        <input type="text" class="formulario__input" name="nombreCursoINP" id="nombreCursoINP" value="<?php echo $this->curso->nombreC; ?>" required>
                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                     </div>
                                     <p class="formulario__input-error">El nombre solo puede contener letras y números.</p>
@@ -54,7 +54,7 @@
                                 <div class="formulario__grupo" id="grupo__costoCursoINP">
                                     <label for="costoCursoINP" class="formulario__label">Costo del curso</label>
                                     <div class="formulario__grupo-input">
-                                        <input type="number" name="costoCursoINP" id="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" required>
+                                        <input type="number" class="formulario__input" name="costoCursoINP" id="costoCursoINP" value="<?php echo $this->curso->costoC; ?>" required>
                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                     </div>
                                     <p class="formulario__input-error">El costo solo puede tener números enteros.</p>
@@ -64,7 +64,7 @@
                                 <div class="formulario__grupo" id="grupo__duracionCursoINP">
                                     <label for="duracionCursoINP" class="formulario__label">Total de horas del curso</label>
                                     <div class="formulario__grupo-input">
-                                        <input type="text" name="duracionCursoINP" id="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" required>
+                                        <input type="text" class="formulario__input" name="duracionCursoINP" id="duracionCursoINP" value="<?php echo $this->curso->duracionC; ?>" required>
                                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                     </div>
                                     <p class="formulario__input-error">El total de horas del curso sólo pueder números.</p>
@@ -76,7 +76,7 @@
                             <div class="col_12"> <!-- R2 - COL 1 -->
                                 <!-- SECCION DE CATEGORIAS -->
                                 <label for="catCursoINP">Categoría</label><br>
-                                <select name="catCursoINP" id="catCursoINP">
+                                <select name="catCursoINP" class="formulario__input" id="catCursoINP">
                                     <option value="">Seleccionar una categoría</option>
                                         <?php          
                                             foreach($this->categorias as $row)
@@ -167,6 +167,6 @@
     </div>
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
-    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validarActualizarCurso.js?ver=1.0.21"></script>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/validar/validarActualizarCurso.js?ver=1.0.22"></script>
 </body>
 </html>

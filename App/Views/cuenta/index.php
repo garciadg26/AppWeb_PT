@@ -26,7 +26,7 @@
                         <div class="formulario__grupo" id="grupo__nombreA">
                             <label for="nombreA" class="formulario__label">Nombre</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="nombreA" id="nombreA" placeholder="John Doe" value="<?php echo $this->nombreA?>">
+                                <input type="text" class="formulario__input" name="nombreA" id="nombreA" placeholder="Ingresa tu Nombre" value="<?php echo $this->nombreA?>">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">El nombre solo puede contener letras.</p>
@@ -39,7 +39,7 @@
                         <div class="formulario__grupo" id="grupo__apellidosA">
                             <label for="apellidosA" class="formulario__label">Apellidos</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="apellidosA" id="apellidosA" placeholder="Estrada Molina" value="<?php echo $this->apellidosA?>">
+                                <input type="text" class="formulario__input" name="apellidosA" id="apellidosA" placeholder="Ingresa tus Apellidos" value="<?php echo $this->apellidosA?>">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">El apellido solo puede contener letras y espacios.</p>
@@ -52,7 +52,7 @@
                         <div class="formulario__grupo" id="grupo__emailA">
                             <label for="emailA" class="formulario__label">Correo Electrónico</label>
                             <div class="formulario__grupo-input">
-                                <input autocomplete="off" type="email" class="formulario__input" name="emailA" id="emailA" placeholder="ejemplo@correo.com" value="<?php echo $this->emailA?>">
+                                <input autocomplete="off" type="email" class="formulario__input" name="emailA" id="emailA" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $this->emailA?>">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
@@ -63,7 +63,7 @@
                         <div class="formulario__grupo" id="grupo__celularA">
                             <label for="celularA" class="formulario__label">Teléfono</label>
                             <div class="formulario__grupo-input">
-                                <input type="tel" class="formulario__input" name="celularA" id="celularA" placeholder="4491234567" value="<?php echo $this->celularA?>">
+                                <input type="tel" class="formulario__input" name="celularA" id="celularA" placeholder="Ingresa tu número de teléfono" value="<?php echo $this->celularA?>">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">Solo se permite colocar números de 10 dígitos.</p>
@@ -76,7 +76,7 @@
                         <div class="formulario__grupo" id="grupo__passA">
                             <label for="passA" class="formulario__label">Contraseña</label>
                             <div class="formulario__grupo-input">
-                                <input type="password" class="formulario__input" name="passA" id="passA">
+                                <input type="password" class="formulario__input" name="passA" id="passA" placeholder="Ingresa una contraseña segura">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">La contraseña debe tener al menos 8 caracteres, una letra en mayúscula, un número y un carácter especial.</p>
@@ -87,7 +87,7 @@
                         <div class="formulario__grupo" id="grupo__password2">
                             <label for="passAR" class="formulario__label">Repetir Contraseña</label>
                             <div class="formulario__grupo-input">
-                                <input type="password" class="formulario__input" name="passAR" id="passAR">
+                                <input type="password" class="formulario__input" name="passAR" id="passAR" placeholder="Escribe nuevamente tu contraseña">
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             </div>
                             <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
@@ -111,6 +111,6 @@
     <footer id="cont_foot_login">
         <p class="foote_legales">© IAM 2023. Todos los derechos reservados.</p>
     </footer>
-    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/Assets/js/validarCuenta.js?ver=1.1.21"></script>
+    <script type="text/javascript" src="<?php echo constant('URL'); ?>Public/Assets/js/validar/validarCuenta.js?ver=1.1.23"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
 
+
     class Home extends Controller{
         
         public function __construct(){
@@ -9,9 +10,11 @@
 
         public function render(){
 
+            
             // $cursos = [];
             // $cursos = $user->consultarCursoUser();
 
+            
             // $cursos = $this->model->getCurso();
             // $cursos = $this->user->consultarCursoUser();
             // $this->view->cursosk = $cursos;
