@@ -295,6 +295,9 @@ a.btn_menu_aside{
     width: 66px;
     background-color: var(--color-azul-editar);
 }
+.btn_download{
+    background-color: var(--color-mazul-morado);
+}
 .btn_foto{
     display: inline-block;
     position: absolute;
@@ -519,7 +522,9 @@ a.btn_menu_aside{
     color: var(--color-black);
     font-weight: 600;
 }
-
+.txt_pesos{
+    font-size: 0.6rem;
+}
 /* __PANELADMIN*/
 .cont_contadores_panel{
     display: inherit;
@@ -691,7 +696,7 @@ a.btn_menu_aside{
     width: 100%;
 }
 .tabla_panel thead tr{
-    background-color: var(--color-morado-vino)!important;
+    /* background-color: var(--color-morado-vino)!important; */
     color: var(--color-white);
     padding: 16px 20px;
     height: 40px;
@@ -718,9 +723,15 @@ a.btn_menu_aside{
 #tit_tabla{
     text-align: center;
     background-color: var(--color-morado-vino);
-    color: var(--color-white);
-    
+    color: var(--color-white);   
 }
+#tit_tabla_alumnos{
+    text-align: center;
+    background-color: var(--color-mazul-morado);
+    color: var(--color-white);   
+}
+
+
 .tabla_panel tbody tr:hover{
     background-color: var(--color-verde-claro-100);
 }
@@ -1536,6 +1547,10 @@ input[type=submit]{
     width: 12px;
     margin-right: 6px;
 }   
+.icon_exel{
+    width: 120px;
+    margin: 20px 0px 8px 0px;
+}
 
 
 

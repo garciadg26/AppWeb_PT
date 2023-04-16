@@ -36,4 +36,22 @@
         public $fechaFoC;
     }
 
+    class Alumno{
+        public $idAlu;
+        public $MatriculaAlu;
+        public $NombreAlu;
+        public $ApellidosAlu;
+        public $EmailAlu;
+        public $TelAlu;
+        public $TelFijoAlu;
+        public $CURPAlu;
+        public $DireccionAlu;
+        public $CPAlu;
+        public $CiudadAlu;
+        public $PaisAlu;
+        public $FechaNacAlu;
+        public $FechaCreadoAlu;
+        public $EdadAlu;
+    }
+
 ?>

@@ -82,7 +82,7 @@
                     </div>
                     <table id="tabla_panel_admin" class="tabla_panel">
                         <thead class="titulo_tabla_panel">
-                            <tr>
+                            <tr id="tit_tabla">
                                 <th>Nombre</th>
                                 <th>Costo</th>
                             </tr>
@@ -104,7 +104,7 @@
                             ?>
                             <tr>
                                 <td><?php echo $cursos->nombreC; ?></td>
-                                <td>$<?php echo $cursos->costoC; ?></td>
+                                <td><?php echo "$" . number_format($cursos->costoC,0) . " <span class='txt_pesos'>MXN</span>" ; ?></td>
                             </tr>
                             <?php
                                 }//Termina el ciclo Foreach  

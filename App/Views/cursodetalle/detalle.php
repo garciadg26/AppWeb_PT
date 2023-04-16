@@ -45,7 +45,7 @@
                                         <p class="txt_info_curso"><?php echo $this->curso->duracionC;?> hr</p>
                                     </div>
                                     <div class="card_precio_curso">
-                                        <p class="txt_precio_curso">$<?php echo $this->curso->costoC;?></p>
+                                        <p class="txt_precio_curso"><?php echo "$" . number_format($this->curso->costoC,0) . "<span class='txt_pesos'>MXN</span>" ;?></p>
                                     </div>
                                 </div>
                             </div>

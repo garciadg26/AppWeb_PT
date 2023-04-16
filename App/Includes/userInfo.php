@@ -6,11 +6,13 @@
             // BUSCAR
             $iamMain = "main";
             // CONTROLLADORES
+            $alumnos = "alumnos";
             $consulta = "consulta";
             $altaCurso = "altaCurso";
             $categoria = "categoria";
             $altaCategoria = "altaCategoria";
             $posIamMain = strpos($url, $iamMain);
+            $posAlumnos = strpos($url, $alumnos);
             $posConsulta = strpos($url, $consulta);
             $posaltaCurso = strpos($url, $altaCurso);
             $poscategoria = strpos($url, $categoria);

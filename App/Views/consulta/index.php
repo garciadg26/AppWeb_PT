@@ -126,7 +126,7 @@
                             ?>
                             <tr>
                                 <td><?php echo $cursos->nombreC; ?></td>
-                                <td>$<?php echo $cursos->costoC; ?></td>
+                                <td><?php echo "$" . number_format($cursos->costoC,0) . " <span class='txt_pesos'>MXN</span>" ; ?></td>
                                 <td><?php echo $cursos->duracionC; ?>hrs</td>
                                 <td><?php echo $cursos->categoriaC; ?></td>
                                 <td><?php echo $cursos->tipoC; ?></td>

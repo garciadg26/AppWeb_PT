@@ -38,19 +38,20 @@
     <?php } ?>
     <?php //ADMINISTRADOR
         if( $userTipo == 1){ ?>
-        <a href="#" class="btn_menu_aside">
-            <li class="lista_aside"><i class="icon_menu_aside icon_ms_2"></i>Alumnos</li>
+        <a href="<?php echo constant('URL') ?>alumnos" class="btn_menu_aside <?php if($posAlumnos !== false) echo "active"; ?>">
+            <li class="lista_aside lista_aside_hover">
+                <i class="icon_menu_aside icon_ms_2"></i>Alumnos</li>
         </a>
 
-        <a href="#" class="btn_menu_aside">
+        <!-- <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_3"></i>Instructores</li>
-        </a>
+        </a> -->
 
     <?php }?>
      
-        <a href="#" class="btn_menu_aside">
+        <!-- <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_4"></i>Grupos</li>
-        </a>
+        </a> -->
         
         <a href="#" class="btn_menu_aside">
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_7"></i>Plantel</li>
