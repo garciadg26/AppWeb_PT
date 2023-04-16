@@ -10,6 +10,8 @@
         public $tipoC;
         public $softwareC;
         public $fotoC;
+        public $totalC;
+        public $totalAlu;
     }
     
     class Categorias{

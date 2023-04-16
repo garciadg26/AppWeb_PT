@@ -39,7 +39,7 @@
                             $fotos = new Curso();
                             $fotos = $row;
                         ?>
-                            <?php  if($this->curso->fotoC == $fotos->idFoC) {
+                            <?php  if($this->curso->fotoC == $fotos->nombreFoC) {
                             ?>
                                 <img class="img_foto_consulta_curso" src="<?php echo constant('URL') . $fotos->urlFoC;?>" alt="">
                             <?php break; }
@@ -74,7 +74,7 @@
                 <div class="panel_central_right_70">
                     <p class="txt_descripcion_p">Seleccionar foto de la galería</p>
                     <form id="form_img" class="form_general" action="<?php echo constant('URL') ?>consulta/actualizarFotoC" method="post">
-                        <div class="cont_form_galeria">
+                        <div id="cont_card_cover" class="cont_form_galeria">
                             <?php foreach($this->fotos as $row)
                             {
                                 $fotos = new Curso();
@@ -94,6 +94,11 @@
                             } 
                             ?>
                         </div>
+                        
+                        <!-- Aquí se encuentran los botones de paginación -->
+                        <div id="botones"></div>
+                    
+
                         <div class="btn_form btn_form_subir">
                             <input type="submit" value="Actualizar foto">
                         </div>
@@ -104,5 +109,6 @@
     </div>
 
     <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
+    <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/paginacionImg.js?ver=1.1.10"></script>
 </body>
 </html>

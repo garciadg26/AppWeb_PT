@@ -31,19 +31,27 @@
 
                 <div class="cont_contadores_panel">
                     <div class="tarjeta_cont tarjeta_p_admin1">
-                        <span class="cont_numero_ps">16</span>
-                        <p class="cont_descriptivo_ps">Alumno</p>
+                        <span class="cont_numero_ps"><?php
+                        $alumnos = [];
+                        $alumnos = $user->getNumAlumnos();
+                        echo $alumnos->totalAlu;
+                        ?></span>
+                        <p class="cont_descriptivo_ps">Alumnos</p>
                     </div>
                     <div class="tarjeta_cont tarjeta_p_admin2">
                         <span class="cont_numero_ps">6</span>
-                        <p class="cont_descriptivo_ps">Instructores</p>
+                        <p class="cont_descriptivo_ps">Categorías</p>
                     </div>
                     <div class="tarjeta_cont tarjeta_p_admin3">
                         <span class="cont_numero_ps">8</span>
-                        <p class="cont_descriptivo_ps">Grupos</p>
+                        <p class="cont_descriptivo_ps">Equipos de cómputo</p>
                     </div>
                     <div class="tarjeta_cont tarjeta_p_admin4">
-                        <span class="cont_numero_ps">24</span>
+                        <span class="cont_numero_ps"><?php 
+                        $cursos = [];
+                        $cursos = $user->getNumCurso(); 
+                        echo $cursos->totalC;
+                        ?></span>
                         <p class="cont_descriptivo_ps">Cursos</p>
                     </div>
                 </div>

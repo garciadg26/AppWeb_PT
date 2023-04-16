@@ -7,7 +7,7 @@
     <div class="cont_flex" id="panel_usuario">
         <!-- Aside -->
         <aside id="cont_aside">
-            <?php include_once __DIR__ . "/../../Template/asideAlu.php"; ?>
+            <?php include_once __DIR__ . "/../../Template/asideMenu.php"; ?>
             <?php include_once __DIR__ . "/../../Template/asideFooter.php"; ?>
         </aside>
         <!-- Panel principal -->
@@ -42,6 +42,9 @@
                     <!-- PANEL DERECHO 70 -->
                     <div class="panel_central_right_70">
                         <div class="cont_titulo_cursos">
+                            <a class="btn_general btn_regresar btn_icon_reverse" href="<?php echo constant('URL') ?>main">
+                                <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
+                            REGRESAR</a>
                             <h3 class="tit_3">INFORMACIÓN</h3>
                             <a class="btn_general btn_editar btn_icon" href="<?php echo constant('URL') . 'usuario/verUser';?>">
                                 Editar

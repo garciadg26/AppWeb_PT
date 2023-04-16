@@ -3,6 +3,7 @@
 include_once 'App/Libs/db.php';
 include_once 'App/Models/curso.php';
 include_once 'App/Models/consultaModel.php';
+//include_once 'App/Models/usuarioModel.php';
 //include_once 'App/Includes/user_session.php';
 //$userSession = new UserSession();
 
@@ -150,6 +151,28 @@ class User extends BD{
         $this->consultarM = new ConsultaModel();
         return $this->consultarM->consultarSoftware();
     }
+
+    public function getNumCurso(){
+        $this->consultarM = new ConsultaModel();
+        return $this->consultarM->consultaNumberCurso();
+    }
+
+    public function getNumAlumnos(){
+        $item = new Curso();
+        try{
+            $query = $this->conectar()->query('SELECT COUNT(*) as totalAlu FROM usuarios WHERE Tipo_idTipo_usuario = 2');
+            $query->execute();
+            while($row = $query->fetch()){
+                $item->totalAlu = $row['totalAlu'];
+            }
+            return $item;
+        }catch(PDOException $e){
+            echo 'Error SQL: ' . $e;
+            return null;
+        }
+    }
+
+    
 
 }
 

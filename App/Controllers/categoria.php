@@ -10,6 +10,8 @@
         }
         
         public function render(){
+            session_start();
+            include_once 'App/Includes/validarUserAdmin.php';
             ##PRIMERA PARTE - CONSULTAR CATEGORIAS
             //Traemos un objeto con todos los datos
             $categorias = $this->model->consultarCategoria();
@@ -24,12 +26,12 @@
 
         //Ver detalle de la categoria
         public function verCategoria($param = null){
+            session_start();
             //Asignamos solo un parametro
             $idCategoria = $param[0];
             //Traemos un objeto con todos los datos
             $categoria = $this->model->getById($idCategoria); 
             //Iniciamos sesion para evitar que se edite el ID del curso
-            session_start();
             $_SESSION['id_verCategoria'] = $categoria->idCa;
 
 
@@ -50,7 +52,6 @@
         public function actualizarCategoria(){
             //$validarCurActual = array();#E
 
-            session_start();
 
             $respuesta = [];
             echo json_encode($respuesta);
@@ -100,7 +101,6 @@
             ////////////// BLOQUE 2
             //Por seguridad se actualiza el id de la sesion
             /*
-            session_start();
             //PROBAR CON GETTER Y SETTER
             $idC = $_SESSION['id_verCurso'];
             

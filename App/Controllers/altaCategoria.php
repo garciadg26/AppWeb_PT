@@ -7,20 +7,20 @@
 
         public function __construct(){
             parent::__construct();
-
             //Definimos la variable del arreglo
             $this->view->categorias    = [];
             $this->view->tipos         = [];
             $this->view->softwares     = [];
             $this->view->validarCursos = array();
-
+            
             $this->view->nomCurso = "";
             $this->view->costoCurso = "";
             $this->view->durCurso = "";
             $this->view->catCurso = "";
             $this->view->tipoCurso = "";
             $this->view->softCurso = "";
-
+            session_start();
+            include_once 'App/Includes/validarUserAdmin.php';
         }
 
         public function render(){

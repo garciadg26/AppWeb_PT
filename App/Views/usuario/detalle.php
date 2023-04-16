@@ -4,7 +4,7 @@
     <div class="cont_flex" id="panel_usuario">
         <!-- Aside -->
         <aside id="cont_aside">
-            <?php include_once __DIR__ . "/../../Template/asideAlu.php" ?>
+            <?php include_once __DIR__ . "/../../Template/asideMenu.php" ?>
             <?php include_once __DIR__ . "/../../Template/asideFooter.php" ?>
         </aside>
         <!-- Panel principal -->

@@ -18,10 +18,12 @@
             $this->view->catCurso = "";
             $this->view->tipoCurso = "";
             $this->view->softCurso = "";
-
+            session_start();
+            include_once 'App/Includes/validarUserAdmin.php';
         }
 
         public function render(){
+            
             ##PRIMERA PARTE - CONSULTAR CATEGORIAS
             //Traemos un objeto con todos los datos
             $categorias = $this->model->consultarCategoria();
@@ -61,7 +63,7 @@
                 $catCurso   = $_POST['catCursoINP'];
                 $tipoCurso  = $_POST['tipoCursoINP'];
                 $softCurso  = $_POST['softCursoINP'];
-                $idFotoCurso  = 1;
+                $idFotoCurso  = 2;
 
                 //VALIDACIONES DE CAMPOS
                 // if($nomCurso == ""){

@@ -10,7 +10,7 @@
               llamamos el metodo render
               que tiene el nombre de la carpteta y la vista
             */
-            $this->view->mensaje = "Error genérico";
+            $this->view->mensaje = "La ubicación que buscas no existe :(";
             $this->view->render('errorViews/index');
             //echo "<p>Error al cargar recurso</p>";
         }

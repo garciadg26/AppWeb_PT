@@ -84,7 +84,7 @@
                                                 $categorias = new Curso();
                                                 $categorias = $row;                 
                                         ?>
-                                    <option value="<?php echo $categorias->idCa; ?>" <?php if($this->curso->categoriaC == $categorias->idCa) echo "selected" ?>><?php echo $categorias->nombreCa; ?></option>
+                                    <option value="<?php echo $categorias->idCa; ?>" <?php if($this->curso->categoriaC == $categorias->nombreCa) echo "selected" ?>><?php echo $categorias->nombreCa; ?></option>
                                         <?php
                                             }
                                         ?> 
@@ -103,7 +103,7 @@
                                                 $tipos = new Curso();
                                                 $tipos = $row;  
                                         ?>
-                                    <option value="<?php echo $tipos->idTi; ?>" <?php if($this->curso->tipoC == $tipos->idTi) echo "selected" ?>><?php echo $tipos->nombreTi; ?></option>
+                                    <option value="<?php echo $tipos->idTi; ?>" <?php if($this->curso->tipoC == $tipos->nombreTi) echo "selected" ?>><?php echo $tipos->nombreTi; ?></option>
                                         <?php
                                             }
                                         ?>
@@ -120,7 +120,7 @@
                                                 $softwares = new Curso();
                                                 $softwares = $row;  
                                         ?>
-                                    <option value="<?php echo $softwares->idSo; ?>" <?php if($this->curso->softwareC == $softwares->idSo) echo "selected" ?>><?php echo $softwares->nombreSo; ?></option>
+                                    <option value="<?php echo $softwares->idSo; ?>" <?php if($this->curso->softwareC == $softwares->nombreSo) echo "selected" ?>><?php echo $softwares->nombreSo; ?></option>
                                         <?php
                                             }
                                         ?>
@@ -148,11 +148,11 @@
                             $fotos = new Curso();
                             $fotos = $row;
                         ?>
-                            <?php  if($this->curso->fotoC == $fotos->idFoC) {
+                            <?php  if($this->curso->fotoC == $fotos->nombreFoC) {
                             ?>
                                 <img class="img_foto_consulta_curso" src="<?php echo constant('URL');?><?php echo $fotos->urlFoC;?>" alt="">
                                 <p class="txt_caption"><b>Nombre:</b> <?php echo $fotos->nombreFoC; ?></p>
-                            <?php break; }
+                            <?php }
                             ?>
                         <?php
                         }

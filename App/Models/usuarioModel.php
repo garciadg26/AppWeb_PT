@@ -1,6 +1,6 @@
 <?php 
 
-    
+    include_once 'App/Models/curso.php';
 
     class UsuarioModel extends Model{
 
@@ -29,7 +29,6 @@
                 return false;
             }
         }
-
     }
 
 ?>

@@ -46,7 +46,7 @@ Primera versión de la aplicación web
     - [ ] Mejorar vista de error
     - [ ] Diseño de vista de error genérico
 7.  \(Observaciones) Captura de datos.
-    - [ ] Intervalos mínimos y máximos de datos
+    - [x] Intervalos mínimos y máximos de datos
 8. Desplegar registros por páginas.
     - [x] Paginación de tablas
 9. Implementar el borrado lógico.
@@ -61,13 +61,17 @@ Primera versión de la aplicación web
     - [ ] Diseño Smartphone
 ---
 ## Módulos completados
-### Historias de usuario = (10)
+### Historias de usuario = (14)
 1. \(3) Control de usuarios 
     - [x] Mostrar Formulario para iniciar sesión
     - [x] Autentificar usuarios con diferentes roles
     - [x] Mostrar mensaje de error
 2. \(1) Mi cuenta
     - [x] Crear una cuenta nueva
+    - [x] Mostrar datos del perfil de usuario
+    - [x] Actualizar datos del usuario
+    - [x] Mostrar cursos
+    - [x] Cerrar sesión
 3. Mis cursos
 4. Grupos
 5. Panel de administración

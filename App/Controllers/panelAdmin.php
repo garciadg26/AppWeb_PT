@@ -1,12 +1,20 @@
 <?php
 
+    include_once 'App/Models/usuarioModel.php';
+
     class PanelAdmin extends Controller{
         
         public function __construct(){
             parent::__construct();
+
         }
     
         public function render(){
+            $usuarioM =  new UsuarioModel();
+
+            $alumno = $this->usuarioM->consultaNumberAlumno();
+
+            $this->view->alumno = $alumno;
             $this->view->render('panelAdmin/index');
         }
 

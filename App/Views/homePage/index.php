@@ -157,8 +157,9 @@
                                 <h4 class="tit_5"><?php echo $cursos->nombreC; ?></h4>
                                 <p class="txt_caption">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
                                 <div class="cont_datos_card">
-                                    <p class="card_curso_precio">$<?php echo $cursos->costoC; ?></p>
-                                    <p class="card_curso_duracion"><?php echo $cursos->duracionC; ?>hrs</p>
+                                    <p class="card_curso_duracion">Duración: <?php echo $cursos->duracionC; ?>hrs</p>
+                                    <p class="card_curso_precio">Inversión: <b>$<?php echo $cursos->costoC; ?></b></p>
+                                    <a class="btn_general btn_principal" href="<?php echo constant('URL') ?>cursodetalle/verCursoDetalle/<?php echo $cursos->idC; ?>">Ver curso</a>
                                 </div>
                             </div>
                         </article>

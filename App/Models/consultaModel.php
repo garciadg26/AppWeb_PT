@@ -77,6 +77,21 @@
             }
         }
 
+        public function consultaNumberCurso(){
+            $item = new Curso();
+            try{
+                $query = $this->db->conectar()->query('SELECT COUNT(*) as total FROM curso');
+                $query->execute();
+                while($row = $query->fetch()){
+                    $item->totalC = $row['total'];
+                }
+                return $item;
+            }catch(PDOException $e){
+                echo "Error SQL: " .  $e;
+                return null;
+            }
+        }
+
         //CATEGORÍA 
         public function consultarCategoria(){
             return $this->categoriaM->consultarCategoria();
@@ -149,7 +164,17 @@
         public function getById($id){
             $item = new Curso();
 
-            $query = $this->db->conectar()->prepare('SELECT * FROM curso WHERE idCurso = :idcurso');
+            $query = $this->db->conectar()->prepare('SELECT * 
+            FROM curso 
+            INNER JOIN categoria
+            ON curso.Categoria_idCategoria = categoria.idCategoria
+            INNER JOIN tipo_curso
+            ON curso.Tipo_idTipo = tipo_curso.idTipo
+            INNER JOIN software
+            ON curso.Software_idSoftware = software.idSoftware
+            INNER JOIN foto_curso
+            ON curso.Foto_idFoto = foto_curso.idFoto_curso 
+            WHERE idCurso = :idcurso');
             try{
                 $query->execute(['idcurso' => $id]);
 
@@ -158,10 +183,11 @@
                     $item->nombreC = $row['Nombre_cur'];
                     $item->costoC = $row['Costo_cur'];
                     $item->duracionC = $row['Duracion_cur'];
-                    $item->categoriaC = $row['Categoria_idCategoria'];
-                    $item->tipoC = $row['Tipo_idTipo'];
-                    $item->softwareC = $row['Software_idSoftware'];
-                    $item->fotoC = $row['Foto_idFoto'];
+                    $item->categoriaC = $row['Nombre_cat'];
+                    $item->tipoC = $row['Nombre_tipo'];
+                    $item->softwareC = $row['Nombre_software'];
+                    $item->fotoC = $row['Titulo_foto_cur'];
+                    $item->fotoURLC = $row['URL_foto_cur'];
                 }
                 return $item;
             }catch(PDOException $e){

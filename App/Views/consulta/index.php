@@ -43,6 +43,9 @@
                 <!-- Panel central único -->
                 <div class="panel_central_unico">
                     <div class="cont_titulo_cursos">
+                        <a class="btn_general btn_regresar btn_icon_reverse" href="<?php echo constant('URL') ?>main">
+                            <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
+                        REGRESAR</a>
                         <h3 class="tit_3">CURSOS</h3>
                         <a class="btn_general btn_principal btn_icon" href="<?php echo constant('URL') . 'altaCurso'?>">CREAR NUEVO CURSOS
                             <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
