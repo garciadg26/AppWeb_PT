@@ -1151,6 +1151,7 @@ input[type=submit]{
     padding: 3px 8px 5px;
     margin: 0 4px;
     border-radius: 4px;
+    cursor: pointer;
 }
 .active_pagination{
     font-weight: bold;
@@ -1185,7 +1186,7 @@ input[type=submit]{
     margin: 16px auto 24px;
     width: 180px;
     height: 180px;
-    background-color: red;
+    background-color: var(--color-gris-azulado-obscuro);
     border-radius: 100px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1552,6 +1553,46 @@ input[type=submit]{
     margin: 20px 0px 8px 0px;
 }
 
+
+/* __AULA */
+.cont_card_aula{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.cont_card_aula .card_aula{
+    position: relative;
+    width: 31%;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.2);
+    transition: all .3s;
+}
+.card_aula:hover{
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.12);
+}
+.card_aula img{
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+.txt_card_aula{
+    padding: 8px 12px 12px 12px;
+}
+.nom_aula{
+    font-family: var(--font-raleway);
+    font-size: var(--body1-16);
+    font-weight: 800;
+    color: var(--color-verde-hover);
+    margin-bottom: 8px;
+}
+.card_aula .btn_editar{
+    margin-top: 8px;
+}
+.card_aula .img_perfil, .card_aula .btn_eliminar_foto img{
+    width: 14px;
+}
 
 
 /* __MENSAJES */

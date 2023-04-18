@@ -54,4 +54,17 @@
         public $EdadAlu;
     }
 
+    class Aula{
+        public $idAul;
+        public $nomAul;
+        public $maxAul;
+    }
+
+    class Equipo{
+        public $idEqu;
+        public $numSerieEqu;
+        public $nomEqu;
+        public $estatusEqu;
+    }
+
 ?>

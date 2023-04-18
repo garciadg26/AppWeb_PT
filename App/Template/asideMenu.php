@@ -53,11 +53,15 @@
             <li class="lista_aside"><i class="icon_menu_aside icon_ms_4"></i>Grupos</li>
         </a> -->
         
-        <a href="#" class="btn_menu_aside">
-            <li class="lista_aside"><i class="icon_menu_aside icon_ms_7"></i>Plantel</li>
+        <a href="<?php echo constant('URL') ?>plantel" class="btn_menu_aside <?php if($posPlantel !== false || $posAltaAula !== false) echo "active"; ?>">
+            <li class="lista_aside lista_aside_hover">
+                <i class="icon_menu_aside icon_ms_7"></i>Plantel
+            </li>
         </a>
-        <a href="#" class="btn_menu_aside">
-            <li class="lista_aside"><i class="icon_menu_aside icon_ms_8"></i>Equipos de cómputo</li>
+        <a href="<?php echo constant('URL') ?>computo" class="btn_menu_aside <?php if($posComputo !== false || $posAltaComputo !== false) echo "active"; ?>">
+            <li class="lista_aside lista_aside_hover">
+                <i class="icon_menu_aside icon_ms_8"></i>Equipos de cómputo
+            </li>
         </a>
         <hr>
         <a href="<?php echo constant('URL') ?>usuario" class="btn_menu_aside <?php if(strpos($url, $usuario) !== false) echo "active"; ?>">
