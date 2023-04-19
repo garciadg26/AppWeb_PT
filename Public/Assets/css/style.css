@@ -298,6 +298,9 @@ a.btn_menu_aside{
 .btn_download{
     background-color: var(--color-mazul-morado);
 }
+.btn_download_curso{
+    background-color: var(--color-morado-vino);
+}
 .btn_foto{
     display: inline-block;
     position: absolute;
@@ -1592,6 +1595,11 @@ input[type=submit]{
 }
 .card_aula .img_perfil, .card_aula .btn_eliminar_foto img{
     width: 14px;
+}
+
+/* __REPORTES */
+.cont_reportes_img img{
+    width: 120px;
 }
 
 

@@ -10,5 +10,6 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>Public/Assets/css/login.css?ver=2.3.12">
     <!-- ICONS -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>Public/Assets/css/ionicons.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>

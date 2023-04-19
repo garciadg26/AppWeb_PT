@@ -27,6 +27,7 @@
                 <label for="input_pass"> Contraseña <br>
                     <input type="password" id="input_pass" name="password" placeholder="Ingresa tu contraseña" >
                 </label>
+                <div class="g-recaptcha" data-sitekey="6Ld0PS4kAAAAANbjuXycEkIeV_32LuGnEV0XvkrQ"></div>
                 <!-- <p class="olvidar_pas"><a href="#">Olvidé mi constraseña</a></p> -->
                 <div class="btn_form btn_form_crear">
                     <input class type="submit" value="Iniciar">
@@ -40,6 +41,11 @@
         <p class="foote_legales">© IAM 2023. Todos los derechos reservados.</p>
         <div class="before_ilus_right"></div>
     </footer>
+    <script type="text/javascript">
+    var onloadCallback = function() {
+        alert("captcha listo");
+    };
+    </script>
     
     
                     

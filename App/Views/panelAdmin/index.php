@@ -39,11 +39,19 @@
                         <p class="cont_descriptivo_ps">Alumnos</p>
                     </div>
                     <div class="tarjeta_cont tarjeta_p_admin2">
-                        <span class="cont_numero_ps">6</span>
+                        <span class="cont_numero_ps"><?php 
+                        $categorias = [];
+                        $categorias = $user->getNumCategorias();
+                        echo $categorias->totalCat;
+                        ?></span>
                         <p class="cont_descriptivo_ps">Categorías</p>
                     </div>
                     <div class="tarjeta_cont tarjeta_p_admin3">
-                        <span class="cont_numero_ps">8</span>
+                        <span class="cont_numero_ps"><?php
+                        $equipos = [];
+                        $equipos = $user->getNumEquipos();
+                        echo $equipos->totalEqu;
+                        ?></span>
                         <p class="cont_descriptivo_ps">Equipos de cómputo</p>
                     </div>
                     <div class="tarjeta_cont tarjeta_p_admin4">

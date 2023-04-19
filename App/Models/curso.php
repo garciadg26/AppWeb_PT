@@ -17,6 +17,7 @@
     class Categorias{
         public $idCa;
         public $nombreCa;
+        public $totalCat;
     }
 
     class Tipo{
@@ -65,6 +66,7 @@
         public $numSerieEqu;
         public $nomEqu;
         public $estatusEqu;
+        public $totalEqu;
     }
 
 ?>

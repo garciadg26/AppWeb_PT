@@ -7,7 +7,6 @@
 
             $this->view->aula = [];
             session_start();
-            include_once 'App/Includes/validarUserAdmin.php';
         }
 
         public function render(){
@@ -20,6 +19,7 @@
         }
 
         public function verEquipo($param = null){
+            include_once 'App/Includes/validarUserAdmin.php';
             //Asignamos solo un parametro
             $idEquipo = $param[0];
             //Traemos un objeto con todos los datos
@@ -31,6 +31,7 @@
         }
 
         public function actualizarEquipo(){
+            include_once 'App/Includes/validarUserAdmin.php';
             $aula = new Equipo();
 
             $respuesta = [];
@@ -60,6 +61,7 @@
         }
 
         public function eliminarEquipo($param = null){
+            include_once 'App/Includes/validarUserAdmin.php';
             $idEquipo = $param[0];
             //CONDICIONAL PARA ELIMINAR
             if($this->model->eliminar($idEquipo)){

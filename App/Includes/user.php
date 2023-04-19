@@ -172,6 +172,36 @@ class User extends BD{
         }
     }
 
+    public function getNumEquipos(){
+        $item = new Equipo();
+        try{
+            $query = $this->conectar()->query('SELECT COUNT(*) as totalEqu FROM equipo');
+            $query->execute();
+            while($row = $query->fetch()){
+                $item->totalEqu = $row['totalEqu'];
+            }
+            return $item;
+        }catch(PDOException $e){
+            echo 'Error SQL: ' . $e;
+            return null;
+        }
+    }
+
+    public function getNumCategorias(){
+        $item = new Categorias();
+        try{
+            $query = $this->conectar()->query('SELECT COUNT(*) as totalCat FROM categoria');
+            $query->execute();
+            while($row = $query->fetch()){
+                $item->totalCat = $row['totalCat'];
+            }
+            return $item;
+        }catch(PDOException $e){
+            echo 'Error SQL: ' . $e;
+            return null;
+        }
+    }
+
     
 
 }

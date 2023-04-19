@@ -42,9 +42,19 @@
                                 <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
                             REGRESAR</a>
                             <p class="subtit_1">Listado de aulas</p>
+                            <?php
+                                if($_SESSION['rol'] == 1)
+                                {
+                            ?>
                             <a class="btn_general btn_principal btn_icon" href="<?php echo constant('URL') . 'altaAula'?>">CREAR NUEVA AULA
                                 <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
                             </a>
+                            <?php } else {
+                                ?>
+                            <div class="vacio"></div>
+                                <?php 
+
+                            } ?>
                         </div>
                         <!-- CARD -->
                         <div id="cont_card_cover" class="cont_card_aula">
@@ -55,19 +65,27 @@
                             ?>
                             <div class="card_aula">
                                 <img src="<?php echo constant('URL') ?>Public/Assets/images/aula-portada.jpg" alt="">
+                                <?php 
+                                    if($_SESSION['rol'] == 1){
+                                ?>
                                 <a class="btn_general btn_eliminar_foto btn_icon m0-auto" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'plantel/eliminarAula/'  . $aulas->idAul; ?>">
                                     <img src="<?php echo constant('URL')?>Public/Assets/images/svg/icono_eliminar_botones.svg" alt="">    
                                 </a>
-                                
+                                <?php } ?>
 
                                 <div class="txt_card_aula">
                                     <h5 class="nom_aula"><?php echo $aulas->nomAul; ?></h5>
                                     <p class="txt_caption"><b>Plantel:</b> Toluca</p>
                                     <p class="txt_caption"><b>Cap. máxima:</b> <?php echo $aulas->maxAul ?> Alumnos</p>
+                                    <?php 
+                                        if($_SESSION['rol'] == 1)
+                                        {
+                                    ?>
                                     <a class="btn_general btn_editar btn_icon" href="<?php echo constant('URL') . 'plantel/verAula/' . $aulas->idAul;?>">
                                         Editar
                                         <img class="img_perfil" src="<?php echo constant('URL'); ?>Public/Assets/images/svg/icono_editar_botones.svg" alt="">
                                     </a>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <?php

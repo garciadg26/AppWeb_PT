@@ -28,13 +28,7 @@
                 <a href="<?php echo constant('URL'); ?>consulta" class="lista_aside lista_aside_hover <?php if($posConsulta !== false || $posaltaCurso !== false) echo "active_submenu" ?>"> Cursos</a>
                 <a href="<?php echo constant('URL'); ?>categoria" class="lista_aside lista_aside_hover <?php if($poscategoria !== false || $posaltaCategoria !== false) echo "active_submenu" ?>"> Categoría</a>
             </div>
-        </li>
-    <?php } else if($userTipo == 2){ ?>
-        <a href="#" class="btn_menu_aside">
-            <li class="lista_aside">
-                <i class="icon_menu_aside icon_ms_5"></i>Mis Cursos
-            </li>
-        </a>    
+        </li>    
     <?php } ?>
     <?php //ADMINISTRADOR
         if( $userTipo == 1){ ?>
@@ -64,14 +58,19 @@
             </li>
         </a>
         <hr>
-        <a href="<?php echo constant('URL') ?>usuario" class="btn_menu_aside <?php if(strpos($url, $usuario) !== false) echo "active"; ?>">
+        <a href="<?php echo constant('URL') ?>usuario" class="btn_menu_aside <?php if($posUsuario !== false) echo "active"; ?>">
             <li class="lista_aside lista_aside_hover">
                 <i class="icon_menu_aside icon_ms_11"></i>Mi cuenta
             </li>
         </a>
-        <a href="#" class="btn_menu_aside">
-            <li class="lista_aside"><i class="icon_menu_aside icon_ms_9"></i>Reportes</li>
+    <?php //ADMINISTRADOR
+        if( $userTipo == 1){ ?>
+        <a href="<?php echo constant('URL') ?>reportes" class="btn_menu_aside <?php if($posReportes !== false) echo "active"; ?>">
+            <li class="lista_aside lista_aside_hover">
+                <i class="icon_menu_aside icon_ms_9"></i>Reportes
+            </li>
         </a>
+    <?php }?>
         <a href="<?php echo constant('URL'); ?>App/Includes/logout.php" class="btn_menu_aside">
             <li class="lista_aside lista_aside_hover"><i class="icon_menu_aside icon_ms_10"></i>Cerrar sesión</li>
         </a>

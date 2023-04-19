@@ -26,9 +26,16 @@
                                 <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
                             REGRESAR</a>
                             <p class="subtit_1">Listado de equipos</p>
+                            <?php 
+                                if($_SESSION['rol'] == 1){
+                            ?>
                             <a class="btn_general btn_principal btn_icon" href="<?php echo constant('URL') . 'altaComputo'?>">NUEVO EQUIPO
                                 <img src="Public/Assets/images/svg/Icon-arrow-next.svg" alt="">
                             </a>
+                            <?php } else {
+                                ?>
+                            <div class="vacio"></div>
+                                <?php } ?>
                         </div>
                         <!-- CARD -->
                         <div id="cont_card_cover" class="cont_card_aula">
@@ -39,18 +46,26 @@
                             ?>
                             <div class="card_aula">
                                 <img src="<?php echo constant('URL') ?>Public/Assets/images/cover_equipos_de_computo.jpg" alt="">
+                                <?php 
+                                    if($_SESSION['rol'] == 1){
+                                ?>
                                 <a class="btn_general btn_eliminar_foto btn_icon m0-auto" onclick="return confirmEliminar()" href="<?php echo constant('URL') . 'computo/eliminarEquipo/'  . $equipos->idEqu; ?>">
                                     <img src="<?php echo constant('URL')?>Public/Assets/images/svg/icono_eliminar_botones.svg" alt="">    
                                 </a>
+                                <?php } ?>
 
                                 <div class="txt_card_aula">
                                     <h5 class="nom_aula"><?php echo $equipos->nomEqu; ?></h5>
                                     <p class="txt_caption"><b>N. serie:</b> <?php echo $equipos->numSerieEqu; ?></p>
                                     <p class="txt_caption"><b>Disponible:</b> <?php echo $equipos->estatusEqu; ?></p>
+                                    <?php 
+                                        if($_SESSION['rol'] == 1){
+                                    ?>
                                     <a class="btn_general btn_editar btn_icon" href="<?php echo constant('URL') . 'computo/verEquipo/' . $equipos->idEqu;?>">
                                         Editar
                                         <img class="img_perfil" src="<?php echo constant('URL'); ?>Public/Assets/images/svg/icono_editar_botones.svg" alt="">
                                     </a>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <?php

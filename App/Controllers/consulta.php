@@ -298,5 +298,12 @@
             $this->view->mensaje = $mensaje;
             $this->view->render('consulta/foto');
         }
+
+        public function descargar(){
+            $cursos = $this->model->get();
+            
+            $this->view->cursos = $cursos;
+            $this->view->render('consulta/descargar');
+        }
     }
 ?>

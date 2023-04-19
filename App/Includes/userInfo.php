@@ -7,9 +7,11 @@
             $iamMain = "main";
             // CONTROLLADORES
             $alumnos = "alumnos";
+            $usuario = "usuario";
             $consulta = "consulta";
             $plantel = "plantel";
             $computo = "computo";
+            $reportes = "reportes";
             $altaAula = "altaAula";
             $altaComputo = "altaComputo";
             $altaCurso = "altaCurso";
@@ -17,9 +19,11 @@
             $altaCategoria = "altaCategoria";
             $posIamMain = strpos($url, $iamMain);
             $posAlumnos = strpos($url, $alumnos);
+            $posUsuario = strpos($url, $usuario);
             $posConsulta = strpos($url, $consulta);
             $posPlantel = strpos($url, $plantel);
             $posComputo = strpos($url, $computo);
+            $posReportes = strpos($url, $reportes);
             $posAltaAula = strpos($url, $altaAula);
             $posAltaComputo = strpos($url, $altaComputo);
             $posaltaCurso = strpos($url, $altaCurso);
