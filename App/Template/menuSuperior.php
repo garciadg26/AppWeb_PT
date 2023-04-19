@@ -1,4 +1,8 @@
  <header class="cont_menu">
+     <div class="cont_menu_movil">
+         <div id="menu_movil">
+         </div>
+     </div>
     <div class="acceso_usuario">
         <div class="info_user_top">
             <p><?php

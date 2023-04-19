@@ -27,7 +27,9 @@
                 <label for="input_pass"> Contraseña <br>
                     <input type="password" id="input_pass" name="password" placeholder="Ingresa tu contraseña" >
                 </label>
-                <div class="g-recaptcha" data-sitekey="6Ld0PS4kAAAAANbjuXycEkIeV_32LuGnEV0XvkrQ"></div>
+                <div class="" style="margin:20px 0px;">
+                    <div class="g-recaptcha" data-sitekey="6Ld0PS4kAAAAANbjuXycEkIeV_32LuGnEV0XvkrQ"></div>
+                </div>
                 <!-- <p class="olvidar_pas"><a href="#">Olvidé mi constraseña</a></p> -->
                 <div class="btn_form btn_form_crear">
                     <input class type="submit" value="Iniciar">
@@ -42,9 +44,24 @@
         <div class="before_ilus_right"></div>
     </footer>
     <script type="text/javascript">
-    var onloadCallback = function() {
-        alert("captcha listo");
-    };
+        let formulario = document.getElementById('formulario');
+
+        formulario.addEventListener('submit', e=>{
+            e.preventDefault();
+
+            //VALIDAMOS SI SE PRECIONO EL CAPTCHA
+            var response = grecaptcha.getResponse();
+
+            if(response.length == 0){
+
+            //NO VERIFICADO
+                
+                alert('Captcha no verificado');        
+                
+            }
+
+        });
+        
     </script>
     
     

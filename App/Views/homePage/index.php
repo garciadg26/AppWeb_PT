@@ -34,7 +34,7 @@
                     </div> 
                     <!-- TARJETA ENCABEZADO -->
                     <div class="cont_encabezado_grupo">
-                        <div class="tarjeta_encabezado">
+                        <!-- <div class="tarjeta_encabezado">
                             <div class="cont_img_tarjeta">
                                 <img src="<?php echo constant('URL') ?>Public/Assets/images/cover_tarjeta_grupo_pytho_alumno.jpg" alt="">
                             </div>
@@ -46,7 +46,7 @@
                                 <h4 class="tit_5">PROGRAMACIÓN CON PYTON</h4>
                                 <a class="btn_general btn_inhabil btn_icon_right" href="#">CONTINUAR<i class="btn_icon icon_flecha"></i></a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>                   
                 </section>
             </div>
@@ -178,7 +178,7 @@
     </div>
 
 
-        <?php //include_once __DIR__ . "/../../Includes/footer.php"; ?>
+        <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
         <script type="text/javascript" src="<?php echo constant('URL') . "Public/Assets/js/buscadorT.js?ver=1.1.20"; ?>"></script>
 
 </body>

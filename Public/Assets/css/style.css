@@ -1658,8 +1658,112 @@ input[type=submit]{
 .col_destacado{
     color: blueviolet;
 }
+.cont_menu_movil{
+    display: none;
+}
+#menu_movil{
+    display: none;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 16px;
+    width: 60px;
+    height: 60px;
+    background-image: url('../images/svg/icon-menu.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 
 /* __RESPONSIVE__ */
+@media screen and (max-width:768px) {
+    .cont_menu_movil{
+        display: block;
+    }
+    #menu_movil{
+        display: block;
+    }
+    #cont_aside{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 99;
+    }
+    .cont_contadores_panel{
+        flex-wrap: wrap;
+    }
+    .tarjeta_cont{
+        width: 45%;
+        margin: 8px 0px;
+    }
+    .panel_central_left{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .panel_inferior{
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+    .panel_central_right{
+        width: 100%;
+    }
+    #panel_central{
+        padding: 0 16px;
+    }
+    .panel_central_unico{
+        overflow: scroll;
+    }
+    .cont_titulo_cursos{
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+    }
+    .cont_sortable{
+        flex-direction: column;
+        gap: 12px;
+    }
+    .select_filter{
+        margin-bottom: 12px;
+    }
+    #submenu{
+        display: block;
+    }
+    .cont_descrip_alta{
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .panel_central_left_30{
+        width: 100%;
+    }
+    #panel_plantel .cont_titulo_cursos{
+        flex-direction: column;
+        gap: 12px;
+    }
+    .panel_central_right_70{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .cont_card_aula .card_aula{
+        width: 100%;
+    }
+    .cont_central_encabezado{
+        padding: 20px 16px;
+    }
+    .card_curso{
+        max-width: 100%;
+    }
+    #panel_usuario .panel_central_unico {
+        margin-top: 0px;
+    }
+    .subMenu_superior{
+        margin-left: 60px;
+    }
+    #panel_usuario .form_general_row{
+        gap: 0;
+    }
+}
+
+
 
 @media screen and (max-width:568px) {
     .form_general_row{

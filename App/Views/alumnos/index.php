@@ -97,6 +97,6 @@
             </div>
         </div>
     </div>
-
+    <?php include_once __DIR__ . "/../../Includes/footer.php"; ?>
     <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/buscadorT.js?ver=1.1.12"></script>
     <script type="text/javascript" src="<?php echo constant('URL') ?>Public/Assets/js/paginacionAlu.js?ver=1.1.10"></script>

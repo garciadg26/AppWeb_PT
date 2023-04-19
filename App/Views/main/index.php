@@ -16,7 +16,7 @@
     $mensaje = '';
 
     //$app = new App();
-
+   
     //////////// BLOQUE 1
     //IMPLEMENTACION DE ROL DE SESIONES
     if(isset($_SESSION['rol'])){
